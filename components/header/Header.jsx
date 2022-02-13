@@ -1,5 +1,5 @@
 import React, { useContext, useState, useEffect } from "react";
-import { Center, Text } from "@chakra-ui/react";
+import { Container, Text, Box } from "@chakra-ui/react";
 import PortfolioContext from "../../context/context";
 // import { Link } from "react-scroll";
 import { Fade } from "react-reveal";
@@ -24,24 +24,29 @@ const Header = () => {
 
 	return (
 		<section id="header">
-			<Center>
-				<Fade
+			<Container>
+				{/* <Fade
 					top={isDesktop}
 					bottom={isMobile}
 					duration={1000}
 					delay={500}
 					distance="30px"
-				>
-					<Text
-						bgGradient="linear(to-l, #7928CA, #FF0080)"
-						bgClip="text"
-						fontSize="6xl"
-						fontWeight="extrabold"
-					>
-						{name}
-					</Text>
-				</Fade>
-			</Center>
+				> */}
+				<Box borderRadius="lg" display={{ md: "flex" }}>
+					<Box flexGrow={1}>
+						<Text
+							bgGradient="linear(to-l, #7928CA, #FF0080)"
+							bgClip="text"
+							fontSize="6xl"
+							fontWeight="extrabold"
+						>
+							{name}
+						</Text>
+						<p>Creative ( Artist / Developer / For the Planet )</p>
+					</Box>
+					{/* </Fade> */}
+				</Box>
+			</Container>
 		</section>
 	);
 };
