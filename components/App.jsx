@@ -10,14 +10,14 @@ import {
 import Header from "./header/Header";
 
 function App() {
-	const [hero, setHero] = useState({});
+	const [header, setHeader] = useState({});
 	const [about, setAbout] = useState({});
 	const [projects, setProjects] = useState([]);
 	const [contact, setContact] = useState({});
 	const [footer, setFooter] = useState({});
 
 	useEffect(() => {
-		setHero({ ...heroData });
+		setHeader({ ...heroData });
 		setAbout({ ...aboutData });
 		setProjects([...projectsData]);
 		setContact({ ...contactData });
@@ -25,7 +25,7 @@ function App() {
 	}, []);
 
 	return (
-		<PortfolioProvider value={{ hero, about, projects, contact, footer }}>
+		<PortfolioProvider value={{ header, about, projects, contact, footer }}>
 			<Header />
 		</PortfolioProvider>
 	);

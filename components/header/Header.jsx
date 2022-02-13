@@ -3,7 +3,7 @@ import PortfolioContext from "../../context/context";
 
 const Header = () => {
 	const {
-		hero: { title, name, subtitle, cta },
+		header: { title, name, subtitle, cta },
 	} = useContext(PortfolioContext);
 
 	return <h1>Header!</h1>;
