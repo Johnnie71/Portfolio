@@ -30,3 +30,21 @@ const LinkItem = ({ href, path, children }) => {
 		</NextLink>
 	);
 };
+
+const NavBar = (props) => {
+	const { path } = props;
+
+	return (
+		<Box
+			position="fixed"
+			as="nav"
+			w="100%"
+			bg={useColorModeValue("#ffffff40", "#20202380")}
+			style={{ backdropFilter: "blur(10px)" }}
+			zIndex={1}
+			{...props}
+		>
+			Navbar
+		</Box>
+	);
+};
