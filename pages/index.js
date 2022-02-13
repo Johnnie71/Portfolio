@@ -1,6 +1,7 @@
 import React from "react";
 import { Helmet } from "react-helmet";
 import { headData } from "../data/data";
+import App from "../components/App";
 import "../styles/Home.module.css";
 
 export default function Home() {
@@ -13,6 +14,7 @@ export default function Home() {
 				<html lang={lang} />
 				<meta name="description" content={description} />
 			</Helmet>
+			<App />
 		</>
 	);
 }
