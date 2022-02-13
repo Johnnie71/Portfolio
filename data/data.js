@@ -25,3 +25,37 @@ export const aboutData = {
 	paragraphThree:
 		"Please feel free to explore my page and learn about my projects... 😀",
 };
+
+// PROJECTS DATA
+export const projectsData = [
+	{
+		id: nanoid(),
+		img: "EZTaskShot.png",
+		title: "E-Z Task",
+		info: "A clean and simple single-page application where users can view/create task notes.",
+		info2:
+			"Utilized Ruby on Rails, Active Record in backend. Vanilla JavaScript in frontend.",
+		url: "https://www.loom.com/share/00d67a6c4a7c4d5b9d67fd5ff7fcd8c9",
+		repo: "https://github.com/Johnnie71/EZ-Task-frontend", // if no repo, the button will not show up
+	},
+	{
+		id: nanoid(),
+		img: "EcoShareShot.png",
+		title: "Eco Share",
+		info: "A fun, interactive social media web application. Where creatives from all over the world can come together and share their eco-friendly designs.",
+		info2:
+			"Utilized Ruby on Rails, Active Record for data relationships. JavaScript, React, Redux for state management in frontend.",
+		url: "https://www.loom.com/share/ee145a72b8194b0e9d97a46a46315bdf",
+		repo: "https://github.com/Johnnie71/eco-designs-frontend", // if no repo, the button will not show up
+	},
+	{
+		id: nanoid(),
+		img: "avatarScreenShot.png",
+		title: "Adventures of Avatar",
+		info: "Fun Interactive Ruby CLI game where a user can explore the world of Pandora.",
+		info2:
+			"Utilized Ruby on Rails, and Active Record to access a Sqlite3 Database for easy data relationships.",
+		url: "https://www.loom.com/share/22b9f38a28494df081c97334847273c0",
+		repo: "https://github.com/Johnnie71/ruby-project-guidelines-nyc01-seng-ft-082420/tree/JohnnieG", // if no repo, the button will not show up
+	},
+];
