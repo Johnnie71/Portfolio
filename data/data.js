@@ -6,3 +6,11 @@ export const headData = {
 	lang: "en", // e.g: en, es, fr, jp
 	description: "Johnnie G Software Engineer", // e.g: Welcome to my website
 };
+
+// HERO DATA
+export const heroData = {
+	title: "",
+	name: "Johnnie Gonzalez",
+	subtitle: "Full stack software developer",
+	cta: "",
+};
