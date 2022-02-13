@@ -1,5 +1,5 @@
 import React, { useContext, useState, useEffect } from "react";
-import { Center } from "@chakra-ui/react";
+import { Center, Text } from "@chakra-ui/react";
 import PortfolioContext from "../../context/context";
 // import { Link } from "react-scroll";
 import { Fade } from "react-reveal";
@@ -32,11 +32,14 @@ const Header = () => {
 					delay={500}
 					distance="30px"
 				>
-					<h1>
+					<Text
+						bgGradient="linear(to-l, #7928CA, #FF0080)"
+						bgClip="text"
+						fontSize="6xl"
+						fontWeight="extrabold"
+					>
 						{name}
-						<br />
-						{subtitle}
-					</h1>
+					</Text>
 				</Fade>
 			</Center>
 		</section>
