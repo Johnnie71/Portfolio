@@ -66,3 +66,29 @@ export const contactData = {
 	btn: "",
 	email: "johnnie.agonz71@gmail.com",
 };
+
+// FOOTER DATA
+export const footerData = {
+	networks: [
+		{
+			id: nanoid(),
+			name: "twitter",
+			url: "https://twitter.com/intent/user?screen_name=Johnnieg71",
+		},
+		{
+			id: nanoid(),
+			name: "medium",
+			url: "https://medium.com/@johnnie.agonz71",
+		},
+		{
+			id: nanoid(),
+			name: "linkedin",
+			url: "https://www.linkedin.com/in/johnnie-gonzalez71/",
+		},
+		{
+			id: nanoid(),
+			name: "github",
+			url: "https://github.com/Johnnie71",
+		},
+	],
+};
