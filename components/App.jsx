@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { ChakraProvider } from "@chakra-ui/react";
 import { PortfolioProvider } from "../context/context";
 import {
 	heroData,
@@ -25,9 +26,13 @@ function App() {
 	}, []);
 
 	return (
-		<PortfolioProvider value={{ header, about, projects, contact, footer }}>
-			<Header />
-		</PortfolioProvider>
+		<>
+			<PortfolioProvider value={{ header, about, projects, contact, footer }}>
+				<ChakraProvider>
+					<Header />
+				</ChakraProvider>
+			</PortfolioProvider>
+		</>
 	);
 }
 
