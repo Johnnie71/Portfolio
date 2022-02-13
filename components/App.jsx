@@ -7,6 +7,7 @@ import {
 	contactData,
 	footerData,
 } from "../data/data";
+import Header from "./header/Header";
 
 function App() {
 	const [hero, setHero] = useState({});
@@ -25,7 +26,7 @@ function App() {
 
 	return (
 		<PortfolioProvider value={{ hero, about, projects, contact, footer }}>
-			hello
+			<Header />
 		</PortfolioProvider>
 	);
 }
