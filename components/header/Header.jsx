@@ -1,5 +1,8 @@
 import React, { useContext, useState, useEffect } from "react";
+// import { Center } from "@chakra-ui/react";
 import PortfolioContext from "../../context/context";
+// import { Link } from "react-scroll";
+// import { Fade } from "react-reveal";
 
 const Header = () => {
 	const {
@@ -19,7 +22,7 @@ const Header = () => {
 		}
 	}, []);
 
-	return <section id="header">Hello!</section>;
+	return <section id="header">hello!</section>;
 };
 
 export default Header;
