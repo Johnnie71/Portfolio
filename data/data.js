@@ -59,3 +59,10 @@ export const projectsData = [
 		repo: "https://github.com/Johnnie71/ruby-project-guidelines-nyc01-seng-ft-082420/tree/JohnnieG", // if no repo, the button will not show up
 	},
 ];
+
+// CONTACT DATA
+export const contactData = {
+	cta: "",
+	btn: "",
+	email: "johnnie.agonz71@gmail.com",
+};
