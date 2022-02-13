@@ -19,7 +19,7 @@ const Header = () => {
 		}
 	}, []);
 
-	return <h1>Header!</h1>;
+	return <section id="header">Hello!</section>;
 };
 
 export default Header;
