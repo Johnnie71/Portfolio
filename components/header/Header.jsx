@@ -1,5 +1,5 @@
 import React, { useContext, useState, useEffect } from "react";
-import { Container, Text, Box } from "@chakra-ui/react";
+import { Container, Text, Box, Image } from "@chakra-ui/react";
 import PortfolioContext from "../../context/context";
 // import { Link } from "react-scroll";
 import { Fade } from "react-reveal";
@@ -43,6 +43,23 @@ const Header = () => {
 							{name}
 						</Text>
 						<p>Creative ( Artist / Developer / For the Planet )</p>
+					</Box>
+					<Box
+						flexShrink={0}
+						mt={{ base: 4, md: 0 }}
+						ml={{ md: 6 }}
+						align="center"
+					>
+						<Image
+							borderColor="whiteAplha.800"
+							borderWidth={2}
+							borderStyle="solid"
+							maxWidth="100px"
+							display="inline-block"
+							borderRadius="full"
+							src=""
+							alt="Profile Image"
+						/>
 					</Box>
 					{/* </Fade> */}
 				</Box>
