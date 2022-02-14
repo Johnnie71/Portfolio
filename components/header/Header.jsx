@@ -45,7 +45,7 @@ const Header = () => {
 						<p>Creative ( Artist / Developer / For the Planet )</p>
 					</Box>
 					<Box
-						flexShrink={0}
+						flexShrink={1}
 						mt={{ base: 4, md: 0 }}
 						ml={{ md: 6 }}
 						align="center"
@@ -57,7 +57,7 @@ const Header = () => {
 							maxWidth="100px"
 							display="inline-block"
 							borderRadius="full"
-							src=""
+							src="../../image/profile.png"
 							alt="Profile Image"
 						/>
 					</Box>
