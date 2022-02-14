@@ -47,7 +47,7 @@ const Header = () => {
 					</Box>
 					<Box
 						flexShrink={1}
-						mt={{ base: 4, md: 10 }}
+						mt={{ base: 4, md: 8 }}
 						ml={{ md: 1 }}
 						align="center"
 					>
