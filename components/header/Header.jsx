@@ -58,7 +58,7 @@ const Header = () => {
 							boxSize="120px"
 							display="inline-block"
 							borderRadius="full"
-							srcSet="../../images/profile.jpg"
+							src="/images/profile.jpg"
 							fallbackSrc="https://via.placeholder.com/150"
 							alt="Profile Image"
 						/>
