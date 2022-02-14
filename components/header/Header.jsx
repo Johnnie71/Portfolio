@@ -1,4 +1,4 @@
-import React, { useContext, useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import {
 	Container,
 	Text,
@@ -6,15 +6,10 @@ import {
 	Image,
 	useColorModeValue,
 } from "@chakra-ui/react";
-import PortfolioContext from "../../context/context";
 // import { Link } from "react-scroll";
 import { Fade } from "react-reveal";
 
 const Header = () => {
-	const {
-		header: { title, name, subtitle, cta },
-	} = useContext(PortfolioContext);
-
 	const [isMobile, setIsMobile] = useState(false);
 	const [isDesktop, setIsDesktop] = useState(false);
 
@@ -30,7 +25,7 @@ const Header = () => {
 
 	return (
 		<section id="header">
-			<Container>
+			<Container maxWidth={isDesktop ? 800 : "auto"}>
 				{/* <Fade
 					top={isDesktop}
 					bottom={isMobile}
@@ -38,25 +33,31 @@ const Header = () => {
 					delay={500}
 					distance="30px"
 				> */}
-				<Box borderRadius="lg" display={{ md: "flex" }}>
-					<Box flexGrow={1}>
+				<Box borderRadius="lg" bg="turquoise" display={{ md: "flex" }}>
+					<Box
+						bg="tomato"
+						flexGrow={1}
+						justifyContent="center"
+						align={isMobile ? "center" : "auto"}
+					>
 						<Text
 							bgGradient={useColorModeValue(
 								"linear(to-r, #1367d4, #32d142)",
 								"linear(to-l, #7928CA, #FF0080)"
 							)}
 							bgClip="text"
-							fontSize="6xl"
+							fontSize={isMobile ? "5xl" : "6xl"}
 							fontWeight="extrabold"
 						>
-							{name}
+							Johnnie Gonzalez
 						</Text>
-
-						<p>Creative ( Artist / Developer / For the Planet )</p>
+						<Box align="center">
+							<p>Creative ( Artist / Engineer / For the Planet )</p>
+						</Box>
 					</Box>
 					<Box
 						flexShrink={1}
-						mt={{ base: 4, md: 8 }}
+						mt={{ base: 4, md: 4 }}
 						ml={{ md: 1 }}
 						align="center"
 					>
