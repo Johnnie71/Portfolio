@@ -4,6 +4,7 @@ import App from "../components/App";
 import "../styles/Home.module.css";
 import NavBar from "../components/navbar/NavBar";
 import { ChakraProvider } from "@chakra-ui/react";
+import Fonts from "../components/fonts";
 import theme from "../lib/theme";
 
 export default function Home() {
@@ -18,6 +19,7 @@ export default function Home() {
 				<meta name="description" content={description} />
 			</Helmet>
 			<ChakraProvider theme={theme}>
+				<Fonts />
 				<NavBar />
 				<br />
 				<App />
