@@ -91,6 +91,17 @@ const NavBar = (props) => {
 								variant="outline"
 								aria-label="Options"
 							/>
+							<MenuList>
+								<NextLink href="/about" passHref>
+									<MenuItem>About</MenuItem>
+								</NextLink>
+								<NextLink href="/projects" passHref>
+									<MenuItem>Projects</MenuItem>
+								</NextLink>
+								<NextLink href="/contact" passHref>
+									<MenuItem>Contact</MenuItem>
+								</NextLink>
+							</MenuList>
 						</Menu>
 					</Box>
 				</Box>
