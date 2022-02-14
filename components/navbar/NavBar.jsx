@@ -82,6 +82,18 @@ const NavBar = (props) => {
 						Contact
 					</LinkItem>
 				</Stack>
+				<Box flex={1} align="right">
+					<Box ml={2} display={{ base: "inline-block", md: "none" }}>
+						<Menu>
+							<MenuButton
+								as={IconButton}
+								icon={<HamburgerIcon />}
+								variant="outline"
+								aria-label="Options"
+							/>
+						</Menu>
+					</Box>
+				</Box>
 			</Container>
 		</Box>
 	);
