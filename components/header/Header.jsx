@@ -42,22 +42,24 @@ const Header = () => {
 						>
 							{name}
 						</Text>
+
 						<p>Creative ( Artist / Developer / For the Planet )</p>
 					</Box>
 					<Box
 						flexShrink={1}
-						mt={{ base: 4, md: 0 }}
-						ml={{ md: 6 }}
+						mt={{ base: 4, md: 10 }}
+						ml={{ md: 1 }}
 						align="center"
 					>
 						<Image
 							borderColor="whiteAplha.800"
 							borderWidth={2}
 							borderStyle="solid"
-							maxWidth="100px"
+							boxSize="120px"
 							display="inline-block"
 							borderRadius="full"
-							src="../../image/profile.png"
+							srcSet="../../images/profile.jpg"
+							fallbackSrc="https://via.placeholder.com/150"
 							alt="Profile Image"
 						/>
 					</Box>
