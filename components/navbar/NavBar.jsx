@@ -12,18 +12,20 @@ import {
 	MenuButton,
 	IconButton,
 	useColorModeValue,
+	Text,
 } from "@chakra-ui/react";
 import { HamburgerIcon } from "@chakra-ui/icons";
 
-const LinkItem = ({ href, path, children }) => {
+const LinkItem = ({ href, path, children, ...props }) => {
 	const active = path === href;
 	const inactiveColor = useColorModeValue("gray200", "whiteAlpha.900");
 	return (
-		<NextLink href={href}>
+		<NextLink href={href} passHref>
 			<Link
 				p={2}
 				bg={active ? "turquoise" : undefined}
 				color={active ? "#202023" : inactiveColor}
+				{...props}
 			>
 				{children}
 			</Link>
@@ -40,11 +42,48 @@ const NavBar = (props) => {
 			as="nav"
 			w="100%"
 			bg={useColorModeValue("#ffffff40", "#20202380")}
-			style={{ backdropFilter: "blur(10px)" }}
+			css={{ backdropFilter: "blur(5px)" }}
 			zIndex={1}
 			{...props}
 		>
-			Navbar
+			<Container
+				display="flex"
+				p={2}
+				maxW="container.md"
+				wrap="wrap"
+				align="center"
+				justify="space-between"
+			>
+				<Flex align="center" mr={5}>
+					<Heading
+						as="h1"
+						size="lg"
+						bgClip="text"
+						bgGradient="linear(to-r, teal.500, green.500)"
+						letterSpacing={"tighter"}
+					>
+						JG
+					</Heading>
+				</Flex>
+				<Stack
+					direction={{ base: "column", md: "row" }}
+					display={{ base: "none", md: "flex" }}
+					width={{ base: "full", md: "auto" }}
+					alignItems="center"
+					flexGrow={1}
+					mt={{ base: 4, md: 0 }}
+				>
+					<LinkItem href="/about" path={path}>
+						About
+					</LinkItem>
+					<LinkItem href="/projects" path={path}>
+						Projects
+					</LinkItem>
+					<LinkItem href="/contact" path={path}>
+						Contact
+					</LinkItem>
+				</Stack>
+			</Container>
 		</Box>
 	);
 };

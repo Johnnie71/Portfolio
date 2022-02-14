@@ -3,6 +3,8 @@ import { headData } from "../data/data";
 import App from "../components/App";
 import "../styles/Home.module.css";
 import NavBar from "../components/navbar/NavBar";
+import { ChakraProvider } from "@chakra-ui/react";
+
 export default function Home() {
 	const { title, lang, description } = headData;
 
@@ -14,8 +16,10 @@ export default function Home() {
 				<html lang={lang} />
 				<meta name="description" content={description} />
 			</Helmet>
-			<NavBar />
-			<App />
+			<ChakraProvider>
+				<NavBar />
+				<App />
+			</ChakraProvider>
 		</>
 	);
 }
