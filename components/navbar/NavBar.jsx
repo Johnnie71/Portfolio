@@ -55,15 +55,14 @@ const NavBar = (props) => {
 				justify="space-between"
 			>
 				<Flex align="center" mr={5}>
-					<Heading
-						as="h1"
-						size="lg"
+					<Text
+						bgGradient="linear(to-l, #7928CA, #FF0080)"
 						bgClip="text"
-						bgGradient="linear(to-r, teal.500, green.500)"
-						letterSpacing={"tighter"}
+						fontSize="xl"
+						fontWeight="bold"
 					>
 						JG
-					</Heading>
+					</Text>
 				</Flex>
 				<Stack
 					direction={{ base: "column", md: "row" }}
