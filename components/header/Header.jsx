@@ -1,5 +1,11 @@
 import React, { useContext, useState, useEffect } from "react";
-import { Container, Text, Box, Image } from "@chakra-ui/react";
+import {
+	Container,
+	Text,
+	Box,
+	Image,
+	useColorModeValue,
+} from "@chakra-ui/react";
 import PortfolioContext from "../../context/context";
 // import { Link } from "react-scroll";
 import { Fade } from "react-reveal";
@@ -35,7 +41,10 @@ const Header = () => {
 				<Box borderRadius="lg" display={{ md: "flex" }}>
 					<Box flexGrow={1}>
 						<Text
-							bgGradient="linear(to-l, #7928CA, #FF0080)"
+							bgGradient={useColorModeValue(
+								"linear(to-r, #1367d4, #32d142)",
+								"linear(to-l, #7928CA, #FF0080)"
+							)}
 							bgClip="text"
 							fontSize="6xl"
 							fontWeight="extrabold"
