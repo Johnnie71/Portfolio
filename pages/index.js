@@ -18,6 +18,7 @@ export default function Home() {
 			</Helmet>
 			<ChakraProvider>
 				<NavBar />
+				<br />
 				<App />
 			</ChakraProvider>
 		</>

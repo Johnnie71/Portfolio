@@ -28,6 +28,7 @@ function App() {
 	return (
 		<>
 			<PortfolioProvider value={{ header, about, projects, contact, footer }}>
+				<br />
 				<Header />
 			</PortfolioProvider>
 		</>
