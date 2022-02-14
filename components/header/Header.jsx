@@ -26,16 +26,15 @@ const Header = () => {
 	return (
 		<section id="header">
 			<Container maxWidth={isDesktop ? 800 : "auto"}>
-				{/* <Fade
-					top={isDesktop}
-					bottom={isMobile}
-					duration={1000}
-					delay={500}
-					distance="30px"
-				> */}
-				<Box borderRadius="lg" bg="turquoise" display={{ md: "flex" }}>
+				<Box borderRadius="lg" mr={10} display={{ md: "flex" }}>
+					{/* <Fade
+						top={isDesktop}
+						bottom={isMobile}
+						duration={1000}
+						delay={500}
+						distance="30px"
+					> */}
 					<Box
-						bg="tomato"
 						flexGrow={1}
 						justifyContent="center"
 						align={isMobile ? "center" : "auto"}
@@ -55,6 +54,7 @@ const Header = () => {
 							<p>Creative ( Artist / Engineer / For the Planet )</p>
 						</Box>
 					</Box>
+					{/* </Fade> */}
 					<Box
 						flexShrink={1}
 						mt={{ base: 4, md: 4 }}
@@ -69,11 +69,9 @@ const Header = () => {
 							display="inline-block"
 							borderRadius="full"
 							src="/images/profile.jpg"
-							fallbackSrc="https://via.placeholder.com/150"
 							alt="Profile Image"
 						/>
 					</Box>
-					{/* </Fade> */}
 				</Box>
 			</Container>
 		</section>
