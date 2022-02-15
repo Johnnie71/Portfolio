@@ -8,6 +8,7 @@ import {
 	Button,
 	useColorModeValue,
 	Link,
+	useMediaQuery,
 } from "@chakra-ui/react";
 import Fade from "react-reveal/Fade";
 import NextLink from "next/link";
@@ -17,25 +18,14 @@ const About = () => {
 
 	const { paragraphOne, paragraphTwo, paragraphThree } = about;
 
-	const [isDesktop, setIsDesktop] = useState(false);
-	const [isMobile, setIsMobile] = useState(false);
-
-	useEffect(() => {
-		if (window.innerWidth > 769) {
-			setIsDesktop(true);
-			setIsMobile(false);
-		} else {
-			setIsMobile(true);
-			setIsDesktop(false);
-		}
-	}, []);
+	const [mobile] = useMediaQuery("(max-width: 768px)");
 
 	return (
 		<section id="about">
 			<Container align="center">
 				<Fade
-					top={isDesktop}
-					bottom={isMobile}
+					top={!mobile}
+					bottom={mobile}
 					duration={1000}
 					delay={1000}
 					distance="30px"
@@ -43,8 +33,8 @@ const About = () => {
 					<Heading textDecoration="underline">About</Heading>
 				</Fade>
 				<Fade
-					right={isDesktop}
-					bottom={isMobile}
+					right={!mobile}
+					bottom={mobile}
 					duration={1000}
 					delay={1000}
 					distance="30px"
