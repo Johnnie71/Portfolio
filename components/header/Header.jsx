@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import {
 	Container,
 	Text,
@@ -11,19 +11,7 @@ import {
 import { Fade } from "react-reveal";
 
 const Header = () => {
-	const [isMobile, setIsMobile] = useState(false);
-	const [isDesktop, setIsDesktop] = useState(false);
 	const [mobile] = useMediaQuery("(max-width: 768px)");
-
-	useEffect(() => {
-		if (window.innerWidth > 769) {
-			setIsDesktop(true);
-			setIsMobile(false);
-		} else {
-			setIsMobile(true);
-			setIsDesktop(false);
-		}
-	}, []);
 
 	return (
 		<section id="header">
