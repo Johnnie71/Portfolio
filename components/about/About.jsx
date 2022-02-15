@@ -4,6 +4,8 @@ import {
 	Container,
 	Text,
 	Box,
+	Heading,
+	Button,
 	Image,
 	useColorModeValue,
 } from "@chakra-ui/react";
@@ -29,7 +31,8 @@ const About = () => {
 
 	return (
 		<section id="about">
-			<Container>
+			<Container align="center">
+				<Heading textDecoration="underline">About</Heading>
 				<Fade
 					right={isDesktop}
 					bottom={isMobile}
@@ -53,7 +56,7 @@ const About = () => {
 							className="cta-btn cta-btn--resume"
 							href={JohnnieResume}
 						> */}
-						Resume
+						<Button>Resume</Button>
 						{/* </a> */}
 					</span>
 				</Fade>
