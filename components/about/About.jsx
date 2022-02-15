@@ -7,6 +7,7 @@ import {
 	Heading,
 	Button,
 	useColorModeValue,
+	Link,
 } from "@chakra-ui/react";
 import Fade from "react-reveal/Fade";
 import NextLink from "next/link";
@@ -32,7 +33,15 @@ const About = () => {
 	return (
 		<section id="about">
 			<Container align="center">
-				<Heading textDecoration="underline">About</Heading>
+				<Fade
+					top={isDesktop}
+					bottom={isMobile}
+					duration={1000}
+					delay={1000}
+					distance="30px"
+				>
+					<Heading textDecoration="underline">About</Heading>
+				</Fade>
 				<Fade
 					right={isDesktop}
 					bottom={isMobile}
@@ -49,26 +58,36 @@ const About = () => {
 					<Box>
 						<Text>{paragraphThree}</Text>
 					</Box>
-					<Box>
-						{/* <a
+				</Fade>
+				<Box>
+					{/* <a
 							target="_blank"
 							rel="noopener noreferrer"
 							className="cta-btn cta-btn--resume"
 							href={JohnnieResume}
 						> */}
-						<NextLink href={"/Resume.PDF"}>
-							<Button
-								borderRadius={20}
-								bgColor={useColorModeValue("red", "white")}
-								colorScheme="green"
-								variant="solid"
+					<Fade bottom duration={1000} delay={1000} distance="30px">
+						<NextLink href={"/Resume.PDF"} passHref>
+							<Link
+								textDecorationStyle="none"
+								target="_blank"
+								rel="noopener noreferrer"
 							>
-								Resume
-							</Button>
+								<Button
+									color={useColorModeValue("white", "black")}
+									bg={useColorModeValue("#00b1fc", "#d93296")}
+									borderColor={useColorModeValue("#00b1fc", "#d93296")}
+									borderRadius={20}
+									borderWidth={2}
+									variant="solid"
+								>
+									Resume
+								</Button>
+							</Link>
 						</NextLink>
-						{/* </a> */}
-					</Box>
-				</Fade>
+					</Fade>
+					{/* </a> */}
+				</Box>
 			</Container>
 		</section>
 	);
