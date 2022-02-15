@@ -27,7 +27,11 @@ const Header = () => {
 
 	return (
 		<section id="header">
-			<Container maxWidth={mobile ? "auto" : 800}>
+			<Container
+				height={"100vh"}
+				minHeight={"100vh"}
+				maxWidth={mobile ? "auto" : 800}
+			>
 				<Box borderRadius="lg" mr={10} display={{ md: "flex" }}>
 					{/* <Fade
 						top={isDesktop}
