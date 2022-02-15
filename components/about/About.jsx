@@ -46,6 +46,16 @@ const About = () => {
 					<Box>
 						<Text>{paragraphThree}</Text>
 					</Box>
+					<span>
+						{/* <a
+							target="_blank"
+							rel="noopener noreferrer"
+							className="cta-btn cta-btn--resume"
+							href={JohnnieResume}
+						> */}
+						Resume
+						{/* </a> */}
+					</span>
 				</Fade>
 			</Container>
 		</section>
