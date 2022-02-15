@@ -6,10 +6,10 @@ import {
 	Box,
 	Heading,
 	Button,
-	Image,
 	useColorModeValue,
 } from "@chakra-ui/react";
 import Fade from "react-reveal/Fade";
+import NextLink from "next/link";
 
 const About = () => {
 	const { about } = useContext(PortfolioContext);
@@ -49,16 +49,25 @@ const About = () => {
 					<Box>
 						<Text>{paragraphThree}</Text>
 					</Box>
-					<span>
+					<Box>
 						{/* <a
 							target="_blank"
 							rel="noopener noreferrer"
 							className="cta-btn cta-btn--resume"
 							href={JohnnieResume}
 						> */}
-						<Button>Resume</Button>
+						<NextLink href={"/Resume.PDF"}>
+							<Button
+								borderRadius={20}
+								bgColor={useColorModeValue("red", "white")}
+								colorScheme="green"
+								variant="solid"
+							>
+								Resume
+							</Button>
+						</NextLink>
 						{/* </a> */}
-					</span>
+					</Box>
 				</Fade>
 			</Container>
 		</section>
