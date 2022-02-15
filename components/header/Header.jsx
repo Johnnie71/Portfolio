@@ -5,6 +5,7 @@ import {
 	Box,
 	Image,
 	useColorModeValue,
+	useMediaQuery,
 } from "@chakra-ui/react";
 // import { Link } from "react-scroll";
 import { Fade } from "react-reveal";
@@ -12,6 +13,7 @@ import { Fade } from "react-reveal";
 const Header = () => {
 	const [isMobile, setIsMobile] = useState(false);
 	const [isDesktop, setIsDesktop] = useState(false);
+	const [mobile] = useMediaQuery("(max-width: 768px)");
 
 	useEffect(() => {
 		if (window.innerWidth > 769) {
@@ -25,7 +27,7 @@ const Header = () => {
 
 	return (
 		<section id="header">
-			<Container maxWidth={isDesktop ? 800 : "auto"}>
+			<Container maxWidth={mobile ? "auto" : 800}>
 				<Box borderRadius="lg" mr={10} display={{ md: "flex" }}>
 					{/* <Fade
 						top={isDesktop}
@@ -34,23 +36,20 @@ const Header = () => {
 						delay={500}
 						distance="30px"
 					> */}
-					<Box
-						flexGrow={1}
-						justifyContent="center"
-						align={isMobile ? "center" : "auto"}
-					>
+					<Box flexGrow={1} justifyContent="center" align={"center"}>
 						<Text
 							bgGradient={useColorModeValue(
 								"linear(to-r, #1367d4, #32d142)",
 								"linear(to-l, #7928CA, #FF0080)"
 							)}
 							bgClip="text"
-							fontSize={isMobile ? "5xl" : "6xl"}
+							fontSize={mobile ? "5xl" : "6xl"}
 							fontWeight="extrabold"
+							ml={5}
 						>
 							Johnnie Gonzalez
 						</Text>
-						<Box mb={0} align="center">
+						<Box ml={6} mb={0} align="center">
 							<p>Creative ( Artist / Engineer / For the Planet )</p>
 						</Box>
 					</Box>
