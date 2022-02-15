@@ -19,7 +19,7 @@ export const heroData = {
 export const aboutData = {
 	img: "profile.jpg",
 	paragraphOne:
-		"My name is Johnnie and I’m a full stack software developer with experience in Ruby, Ruby on Rails, JavaScript, and React. Since graduating from Flatiron Academy in December 2020, I have immersed myself in learning React Native to build a more comprehensive understanding of mobile OS applications.",
+		"I’m a full stack software engineer with experience in Ruby, Ruby on Rails, JavaScript, and React. Since graduating from Flatiron Academy in December 2020, I have immersed myself in learning React Native to build a more comprehensive understanding of mobile OS applications.",
 	paragraphTwo:
 		"With a background in architectural design, and a passion for sustainability, I have discovered programming as the perfect vehicle for leading the way toward a greener future. With an estimated 3.5 billion people owning a smartphone in 2020, access to a more sustainable world is now at our fingertips.",
 	paragraphThree:

@@ -7,6 +7,7 @@ import {
 	Image,
 	useColorModeValue,
 } from "@chakra-ui/react";
+import Fade from "react-reveal/Fade";
 
 const About = () => {
 	const { about } = useContext(PortfolioContext);
@@ -28,7 +29,25 @@ const About = () => {
 
 	return (
 		<section id="about">
-			<Container></Container>
+			<Container>
+				<Fade
+					right={isDesktop}
+					bottom={isMobile}
+					duration={1000}
+					delay={1000}
+					distance="30px"
+				>
+					<Box mb={5}>
+						<Text>{paragraphOne}</Text>
+					</Box>
+					<Box mb={5}>
+						<Text>{paragraphTwo}</Text>
+					</Box>
+					<Box>
+						<Text>{paragraphThree}</Text>
+					</Box>
+				</Fade>
+			</Container>
 		</section>
 	);
 };

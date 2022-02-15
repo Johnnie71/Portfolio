@@ -30,6 +30,7 @@ function App() {
 			<PortfolioProvider value={{ header, about, projects, contact, footer }}>
 				<br />
 				<Header />
+				<br />
 				<About />
 			</PortfolioProvider>
 		</>
