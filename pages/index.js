@@ -4,7 +4,6 @@ import App from "../components/App";
 import "../styles/Home.module.css";
 import NavBar from "../components/navbar/NavBar";
 import { ChakraProvider } from "@chakra-ui/react";
-import { AnimatePresence } from "framer-motion";
 import Fonts from "../components/fonts";
 import theme from "../lib/theme";
 
@@ -21,11 +20,9 @@ export default function Home() {
 			</Helmet>
 			<ChakraProvider theme={theme}>
 				<Fonts />
-				<AnimatePresence exitBeforeEnter initial={true}>
-					<NavBar />
-					<br />
-					<App />
-				</AnimatePresence>
+				<NavBar />
+				<br />
+				<App />
 			</ChakraProvider>
 		</>
 	);
