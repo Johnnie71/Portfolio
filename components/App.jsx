@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-
 import { PortfolioProvider } from "../context/context";
 import {
 	heroData,
@@ -9,6 +8,7 @@ import {
 	footerData,
 } from "../data/data";
 import Header from "./header/Header";
+import About from "../components/about/About";
 
 function App() {
 	const [header, setHeader] = useState({});
@@ -30,6 +30,7 @@ function App() {
 			<PortfolioProvider value={{ header, about, projects, contact, footer }}>
 				<br />
 				<Header />
+				<About />
 			</PortfolioProvider>
 		</>
 	);

@@ -50,7 +50,7 @@ const Header = () => {
 						>
 							Johnnie Gonzalez
 						</Text>
-						<Box align="center">
+						<Box mb={0} align="center">
 							<p>Creative ( Artist / Engineer / For the Planet )</p>
 						</Box>
 					</Box>
