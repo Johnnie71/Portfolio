@@ -9,8 +9,13 @@ export default function Home() {
 	return (
 		<>
 			<Helmet>
-				<meta charSet="utf-8" name="viewport" content="width=device-width" />
-				<title>{title}</title>
+				<meta
+					charSet="utf-8"
+					name="viewport"
+					content="width=device-width"
+					initial-scale={1}
+				/>
+				<title>hello!</title>
 				<html lang={lang} />
 				<meta name="description" content={description} />
 			</Helmet>
