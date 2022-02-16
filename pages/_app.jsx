@@ -33,8 +33,8 @@ function App() {
 	return (
 		<>
 			<ChakraProvider theme={theme}>
+				<Fonts />
 				<PortfolioProvider value={{ header, about, projects, contact, footer }}>
-					<Fonts />
 					<NavBar />
 					<Header />
 					<About />
