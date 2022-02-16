@@ -35,7 +35,7 @@ const About = () => {
 						borderBottomColor={useColorModeValue("#32d142", "#84248c")}
 						borderBottomWidth={2}
 						as="h3"
-						size="lg"
+						// size="lg"
 					>
 						About
 					</Heading>
