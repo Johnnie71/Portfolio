@@ -19,7 +19,7 @@ const Projects = () => {
 	return (
 		<section id="projects">
 			<Container mt={20}>
-				<Box align={isMobile ? "center" : "auto"}>
+				<Box align="center">
 					<Heading
 						w={"80%"}
 						borderBottomColor={useColorModeValue("#32d142", "#84248c")}
@@ -30,6 +30,8 @@ const Projects = () => {
 					>
 						Projects
 					</Heading>
+				</Box>
+				<Box>
 					{projects &&
 						projects.map((project) => {
 							const { id, img, title, info, info2, url, repo } = project;
