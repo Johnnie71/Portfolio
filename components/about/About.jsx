@@ -1,4 +1,4 @@
-import { useState, useEffect, useContext } from "react";
+import { useContext } from "react";
 import PortfolioContext from "../../context/context";
 import {
 	Container,
@@ -30,7 +30,9 @@ const About = () => {
 					delay={1000}
 					distance="30px"
 				>
-					<Heading textDecoration="underline">About</Heading>
+					<Heading mb={5} as="h3" size="lg" textDecoration="underline">
+						About
+					</Heading>
 				</Fade>
 				<Fade
 					right={!isMobile}
