@@ -7,9 +7,13 @@ import {
 	contactData,
 	footerData,
 } from "../data/data";
-import Header from "./header/Header";
+import Header from "../components/header/Header";
 import About from "../components/about/About";
 import Projects from "../components/projects/Projects";
+import { ChakraProvider } from "@chakra-ui/react";
+import theme from "../lib/theme";
+import NavBar from "../components/navbar/NavBar";
+import Fonts from "../public/fonts";
 
 function App() {
 	const [header, setHeader] = useState({});
@@ -28,14 +32,19 @@ function App() {
 
 	return (
 		<>
-			<PortfolioProvider value={{ header, about, projects, contact, footer }}>
-				<br />
-				<Header />
-				<br />
-				<About />
-				<br />
-				<Projects />
-			</PortfolioProvider>
+			<ChakraProvider theme={theme}>
+				<PortfolioProvider value={{ header, about, projects, contact, footer }}>
+					<Fonts />
+					<NavBar />
+					<br />
+					<br />
+					<Header />
+					<br />
+					<About />
+					<br />
+					<Projects />
+				</PortfolioProvider>
+			</ChakraProvider>
 		</>
 	);
 }

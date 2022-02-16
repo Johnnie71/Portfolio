@@ -1,11 +1,7 @@
 import { Helmet } from "react-helmet";
 import { headData } from "../data/data";
-import App from "../components/App";
+import App from "./_app";
 import "../styles/Home.module.css";
-import NavBar from "../components/navbar/NavBar";
-import { ChakraProvider } from "@chakra-ui/react";
-import Fonts from "../components/fonts";
-import theme from "../lib/theme";
 
 export default function Home() {
 	const { title, lang, description } = headData;
@@ -18,12 +14,7 @@ export default function Home() {
 				<html lang={lang} />
 				<meta name="description" content={description} />
 			</Helmet>
-			<ChakraProvider theme={theme}>
-				<Fonts />
-				<NavBar />
-				<br />
-				<App />
-			</ChakraProvider>
+			<App />
 		</>
 	);
 }
