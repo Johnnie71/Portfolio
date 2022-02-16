@@ -70,6 +70,8 @@ const About = () => {
 										"linear(to-r, #1367d4, #32d142)",
 										"linear(to-l, #7928CA, #FF0080)"
 									)}
+									transition="padding .5s"
+									_hover={{ padding: 2 }}
 									as="button"
 									variant="solid"
 								>
