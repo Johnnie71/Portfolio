@@ -105,6 +105,21 @@ const Projects = () => {
 												</Link>
 											</NextLink>
 										)}
+										<Box>
+											{img && (
+												<NextLink href={repo} passHref>
+													<Link
+														textDecorationStyle="none"
+														target="_blank"
+														rel="noopener noreferrer"
+														_hover={{
+															textDecorationLine: "none",
+															bgGradient: useColorModeValue("white", "black"),
+														}}
+													></Link>
+												</NextLink>
+											)}
+										</Box>
 									</Box>
 								</Box>
 							);
