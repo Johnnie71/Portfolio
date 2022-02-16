@@ -8,8 +8,10 @@ import {
 	useMediaQuery,
 	useColorModeValue,
 	Link,
+	Image,
 } from "@chakra-ui/react";
 import Fade from "react-reveal/Fade";
+import Tilt from "react-tilt";
 import NextLink from "next/link";
 
 const Projects = () => {
@@ -116,7 +118,11 @@ const Projects = () => {
 															textDecorationLine: "none",
 															bgGradient: useColorModeValue("white", "black"),
 														}}
-													></Link>
+													>
+														<Tilt>
+															<Image alt={title} src={img} />
+														</Tilt>
+													</Link>
 												</NextLink>
 											)}
 										</Box>
