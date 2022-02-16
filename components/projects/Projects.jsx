@@ -12,6 +12,7 @@ import Fade from "react-reveal/Fade";
 import NextLink from "next/link";
 
 const Projects = () => {
+	const { projects } = useContext(PortfolioContext);
 	const [isMobile] = useMediaQuery("(max-width: 768px)");
 
 	return (
@@ -20,3 +21,5 @@ const Projects = () => {
 		</section>
 	);
 };
+
+export default Projects;
