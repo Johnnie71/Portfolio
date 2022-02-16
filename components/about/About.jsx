@@ -30,9 +30,10 @@ const About = () => {
 					distance="30px"
 				>
 					<Heading
+						mb={5}
+						w={"80%"}
 						borderBottomColor={useColorModeValue("#32d142", "#84248c")}
 						borderBottomWidth={2}
-						mb={5}
 						as="h3"
 						size="lg"
 					>
