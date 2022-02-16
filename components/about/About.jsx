@@ -18,14 +18,14 @@ const About = () => {
 
 	const { paragraphOne, paragraphTwo, paragraphThree } = about;
 
-	const [mobile] = useMediaQuery("(max-width: 768px)");
+	const [isMobile] = useMediaQuery("(max-width: 768px)");
 
 	return (
 		<section id="about">
 			<Container align="center">
 				<Fade
-					top={!mobile}
-					bottom={mobile}
+					top={!isMobile}
+					bottom={isMobile}
 					duration={1000}
 					delay={1000}
 					distance="30px"
@@ -33,8 +33,8 @@ const About = () => {
 					<Heading textDecoration="underline">About</Heading>
 				</Fade>
 				<Fade
-					right={!mobile}
-					bottom={mobile}
+					right={!isMobile}
+					bottom={isMobile}
 					duration={1000}
 					delay={1000}
 					distance="30px"
@@ -45,7 +45,7 @@ const About = () => {
 					<Box mb={5}>
 						<Text>{paragraphTwo}</Text>
 					</Box>
-					<Box>
+					<Box mb={5}>
 						<Text>{paragraphThree}</Text>
 					</Box>
 				</Fade>
@@ -56,17 +56,25 @@ const About = () => {
 								textDecorationStyle="none"
 								target="_blank"
 								rel="noopener noreferrer"
+								_hover={{
+									textDecorationLine: "none",
+									bgGradient: useColorModeValue("white", "black"),
+								}}
 							>
-								<Button
+								<Box
 									color={useColorModeValue("white", "black")}
-									bg={useColorModeValue("#00b1fc", "#d93296")}
-									borderColor={useColorModeValue("#00b1fc", "#d93296")}
+									p={3}
+									fontWeight="bold"
 									borderRadius={20}
-									borderWidth={2}
+									bgGradient={useColorModeValue(
+										"linear(to-r, #1367d4, #32d142)",
+										"linear(to-l, #7928CA, #FF0080)"
+									)}
+									as="button"
 									variant="solid"
 								>
 									Resume
-								</Button>
+								</Box>
 							</Link>
 						</NextLink>
 					</Fade>
