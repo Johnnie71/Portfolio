@@ -36,12 +36,8 @@ function App() {
 				<PortfolioProvider value={{ header, about, projects, contact, footer }}>
 					<Fonts />
 					<NavBar />
-					<br />
-					<br />
 					<Header />
-					<br />
 					<About />
-					<br />
 					<Projects />
 				</PortfolioProvider>
 			</ChakraProvider>
