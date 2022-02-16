@@ -9,7 +9,6 @@ import {
 	useColorModeValue,
 	Link,
 	Image,
-	Flex,
 	SimpleGrid,
 } from "@chakra-ui/react";
 import Fade from "react-reveal/Fade";
@@ -19,6 +18,9 @@ import Button from "../buttons/ButtonLink";
 const Projects = () => {
 	const { projects } = useContext(PortfolioContext);
 	const [isMobile] = useMediaQuery("(max-width: 768px)");
+
+	const whiteBlack = useColorModeValue("black", "#84248c");
+	const blackPurple = useColorModeValue("white", "black");
 
 	return (
 		<section id="projects">
@@ -49,11 +51,7 @@ const Projects = () => {
 										distance="30px"
 									>
 										<Box>
-											<Heading
-												color={useColorModeValue("black", "#84248c")}
-												size="lg"
-												as="h5"
-											>
+											<Heading color={whiteBlack} size="lg" as="h5">
 												{title}
 											</Heading>
 											<Box mb={4}>
@@ -61,32 +59,43 @@ const Projects = () => {
 												<Text>{info2}</Text>
 											</Box>
 
-											<Box align={isMobile ? "center" : "auto"}>
+											<Box
+												// justify="center"
+												align={isMobile ? "center" : "auto"}
+											>
 												{url && <Button url={url} name="Demo Video" />}
 
 												{repo && <Button url={repo} name="Source Code" />}
 											</Box>
 										</Box>
 									</Fade>
-									<Box align="center" mt={5}>
-										{img && (
-											<NextLink href={repo} passHref>
-												<Link
-													textDecorationStyle="none"
-													target="_blank"
-													rel="noopener noreferrer"
-													_hover={{
-														textDecorationLine: "none",
-														bgGradient: useColorModeValue("white", "black"),
-													}}
-												>
-													<Tilt>
-														<Image alt={title} src={img} />
-													</Tilt>
-												</Link>
-											</NextLink>
-										)}
-									</Box>
+									<Fade
+										right={!isMobile}
+										bottom={isMobile}
+										duration={1000}
+										delay={1000}
+										distance="30px"
+									>
+										<Box align="center" mt={5}>
+											{img && (
+												<NextLink href={repo} passHref>
+													<Link
+														textDecorationStyle="none"
+														target="_blank"
+														rel="noopener noreferrer"
+														_hover={{
+															textDecorationLine: "none",
+															bgGradient: blackPurple,
+														}}
+													>
+														<Tilt>
+															<Image alt={title} src={img} />
+														</Tilt>
+													</Link>
+												</NextLink>
+											)}
+										</Box>
+									</Fade>
 								</SimpleGrid>
 							);
 						})}
