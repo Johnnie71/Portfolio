@@ -22,7 +22,7 @@ const Projects = () => {
 
 	return (
 		<section id="projects">
-			<Container mt={20}>
+			<Container bgColor="red" mt={20}>
 				<Box align="center">
 					<Heading
 						w={"80%"}
@@ -41,25 +41,33 @@ const Projects = () => {
 
 							return (
 								<SimpleGrid columns={isMobile ? 1 : 2} mb={10} key={id}>
-									<Box>
-										<Heading
-											color={useColorModeValue("black", "#84248c")}
-											size="lg"
-											as="h5"
-										>
-											{title}
-										</Heading>
-										<Box mb={4}>
-											<Text mb={2}>{info}</Text>
-											<Text>{info2}</Text>
-										</Box>
+									<Fade
+										left={!isMobile}
+										bottom={isMobile}
+										duration={1000}
+										delay={500}
+										distance="30px"
+									>
+										<Box>
+											<Heading
+												color={useColorModeValue("black", "#84248c")}
+												size="lg"
+												as="h5"
+											>
+												{title}
+											</Heading>
+											<Box mb={4}>
+												<Text mb={2}>{info}</Text>
+												<Text>{info2}</Text>
+											</Box>
 
-										<Box align={isMobile ? "center" : "auto"}>
-											{url && <Button url={url} name="Demo Video" />}
+											<Box align={isMobile ? "center" : "auto"}>
+												{url && <Button url={url} name="Demo Video" />}
 
-											{repo && <Button url={repo} name="Source Code" />}
+												{repo && <Button url={repo} name="Source Code" />}
+											</Box>
 										</Box>
-									</Box>
+									</Fade>
 									<Box align="center" mt={5}>
 										{img && (
 											<NextLink href={repo} passHref>
