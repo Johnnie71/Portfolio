@@ -32,17 +32,17 @@ function App() {
 
 	return (
 		<>
-			<ChakraProvider theme={theme}>
-				<Fonts />
-				<PortfolioProvider value={{ header, about, projects, contact, footer }}>
+			<PortfolioProvider value={{ header, about, projects, contact, footer }}>
+				<ChakraProvider theme={theme}>
+					<Fonts />
 					<NavBar />
 					<br />
 					<br />
 					<Header />
 					<About />
 					<Projects />
-				</PortfolioProvider>
-			</ChakraProvider>
+				</ChakraProvider>
+			</PortfolioProvider>
 		</>
 	);
 }

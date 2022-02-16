@@ -1,6 +1,5 @@
-import { Helmet } from "react-helmet";
+import Head from "next/head";
 import { headData } from "../data/data";
-import App from "./_app";
 import "../styles/Home.module.css";
 
 export default function Home() {
@@ -8,18 +7,17 @@ export default function Home() {
 
 	return (
 		<>
-			<Helmet>
+			<Head>
 				<meta
 					charSet="utf-8"
 					name="viewport"
 					content="width=device-width"
 					initial-scale={1}
 				/>
-				<title>hello!</title>
+				<title>{title}</title>
 				<html lang={lang} />
 				<meta name="description" content={description} />
-			</Helmet>
-			<App />
+			</Head>
 		</>
 	);
 }
