@@ -5,7 +5,6 @@ import {
 	Text,
 	Box,
 	Heading,
-	Button,
 	useColorModeValue,
 	Link,
 	useMediaQuery,
@@ -30,7 +29,13 @@ const About = () => {
 					delay={1000}
 					distance="30px"
 				>
-					<Heading mb={5} as="h3" size="lg" textDecoration="underline">
+					<Heading
+						borderBottomColor={useColorModeValue("#32d142", "#84248c")}
+						borderBottomWidth={2}
+						mb={5}
+						as="h3"
+						size="lg"
+					>
 						About
 					</Heading>
 				</Fade>
@@ -47,7 +52,7 @@ const About = () => {
 					<Box mb={5}>
 						<Text>{paragraphTwo}</Text>
 					</Box>
-					<Box mb={5}>
+					<Box mb={6}>
 						<Text>{paragraphThree}</Text>
 					</Box>
 				</Fade>
