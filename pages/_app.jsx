@@ -36,6 +36,8 @@ function App() {
 				<Fonts />
 				<PortfolioProvider value={{ header, about, projects, contact, footer }}>
 					<NavBar />
+					<br />
+					<br />
 					<Header />
 					<About />
 					<Projects />
