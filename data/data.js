@@ -30,7 +30,7 @@ export const aboutData = {
 export const projectsData = [
 	{
 		id: nanoid(),
-		img: "EZTaskShot.png",
+		img: "/images/EZTaskShot.png",
 		title: "E-Z Task",
 		info: "A clean and simple single-page application where users can view/create task notes.",
 		info2:
@@ -40,7 +40,7 @@ export const projectsData = [
 	},
 	{
 		id: nanoid(),
-		img: "EcoShareShot.png",
+		img: "/images/EcoShareShot.png",
 		title: "Eco Share",
 		info: "A fun, interactive social media web application. Where creatives from all over the world can come together and share their eco-friendly designs.",
 		info2:
@@ -50,7 +50,7 @@ export const projectsData = [
 	},
 	{
 		id: nanoid(),
-		img: "avatarScreenShot.png",
+		img: "/images/avatarScreenShot.png",
 		title: "Adventures of Avatar",
 		info: "Fun Interactive Ruby CLI game where a user can explore the world of Pandora.",
 		info2:
