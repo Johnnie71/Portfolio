@@ -9,6 +9,7 @@ import {
 } from "../data/data";
 import Header from "./header/Header";
 import About from "../components/about/About";
+import Projects from "../components/projects/Projects";
 
 function App() {
 	const [header, setHeader] = useState({});
@@ -32,6 +33,8 @@ function App() {
 				<Header />
 				<br />
 				<About />
+				<br />
+				<Projects />
 			</PortfolioProvider>
 		</>
 	);
