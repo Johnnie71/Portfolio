@@ -19,19 +19,29 @@ const Projects = () => {
 	return (
 		<section id="projects">
 			<Container mt={20}>
-				<Box>
+				<Box align={isMobile ? "center" : "auto"}>
+					<Heading
+						w={"80%"}
+						borderBottomColor={useColorModeValue("#32d142", "#84248c")}
+						borderBottomWidth={2}
+						mb={5}
+						as="h5"
+						size="lg"
+					>
+						Projects
+					</Heading>
 					{projects &&
 						projects.map((project) => {
 							const { id, img, title, info, info2, url, repo } = project;
 
 							return (
 								<Box mb={10} key={id}>
-									<Heading as="h5">{title}</Heading>
-									<Box align={isMobile ? "center" : "auto"} mb={4}>
+									<Heading as="h3">{title}</Heading>
+									<Box mb={4}>
 										<Text mb={2}>{info}</Text>
 										<Text>{info2}</Text>
 									</Box>
-									<Box align={isMobile ? "center" : "auto"}>
+									<Box>
 										{url && (
 											<NextLink href={url} passHref>
 												<Link
