@@ -36,3 +36,5 @@ const NetworkButton = (props) => {
 		</Box>
 	);
 };
+
+export default NetworkButton;
