@@ -1,7 +1,7 @@
-import { Box, Link } from "@chakra-ui/react";
+import { Box, Link, useColorModeValue } from "@chakra-ui/react";
 import NextLink from "next/link";
 
-const Button = ({ url, repo }) => {
+const Button = ({ url, name }) => {
 	return (
 		<NextLink href={url} passHref>
 			<Link
@@ -28,7 +28,7 @@ const Button = ({ url, repo }) => {
 					as="button"
 					variant="solid"
 				>
-					Demo Video
+					{name}
 				</Box>
 			</Link>
 		</NextLink>
