@@ -15,7 +15,7 @@ import {
 import Fade from "react-reveal/Fade";
 import Tilt from "react-tilt";
 import NextLink from "next/link";
-
+import Button from "../buttons/ButtonLink";
 const Projects = () => {
 	const { projects } = useContext(PortfolioContext);
 	const [isMobile] = useMediaQuery("(max-width: 768px)");
@@ -55,68 +55,9 @@ const Projects = () => {
 										</Box>
 
 										<Box align={isMobile ? "center" : "auto"}>
-											{url && (
-												<NextLink href={url} passHref>
-													<Link
-														textDecorationStyle="none"
-														target="_blank"
-														rel="noopener noreferrer"
-														_hover={{
-															textDecorationLine: "none",
-															bgGradient: useColorModeValue("white", "black"),
-														}}
-													>
-														<Box
-															color={useColorModeValue("white", "black")}
-															p={3}
-															mr={5}
-															fontWeight="bold"
-															borderRadius={20}
-															bgGradient={useColorModeValue(
-																"linear(to-r, #1367d4, #32d142)",
-																"linear(to-l, #7928CA, #FF0080)"
-															)}
-															transition="padding .5s"
-															_hover={{ padding: 2 }}
-															as="button"
-															variant="solid"
-														>
-															Demo Video
-														</Box>
-													</Link>
-												</NextLink>
-											)}
+											{url && <Button url={url} name="Demo Video" />}
 
-											{repo && (
-												<NextLink href={repo} passHref>
-													<Link
-														textDecorationStyle="none"
-														target="_blank"
-														rel="noopener noreferrer"
-														_hover={{
-															textDecorationLine: "none",
-															bgGradient: useColorModeValue("white", "black"),
-														}}
-													>
-														<Box
-															color={useColorModeValue("white", "black")}
-															p={3}
-															fontWeight="bold"
-															borderRadius={20}
-															bgGradient={useColorModeValue(
-																"linear(to-r, #1367d4, #32d142)",
-																"linear(to-l, #7928CA, #FF0080)"
-															)}
-															transition="padding .5s"
-															_hover={{ padding: 2 }}
-															as="button"
-															variant="solid"
-														>
-															Source Code
-														</Box>
-													</Link>
-												</NextLink>
-											)}
+											{repo && <Button url={repo} name="Source Code" />}
 										</Box>
 									</Box>
 									<Box align="center" mt={5}>
