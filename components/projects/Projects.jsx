@@ -24,17 +24,25 @@ const Projects = () => {
 
 	return (
 		<section id="projects">
-			<Container bgColor="red" mt={20}>
+			<Container maxWidth={isMobile ? "auto" : 800} mt={20}>
 				<Box align="center">
-					<Heading
-						w={"80%"}
-						borderBottomColor={useColorModeValue("#32d142", "#84248c")}
-						borderBottomWidth={2}
-						mb={5}
-						as="h3"
+					<Fade
+						top={!isMobile}
+						bottom={isMobile}
+						duration={1000}
+						delay={1000}
+						distance="30px"
 					>
-						Projects
-					</Heading>
+						<Heading
+							w={"80%"}
+							borderBottomColor={useColorModeValue("#32d142", "#84248c")}
+							borderBottomWidth={2}
+							mb={5}
+							as="h3"
+						>
+							Projects
+						</Heading>
+					</Fade>
 				</Box>
 				<Box>
 					{projects &&
