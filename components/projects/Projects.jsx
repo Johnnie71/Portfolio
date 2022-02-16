@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import { useContext } from "react";
 import PortfolioContext from "../../context/context";
 import {
 	Container,
@@ -9,6 +9,7 @@ import {
 	useColorModeValue,
 	Link,
 	Image,
+	Flex,
 } from "@chakra-ui/react";
 import Fade from "react-reveal/Fade";
 import Tilt from "react-tilt";
@@ -33,7 +34,7 @@ const Projects = () => {
 						Projects
 					</Heading>
 				</Box>
-				<Box>
+				<Flex wrap="wrap">
 					{projects &&
 						projects.map((project) => {
 							const { id, img, title, info, info2, url, repo } = project;
@@ -107,7 +108,7 @@ const Projects = () => {
 												</Link>
 											</NextLink>
 										)}
-										<Box>
+										<Box align="center" mt={5}>
 											{img && (
 												<NextLink href={repo} passHref>
 													<Link
@@ -120,7 +121,7 @@ const Projects = () => {
 														}}
 													>
 														<Tilt>
-															<Image alt={title} src={img} />
+															<Image boxSize="90%" alt={title} src={img} />
 														</Tilt>
 													</Link>
 												</NextLink>
@@ -130,7 +131,7 @@ const Projects = () => {
 								</Box>
 							);
 						})}
-				</Box>
+				</Flex>
 			</Container>
 		</section>
 	);
