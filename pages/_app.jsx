@@ -14,6 +14,7 @@ import { ChakraProvider } from "@chakra-ui/react";
 import theme from "../lib/theme";
 import NavBar from "../components/navbar/NavBar";
 import Fonts from "../public/fonts";
+import Footer from "../components/footer/Footer";
 
 function App() {
 	const [header, setHeader] = useState({});
@@ -41,6 +42,8 @@ function App() {
 					<Header />
 					<About />
 					<Projects />
+					<br />
+					<Footer />
 				</ChakraProvider>
 			</PortfolioProvider>
 		</>
