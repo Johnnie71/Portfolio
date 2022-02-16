@@ -27,8 +27,8 @@ const Projects = () => {
 							return (
 								<Box mb={10} key={id}>
 									<Heading as="h5">{title}</Heading>
-									<Box>
-										<Text>{info}</Text>
+									<Box mb={4}>
+										<Text mb={2}>{info}</Text>
 										<Text>{info2}</Text>
 									</Box>
 									{url && (
