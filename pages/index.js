@@ -4,7 +4,7 @@ import { headData } from "../data/data";
 import "../styles/Home.module.css";
 
 export default function Home() {
-	const { title, lang, description } = headData;
+	const { lang, description } = headData;
 
 	return (
 		<>
@@ -15,11 +15,9 @@ export default function Home() {
 					content="width=device-width"
 					initial-scale={1}
 				/>
-				<title>{title}</title>
 				<html lang={lang} />
 				<meta name="description" content={description} />
 			</Head>
-			<App />
 		</>
 	);
 }
