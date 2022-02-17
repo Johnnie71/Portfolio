@@ -1,3 +1,4 @@
+import App from "next/app";
 import Head from "next/head";
 import { headData } from "../data/data";
 import "../styles/Home.module.css";
@@ -18,6 +19,7 @@ export default function Home() {
 				<html lang={lang} />
 				<meta name="description" content={description} />
 			</Head>
+			<App />
 		</>
 	);
 }
