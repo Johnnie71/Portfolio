@@ -78,7 +78,7 @@ export const footerData = {
 		{
 			id: nanoid(),
 			name: "medium",
-			url: "https://www.medium.com/@johnnie.agonz71",
+			url: "https://johnnie-agonz71.medium.com",
 		},
 		{
 			id: nanoid(),
