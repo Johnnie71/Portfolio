@@ -1,7 +1,7 @@
 import { useContext } from "react";
-import { Container, Box, Text } from "@chakra-ui/react";
+import { Container, SimpleGrid } from "@chakra-ui/react";
 import PortfolioContext from "../../context/context";
-import NetworkButton from "../buttons/NetworkButton";
+import NetworkLink from "../buttons/NetworkButton";
 
 const Footer = () => {
 	const {
@@ -10,14 +10,20 @@ const Footer = () => {
 
 	return (
 		<section id="footer">
-			<Container>
-				<Box>
+			<Container mb={20} justify="center" align="center">
+				<SimpleGrid
+					w="full"
+					alignItems="center"
+					justifyContent="center"
+					columns={4}
+					spacing={5}
+				>
 					{networks &&
 						networks.map((network) => {
 							const { id, name, url } = network;
-							<NetworkButton id={id} name={name} url={url} />;
+							return <NetworkLink key={id} name={name} url={url} />;
 						})}
-				</Box>
+				</SimpleGrid>
 			</Container>
 		</section>
 	);
