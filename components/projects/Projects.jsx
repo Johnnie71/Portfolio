@@ -34,11 +34,9 @@ const Projects = () => {
 						distance="30px"
 					>
 						<Heading
-							w={"80%"}
 							borderBottomColor={useColorModeValue("#32d142", "#84248c")}
-							borderBottomWidth={2}
-							mb={5}
 							as="h3"
+							variant="section-title"
 						>
 							Projects
 						</Heading>

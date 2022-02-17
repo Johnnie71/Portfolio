@@ -17,11 +17,8 @@ const Footer = () => {
 		<section id="footer">
 			<Container mb={20} justify="center" align="center">
 				<Heading
-					mb={5}
-					w={"80%"}
 					borderBottomColor={useColorModeValue("#32d142", "#84248c")}
-					borderBottomWidth={2}
-					as="h3"
+					variant="section-title"
 				>
 					Social
 				</Heading>
