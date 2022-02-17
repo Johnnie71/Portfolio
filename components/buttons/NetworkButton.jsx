@@ -1,9 +1,9 @@
 import { Box, Link, useColorModeValue } from "@chakra-ui/react";
 import NextLink from "next/link";
 
-const NetworkButton = (props) => {
+const NetworkButton = ({ id, name, url }) => {
 	return (
-		<Box>
+		<Box key={id}>
 			<NextLink href={url} passHref>
 				<Link
 					textDecorationStyle="none"
