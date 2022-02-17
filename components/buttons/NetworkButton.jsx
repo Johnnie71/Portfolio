@@ -44,7 +44,7 @@ const NetworkLink = ({ name, url }) => {
 					bgGradient: useColorModeValue("white", "black"),
 				}}
 			>
-				<FontAwesomeIcon icon={getIcon(name)} />
+				<FontAwesomeIcon icon={getIcon(name)} size="3x" />
 			</Link>
 		</NextLink>
 	);
