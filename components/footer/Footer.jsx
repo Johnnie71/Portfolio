@@ -7,6 +7,7 @@ import {
 } from "@chakra-ui/react";
 import PortfolioContext from "../../context/context";
 import NetworkLink from "../buttons/NetworkButton";
+
 const Footer = () => {
 	const {
 		footer: { networks },
