@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { Container, SimpleGrid } from "@chakra-ui/react";
 import PortfolioContext from "../../context/context";
 import NetworkLink from "../buttons/NetworkButton";
+import { SocialIcon } from "react-social-icons";
 
 const Footer = () => {
 	const {
