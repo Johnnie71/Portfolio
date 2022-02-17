@@ -42,10 +42,6 @@ const NetworkLink = ({ name, url }) => {
 					textDecorationStyle="none"
 					target="_blank"
 					rel="noopener noreferrer"
-					_hover={{
-						textDecorationLine: "none",
-						bgGradient: useColorModeValue("white", "black"),
-					}}
 				>
 					<FontAwesomeIcon icon={getIcon(name)} size={isMobile ? "2x" : "3x"} />
 				</Link>
