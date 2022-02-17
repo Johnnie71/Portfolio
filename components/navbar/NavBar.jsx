@@ -16,23 +16,24 @@ import {
 } from "@chakra-ui/react";
 import { HamburgerIcon } from "@chakra-ui/icons";
 import ThemeToggleButton from "../theme-toggle-button";
+import { Link as ScrollLink } from "react-scroll";
 
-const LinkItem = ({ href, path, children, ...props }) => {
-	const active = path === href;
-	const inactiveColor = useColorModeValue("gray200", "whiteAlpha.900");
-	return (
-		<NextLink href={href} passHref>
-			<Link
-				p={2}
-				bg={active ? "turquoise" : undefined}
-				color={active ? "#202023" : inactiveColor}
-				{...props}
-			>
-				{children}
-			</Link>
-		</NextLink>
-	);
-};
+// const LinkItem = ({ href, path, children, ...props }) => {
+// 	const active = path === href;
+// 	const inactiveColor = useColorModeValue("gray200", "whiteAlpha.900");
+// 	return (
+// 		<NextLink href={href} passHref>
+// 			<Link
+// 				p={2}
+// 				bg={active ? "turquoise" : undefined}
+// 				color={active ? "#202023" : inactiveColor}
+// 				{...props}
+// 			>
+// 				{children}
+// 			</Link>
+// 		</NextLink>
+// 	);
+// };
 
 const NavBar = (props) => {
 	const { path } = props;
@@ -76,15 +77,15 @@ const NavBar = (props) => {
 					flexGrow={1}
 					mt={{ base: 4, md: 0 }}
 				>
-					<LinkItem href="/about" path={path}>
+					<ScrollLink to="about" path={path}>
 						About
-					</LinkItem>
-					<LinkItem href="/projects" path={path}>
+					</ScrollLink>
+					<ScrollLink to="projects" path={path}>
 						Projects
-					</LinkItem>
-					<LinkItem href="/contact" path={path}>
+					</ScrollLink>
+					<ScrollLink to="contact" path={path}>
 						Contact
-					</LinkItem>
+					</ScrollLink>
 				</Stack>
 				<Box flex={1} align="right">
 					<ThemeToggleButton />
