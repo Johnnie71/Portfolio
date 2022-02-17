@@ -73,12 +73,12 @@ export const footerData = {
 		{
 			id: nanoid(),
 			name: "twitter",
-			url: "https://twitter.com/intent/user?screen_name=Johnnieg71",
+			url: "https://www.twitter.com/intent/user?screen_name=Johnnieg71",
 		},
 		{
 			id: nanoid(),
 			name: "medium",
-			url: "https://medium.com/@johnnie.agonz71",
+			url: "https://www.medium.com/@johnnie.agonz71",
 		},
 		{
 			id: nanoid(),
@@ -88,7 +88,7 @@ export const footerData = {
 		{
 			id: nanoid(),
 			name: "github",
-			url: "https://github.com/Johnnie71",
+			url: "https://www.github.com/Johnnie71",
 		},
 	],
 };
