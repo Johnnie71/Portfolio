@@ -1,4 +1,4 @@
-import { Box, Link, useColorModeValue } from "@chakra-ui/react";
+import { Link, useColorModeValue } from "@chakra-ui/react";
 import NextLink from "next/link";
 
 const NetworkLink = ({ name, url }) => {
