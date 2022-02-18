@@ -6,6 +6,7 @@ const CanvasContainer = () => {
 	return (
 		<Container mt={4} h={400} bgColor="red">
 			<Canvas className="canvas">
+				<ambientLight intensity={0.5} />
 				<Box />
 			</Canvas>
 		</Container>
