@@ -98,15 +98,21 @@ const NavBar = (props) => {
 								aria-label="Options"
 							/>
 							<MenuList>
-								<NextLink href="/about" passHref>
-									<MenuItem>About</MenuItem>
-								</NextLink>
-								<NextLink href="/projects" passHref>
-									<MenuItem>Projects</MenuItem>
-								</NextLink>
-								<NextLink href="/contact" passHref>
-									<MenuItem>Contact</MenuItem>
-								</NextLink>
+								<MenuItem>
+									<ScrollLink to="about" smooth duration={2000}>
+										About
+									</ScrollLink>
+								</MenuItem>
+								<MenuItem>
+									<ScrollLink to="projects" smooth duration={2000}>
+										Projects
+									</ScrollLink>
+								</MenuItem>
+								<MenuItem>
+									<ScrollLink to="footer" smooth duration={2000}>
+										Contact
+									</ScrollLink>
+								</MenuItem>
 							</MenuList>
 						</Menu>
 					</Box>
