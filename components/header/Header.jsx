@@ -8,12 +8,14 @@ import {
 } from "@chakra-ui/react";
 // import { Link } from "react-scroll";
 import { Fade } from "react-reveal";
+import CanvasContainer from "../canvas/Canvas";
 
 const Header = () => {
 	const [mobile] = useMediaQuery("(max-width: 768px)");
 
 	return (
 		<section id="header">
+			<CanvasContainer />
 			<Container
 				height={"100vh"}
 				minHeight={"100vh"}
