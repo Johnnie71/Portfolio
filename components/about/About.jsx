@@ -86,7 +86,6 @@ const About = () => {
 							</Link>
 						</NextLink>
 					</Fade>
-					{/* </a> */}
 				</Box>
 			</Container>
 		</section>

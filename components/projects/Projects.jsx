@@ -24,7 +24,7 @@ const Projects = () => {
 
 	return (
 		<section id="projects">
-			<Container maxWidth={isMobile ? "auto" : 800} mt={20}>
+			<Container maxWidth={isMobile ? "auto" : 800}>
 				<Box align="center">
 					<Fade
 						top={!isMobile}

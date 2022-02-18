@@ -17,6 +17,7 @@ const Footer = () => {
 		<section id="footer">
 			<Container mb={20} justify="center" align="center">
 				<Heading
+					paddingTop={50}
 					borderBottomColor={useColorModeValue("#32d142", "#84248c")}
 					variant="section-title"
 				>
