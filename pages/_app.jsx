@@ -46,7 +46,7 @@ function App() {
 					<Projects />
 					<br />
 					<Footer />
-					<BottomNavBar />
+					{/* <BottomNavBar /> */}
 				</ChakraProvider>
 			</PortfolioProvider>
 		</>
