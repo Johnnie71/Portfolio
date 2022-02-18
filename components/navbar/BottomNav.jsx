@@ -14,8 +14,8 @@ const BottomNavBar = () => {
 		<Box
 			display={!isMobile ? "none" : "hidden"}
 			position="fixed"
-			as="nav"
 			w="100%"
+			as="nav"
 			h={20}
 			bg={useColorModeValue("#ffffff40", "#20202380")}
 			css={{ backdropFilter: "blur(5px)" }}
@@ -25,9 +25,10 @@ const BottomNavBar = () => {
 			<Container
 				display="flex"
 				p={2}
-				// wrap="wrap"
-				// align="center"
-				// justify="space-between"
+				maxW="container.sm"
+				wrap="wrap"
+				align="center"
+				justify="space-between"
 				color={"red"}
 			>
 				<Stack
