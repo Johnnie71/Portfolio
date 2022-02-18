@@ -85,21 +85,9 @@ const Projects = () => {
 									>
 										<Box align="center" mt={5}>
 											{img && (
-												<NextLink href={repo} passHref>
-													<Link
-														textDecorationStyle="none"
-														target="_blank"
-														rel="noopener noreferrer"
-														_hover={{
-															textDecorationLine: "none",
-															bgGradient: blackPurple,
-														}}
-													>
-														<Tilt>
-															<Image alt={title} src={img} />
-														</Tilt>
-													</Link>
-												</NextLink>
+												<Tilt>
+													<Image alt={title} src={img} />
+												</Tilt>
 											)}
 										</Box>
 									</Fade>
