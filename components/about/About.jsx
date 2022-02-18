@@ -30,6 +30,7 @@ const About = () => {
 					distance="30px"
 				>
 					<Heading
+						// mt={50}
 						borderBottomColor={useColorModeValue("#32d142", "#84248c")}
 						as="h3"
 						variant="section-title"

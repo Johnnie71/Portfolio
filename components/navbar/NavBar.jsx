@@ -77,13 +77,13 @@ const NavBar = (props) => {
 					flexGrow={1}
 					mt={{ base: 4, md: 0 }}
 				>
-					<ScrollLink to="about" path={path}>
+					<ScrollLink to="about" smooth duration={2000}>
 						About
 					</ScrollLink>
-					<ScrollLink to="projects" path={path}>
+					<ScrollLink to="projects" smooth duration={2000}>
 						Projects
 					</ScrollLink>
-					<ScrollLink to="contact" path={path}>
+					<ScrollLink to="footer" smooth duration={2000}>
 						Contact
 					</ScrollLink>
 				</Stack>
