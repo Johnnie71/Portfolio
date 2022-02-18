@@ -15,7 +15,6 @@ const Header = () => {
 	return (
 		<section id="header">
 			<Container
-				paddingBottom="20"
 				height={"100vh"}
 				minHeight={"100vh"}
 				maxWidth={mobile ? "auto" : 800}
