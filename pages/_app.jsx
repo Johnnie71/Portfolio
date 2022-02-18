@@ -40,6 +40,7 @@ function App() {
 					<br />
 					<br />
 					<Header />
+					<br />
 					<About />
 					<Projects />
 					<br />
