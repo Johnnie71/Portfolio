@@ -15,6 +15,7 @@ import theme from "../lib/theme";
 import NavBar from "../components/navbar/NavBar";
 import Fonts from "../public/fonts";
 import Footer from "../components/footer/Footer";
+import BottomNavBar from "../components/navbar/BottomNav";
 
 function App() {
 	const [header, setHeader] = useState({});
@@ -45,6 +46,7 @@ function App() {
 					<Projects />
 					<br />
 					<Footer />
+					<BottomNavBar />
 				</ChakraProvider>
 			</PortfolioProvider>
 		</>
