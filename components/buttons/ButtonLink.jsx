@@ -16,7 +16,7 @@ const Button = ({ url, name }) => {
 				<Box
 					color={useColorModeValue("white", "black")}
 					p={3}
-					mr={5}
+					mr={name === "Email" ? "auto" : 5}
 					fontWeight="bold"
 					borderRadius={20}
 					bgGradient={useColorModeValue(
