@@ -17,8 +17,8 @@ const Header = () => {
 		<section id="header">
 			<CanvasContainer />
 			<Container
-				height={"70vh"}
-				minHeight={"70vh"}
+				height={!mobile ? "56vh" : "35vh"}
+				minHeight={mobile ? "57vh" : "35vh"}
 				maxWidth={mobile ? "auto" : 800}
 			>
 				<Box borderRadius="lg" mr={10} display={{ md: "flex" }}>
