@@ -9,7 +9,6 @@ import {
 } from "../data/data";
 import { ChakraProvider } from "@chakra-ui/react";
 import theme from "../lib/theme";
-import Fonts from "../public/fonts";
 import Layout from "../components/layouts/main";
 
 function App({ Component, pageProps, router }) {
@@ -31,7 +30,6 @@ function App({ Component, pageProps, router }) {
 		<>
 			<PortfolioProvider value={{ header, about, projects, contact, footer }}>
 				<ChakraProvider theme={theme}>
-					<Fonts />
 					<Layout router={router}>
 						<Component {...pageProps} key={router.router} />
 					</Layout>
