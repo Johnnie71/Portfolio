@@ -67,7 +67,7 @@ const Projects = () => {
 											</Box>
 
 											<Box
-												// justify="center"
+												justify="center"
 												align={isMobile ? "center" : "auto"}
 											>
 												{url && <Button url={url} name="Demo Video" />}
