@@ -19,7 +19,7 @@ const Footer = () => {
 	const emailUrl = `mailto:${email}`;
 	return (
 		<section id="footer">
-			<Container mb={20} justify="center" align="center">
+			<Container mt={20} justify="center" align="center">
 				<Button url={emailUrl} name="Email" />
 				<Heading
 					paddingTop={50}
