@@ -8,9 +8,6 @@ import "../styles/Home.module.css";
 export default function Home() {
 	return (
 		<>
-			<NavBar />
-			<br />
-			<br />
 			<Header />
 			<br />
 			<About />

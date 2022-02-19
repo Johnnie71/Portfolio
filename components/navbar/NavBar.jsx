@@ -1,4 +1,3 @@
-import NextLink from "next/link";
 import {
 	Container,
 	Box,
@@ -16,26 +15,7 @@ import { HamburgerIcon } from "@chakra-ui/icons";
 import ThemeToggleButton from "../theme-toggle-button";
 import { Link as ScrollLink } from "react-scroll";
 
-// const LinkItem = ({ href, path, children, ...props }) => {
-// 	const active = path === href;
-// 	const inactiveColor = useColorModeValue("gray200", "whiteAlpha.900");
-// 	return (
-// 		<NextLink href={href} passHref>
-// 			<Link
-// 				p={2}
-// 				bg={active ? "turquoise" : undefined}
-// 				color={active ? "#202023" : inactiveColor}
-// 				{...props}
-// 			>
-// 				{children}
-// 			</Link>
-// 		</NextLink>
-// 	);
-// };
-
 const NavBar = (props) => {
-	const { path } = props;
-
 	return (
 		<Box
 			position="fixed"
