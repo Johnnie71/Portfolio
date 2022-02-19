@@ -1,4 +1,3 @@
-import { headData } from "../data/data";
 import NavBar from "../components/navbar/NavBar";
 import Header from "../components/header/Header";
 import About from "../components/about/About";
@@ -7,8 +6,6 @@ import Footer from "../components/footer/Footer";
 import "../styles/Home.module.css";
 
 export default function Home() {
-	const { lang, description } = headData;
-
 	return (
 		<>
 			<NavBar />
