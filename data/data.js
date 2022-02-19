@@ -30,9 +30,18 @@ export const aboutData = {
 export const projectsData = [
 	{
 		id: nanoid(),
-		img: "/images/EZTaskShot.png",
+		img: "/images/ChatApp.gif",
+		title: "We Chat",
+		info: "A responsive chat application that mimics chat services such as Slack or Microsoft Teams. Enabling users to create groups and have individual chats.",
+		info2:
+			"Created with Node.js, React and Stream API while using Twilio to send sms notifications.",
+		repo: "https://github.com/Johnnie71/RM-Client", // if no repo, the button will not show up
+	},
+	{
+		id: nanoid(),
+		img: "/images/EZ-GIF.gif",
 		title: "E-Z Task",
-		info: "A clean and simple single-page application where users can view/create task notes.",
+		info: "A clean and simple single-page CRUD application for note taking.",
 		info2:
 			"Utilized Ruby on Rails, Active Record in backend. Vanilla JavaScript in frontend.",
 		url: "https://www.loom.com/share/00d67a6c4a7c4d5b9d67fd5ff7fcd8c9",
@@ -40,7 +49,7 @@ export const projectsData = [
 	},
 	{
 		id: nanoid(),
-		img: "/images/EcoShareShot.png",
+		img: "/images/Eco-Demo-Gif.gif",
 		title: "Eco Share",
 		info: "A fun, interactive social media web application. Where creatives from all over the world can come together and share their eco-friendly designs.",
 		info2:
