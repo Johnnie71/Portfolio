@@ -4,18 +4,23 @@ import {
 	Heading,
 	SimpleGrid,
 	useColorModeValue,
+	Box,
 } from "@chakra-ui/react";
 import PortfolioContext from "../../context/context";
 import NetworkLink from "../buttons/NetworkButton";
+import Button from "../buttons/ButtonLink";
 
 const Footer = () => {
 	const {
 		footer: { networks },
+		contact: { email },
 	} = useContext(PortfolioContext);
 
+	const emailUrl = `mailto:${email}`;
 	return (
 		<section id="footer">
 			<Container mb={20} justify="center" align="center">
+				<Button url={emailUrl} name="Email" />
 				<Heading
 					paddingTop={50}
 					borderBottomColor={useColorModeValue("#32d142", "#84248c")}
