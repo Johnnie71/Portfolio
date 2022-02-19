@@ -6,7 +6,6 @@ import {
 	useColorModeValue,
 	useMediaQuery,
 } from "@chakra-ui/react";
-// import { Link } from "react-scroll";
 import { Fade } from "react-reveal";
 import CanvasContainer from "../canvas/Canvas";
 
