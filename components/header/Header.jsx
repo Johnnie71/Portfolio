@@ -20,7 +20,7 @@ const Header = () => {
 				minHeight={mobile ? "57vh" : "35vh"}
 				maxWidth={mobile ? "auto" : 800}
 			>
-				<Box borderRadius="lg" mr={10} display={{ md: "flex" }}>
+				<Box borderRadius="lg" display={{ md: "flex" }}>
 					<Box flexGrow={1} justifyContent="center" align={"center"}>
 						<Fade
 							top={!mobile}
@@ -35,9 +35,8 @@ const Header = () => {
 									"linear(to-l, #7928CA, #FF0080)"
 								)}
 								bgClip="text"
-								fontSize={mobile ? "5xl" : "6xl"}
+								fontSize={mobile ? "3xl" : "6xl"}
 								fontWeight="extrabold"
-								ml={5}
 							>
 								Johnnie Gonzalez
 							</Text>
@@ -49,7 +48,7 @@ const Header = () => {
 							delay={900}
 							distance="30px"
 						>
-							<Box ml={6} mb={0} align="center">
+							<Box as="text" fontSize="1em" ml={6} mb={0} align="center">
 								<p>Creative ( Artist / Engineer / For the Planet )</p>
 							</Box>
 						</Fade>
