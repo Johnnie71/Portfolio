@@ -1,6 +1,9 @@
-import App from "next/app";
-import Head from "next/head";
 import { headData } from "../data/data";
+import NavBar from "../components/navbar/NavBar";
+import Header from "../components/header/Header";
+import About from "../components/about/About";
+import Projects from "../components/projects/Projects";
+import Footer from "../components/footer/Footer";
 import "../styles/Home.module.css";
 
 export default function Home() {
@@ -8,16 +11,15 @@ export default function Home() {
 
 	return (
 		<>
-			<Head>
-				<meta
-					charSet="utf-8"
-					name="viewport"
-					content="width=device-width"
-					initial-scale={1}
-				/>
-				<html lang={lang} />
-				<meta name="description" content={description} />
-			</Head>
+			<NavBar />
+			<br />
+			<br />
+			<Header />
+			<br />
+			<About />
+			<Projects />
+			<br />
+			<Footer />
 		</>
 	);
 }

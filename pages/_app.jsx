@@ -7,17 +7,12 @@ import {
 	contactData,
 	footerData,
 } from "../data/data";
-import Header from "../components/header/Header";
-import About from "../components/about/About";
-import Projects from "../components/projects/Projects";
 import { ChakraProvider } from "@chakra-ui/react";
 import theme from "../lib/theme";
-import NavBar from "../components/navbar/NavBar";
 import Fonts from "../public/fonts";
-import Footer from "../components/footer/Footer";
-import BottomNavBar from "../components/navbar/BottomNav";
+import Layout from "../components/layouts/main";
 
-function App() {
+function App({ Component, pageProps, router }) {
 	const [header, setHeader] = useState({});
 	const [about, setAbout] = useState({});
 	const [projects, setProjects] = useState([]);
@@ -37,16 +32,9 @@ function App() {
 			<PortfolioProvider value={{ header, about, projects, contact, footer }}>
 				<ChakraProvider theme={theme}>
 					<Fonts />
-					<NavBar />
-					<br />
-					<br />
-					<Header />
-					<br />
-					<About />
-					<Projects />
-					<br />
-					<Footer />
-					{/* <BottomNavBar /> */}
+					<Layout router={router}>
+						<Component {...pageProps} key={router.router} />
+					</Layout>
 				</ChakraProvider>
 			</PortfolioProvider>
 		</>
