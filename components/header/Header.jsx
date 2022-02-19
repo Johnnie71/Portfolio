@@ -69,14 +69,15 @@ const Header = () => {
 							distance="30px"
 						>
 							<Image
-								borderColor="whiteAplha.800"
+								borderColor={useColorModeValue("#32d142", "#84248c")}
 								borderWidth={2}
 								borderStyle="solid"
 								boxSize="120px"
-								display="inline-block"
+								// display="inline-block"
 								borderRadius="full"
-								src="/images/profile.jpg"
+								src="/images/cartoon.png"
 								alt="Profile Image"
+								ml={2}
 							/>
 						</Fade>
 					</Box>
