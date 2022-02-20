@@ -31,7 +31,7 @@ export const projectsData = [
 	{
 		id: nanoid(),
 		img: "/images/ChatApp.gif",
-		title: "We Chat",
+		title: "Chat App",
 		info: "A responsive chat application that mimics chat services such as Slack or Microsoft Teams. Enabling users to create groups and have individual chats.",
 		info2:
 			"Created with Node.js, React and Stream API while using Twilio to send sms notifications.",
