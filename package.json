@@ -30,6 +30,7 @@
 		"three": "^0.137.5"
 	},
 	"devDependencies": {
+		"@netlify/plugin-nextjs": "^4.2.5",
 		"eslint": "8.9.0",
 		"eslint-config-next": "12.0.10"
 	}
