@@ -49,7 +49,7 @@ const Header = () => {
 							distance="30px"
 						>
 							<Box as="text" fontSize="1em" ml={6} mb={0} align="center">
-								<p>Creative ( Artist / Engineer / For the Planet )</p>
+								<p>Welcome to my world!!</p>
 							</Box>
 						</Fade>
 					</Box>
