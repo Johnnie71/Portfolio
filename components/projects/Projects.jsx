@@ -7,14 +7,15 @@ import {
 	Text,
 	useMediaQuery,
 	useColorModeValue,
-	Link,
 	Image,
 	SimpleGrid,
+	Flex,
 } from "@chakra-ui/react";
 import Fade from "react-reveal/Fade";
 import Tilt from "react-tilt";
-import NextLink from "next/link";
 import Button from "../buttons/ButtonLink";
+import TechIcon from "./TechIcon";
+
 const Projects = () => {
 	const { projects } = useContext(PortfolioContext);
 	const [isMobile] = useMediaQuery("(max-width: 768px)");
@@ -46,7 +47,7 @@ const Projects = () => {
 				<Box>
 					{projects &&
 						projects.map((project) => {
-							const { id, img, title, info, info2, url, repo } = project;
+							const { id, img, title, info, icons, url, repo } = project;
 
 							return (
 								<SimpleGrid columns={isMobile ? 1 : 2} mb={10} key={id}>
@@ -63,9 +64,13 @@ const Projects = () => {
 											</Heading>
 											<Box mb={4}>
 												<Text mb={2}>{info}</Text>
-												<Text>{info2}</Text>
+												<Flex>
+													{icons &&
+														icons.map((icon, idx) => (
+															<TechIcon key={idx} icon={icon} />
+														))}
+												</Flex>
 											</Box>
-
 											<Box
 												justify="center"
 												align={isMobile ? "center" : "auto"}
