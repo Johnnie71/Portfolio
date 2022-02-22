@@ -2,9 +2,9 @@ import { nanoid } from "nanoid";
 
 // HEAD DATA
 export const headData = {
-	title: "Johnnie G", // e.g: 'Name | Developer'
-	lang: "en", // e.g: en, es, fr, jp
-	description: "Johnnie G Software Engineer", // e.g: Welcome to my website
+	title: "Johnnie G",
+	lang: "en",
+	description: "Johnnie G Software Engineer",
 };
 
 // HERO DATA
@@ -100,9 +100,4 @@ export const footerData = {
 			url: "https://www.github.com/Johnnie71",
 		},
 	],
-};
-
-// Github start/fork buttons
-export const githubButtons = {
-	isEnabled: false, // set to false to disable the GitHub stars/fork buttons
 };
