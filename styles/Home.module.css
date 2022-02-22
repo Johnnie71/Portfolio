@@ -114,3 +114,7 @@
 		flex-direction: column;
 	}
 }
+
+.scroll-link {
+	cursor: "pointer";
+}
