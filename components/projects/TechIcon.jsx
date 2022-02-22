@@ -1,9 +1,9 @@
 import { Box, Image } from "@chakra-ui/react";
 
-const TechIcon = ({ icon }) => {
+const TechIcon = ({ icon, key }) => {
 	console.log(icon);
 	return (
-		<Box>
+		<Box key={key}>
 			<Image alt="hey" src={icon} />
 		</Box>
 	);
