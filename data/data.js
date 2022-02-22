@@ -33,8 +33,17 @@ export const projectsData = [
 		img: "/images/ChatApp.gif",
 		title: "Chat App",
 		info: "A responsive chat application that mimics chat services such as Slack or Microsoft Teams. Enabling users to create groups and have individual chats.",
-		info2:
-			"Created with Node.js, React and Stream API while using Twilio to send sms notifications.",
+		icons: [
+			{
+				nodejs:
+					"https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
+			},
+			{
+				react:
+					"https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
+			},
+		],
+
 		repo: "https://github.com/Johnnie71/RM-Client", // if no repo, the button will not show up
 	},
 	{
@@ -42,8 +51,19 @@ export const projectsData = [
 		img: "/images/EZ-GIF.gif",
 		title: "E-Z Task",
 		info: "A clean and simple single-page CRUD application for note taking.",
-		info2:
-			"Utilized Ruby on Rails, Active Record in backend. Vanilla JavaScript in frontend.",
+		icons: [
+			{
+				ruby: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ruby/ruby-original.svg",
+			},
+			{
+				postgre:
+					"https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg",
+			},
+			{
+				javaScript:
+					"https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
+			},
+		],
 		url: "https://www.loom.com/share/00d67a6c4a7c4d5b9d67fd5ff7fcd8c9",
 		repo: "https://github.com/Johnnie71/EZ-Task-frontend", // if no repo, the button will not show up
 	},
@@ -52,8 +72,24 @@ export const projectsData = [
 		img: "/images/Eco-Demo-Gif.gif",
 		title: "Eco Share",
 		info: "A fun, interactive social media web application. Where creatives from all over the world can come together and share their eco-friendly designs.",
-		info2:
-			"Utilized Ruby on Rails, Active Record for data relationships. JavaScript, React, Redux for state management in frontend.",
+		icons: [
+			{
+				ruby: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ruby/ruby-original.svg",
+			},
+			{
+				postgre:
+					"https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg",
+			},
+			{
+				react:
+					"https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
+			},
+			{
+				redux:
+					"https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redux/redux-original.svg",
+			},
+		],
+
 		url: "https://www.loom.com/share/ee145a72b8194b0e9d97a46a46315bdf",
 		repo: "https://github.com/Johnnie71/eco-designs-frontend", // if no repo, the button will not show up
 	},
@@ -62,8 +98,15 @@ export const projectsData = [
 		img: "/images/avatarScreenShot.png",
 		title: "Adventures of Avatar",
 		info: "Fun Interactive Ruby CLI game where a user can explore the world of Pandora.",
-		info2:
-			"Utilized Ruby on Rails, and Active Record to access a Sqlite3 Database for easy data relationships.",
+		icons: [
+			{
+				ruby: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ruby/ruby-original.svg",
+			},
+			{
+				postgre:
+					"https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg",
+			},
+		],
 		url: "https://www.loom.com/share/22b9f38a28494df081c97334847273c0",
 		repo: "https://github.com/Johnnie71/ruby-project-guidelines-nyc01-seng-ft-082420/tree/JohnnieG", // if no repo, the button will not show up
 	},
