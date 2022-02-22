@@ -7,6 +7,10 @@ const Main = ({ children, router }) => {
 			<Head>
 				<meta name="viewport" content="width=device-width initial-scale=1" />
 				<title>Johnnie G</title>
+				<link
+					rel="stylesheet"
+					href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.14.0/devicon.min.css"
+				></link>
 			</Head>
 			<NavBar path={router.asPath} />
 			<Container maxW="container.md" pt={14}>
