@@ -44,7 +44,14 @@ const NavBar = (props) => {
 						fontSize="xl"
 						fontWeight="bold"
 					>
-						JG
+						<ScrollLink
+							style={{ cursor: "pointer" }}
+							to="header"
+							smooth
+							duration={2000}
+						>
+							JG
+						</ScrollLink>
 					</Text>
 				</Flex>
 				<Stack
@@ -55,13 +62,29 @@ const NavBar = (props) => {
 					flexGrow={1}
 					mt={{ base: 4, md: 0 }}
 				>
-					<ScrollLink to="about" smooth duration={2000}>
+					<ScrollLink
+						style={{ cursor: "pointer" }}
+						to="about"
+						smooth
+						duration={2000}
+					>
 						About
 					</ScrollLink>
-					<ScrollLink to="projects" smooth duration={2000}>
+					<ScrollLink
+						style={{ cursor: "pointer" }}
+						to="projects"
+						smooth
+						duration={2000}
+					>
 						Projects
 					</ScrollLink>
-					<ScrollLink to="footer" smooth duration={2000}>
+					<ScrollLink
+						style={{ cursor: "pointer" }}
+						id="scroll-link"
+						to="footer"
+						smooth
+						duration={2000}
+					>
 						Contact
 					</ScrollLink>
 				</Stack>
