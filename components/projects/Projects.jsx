@@ -64,7 +64,7 @@ const Projects = () => {
 											</Heading>
 											<Box mb={4}>
 												<Text mb={2}>{info}</Text>
-												<Flex>
+												<Flex justify="center" alignContent="space-around" wrap>
 													{icons &&
 														icons.map((icon, idx) => (
 															<TechIcon key={idx} icon={icon} />
