@@ -23,6 +23,10 @@ const Projects = () => {
 	const whiteBlack = useColorModeValue("black", "#84248c");
 	const blackPurple = useColorModeValue("white", "black");
 
+	const getUrl = (stack) => {
+		console.log(stack.icons);
+	};
+
 	return (
 		<section id="projects">
 			<Container maxWidth={isMobile ? "auto" : 800}>
@@ -47,7 +51,7 @@ const Projects = () => {
 				<Box>
 					{projects &&
 						projects.map((project) => {
-							const { id, img, title, info, icons, url, repo } = project;
+							const { id, img, title, info, techStack, url, repo } = project;
 
 							return (
 								<SimpleGrid columns={isMobile ? 1 : 2} mb={10} key={id}>
@@ -65,10 +69,7 @@ const Projects = () => {
 											<Box mb={4}>
 												<Text mb={2}>{info}</Text>
 												<Flex justify="center" alignContent="space-around" wrap>
-													{icons &&
-														icons.map((icon, idx) => (
-															<TechIcon key={idx} icon={icon} />
-														))}
+													{techStack && getUrl(techStack)}
 												</Flex>
 											</Box>
 											<Box
