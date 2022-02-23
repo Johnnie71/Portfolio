@@ -24,7 +24,9 @@ const Projects = () => {
 	const blackPurple = useColorModeValue("white", "black");
 
 	const getUrl = (stack) => {
-		console.log(stack.icons);
+		stack.icons.map((icon) => {
+			console.log(icon.url);
+		});
 	};
 
 	return (
@@ -69,7 +71,14 @@ const Projects = () => {
 											<Box mb={4}>
 												<Text mb={2}>{info}</Text>
 												<Flex justify="center" alignContent="space-around" wrap>
-													{techStack && getUrl(techStack)}
+													{techStack &&
+														techStack.icons.map((icon, idx) => (
+															<TechIcon
+																key={idx}
+																name={icon.name}
+																url={icon.url}
+															/>
+														))}
 												</Flex>
 											</Box>
 											<Box
