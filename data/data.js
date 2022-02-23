@@ -98,15 +98,18 @@ export const projectsData = [
 		img: "/images/avatarScreenShot.png",
 		title: "Adventures of Avatar",
 		info: "Fun Interactive Ruby CLI game where a user can explore the world of Pandora.",
-		icons: [
-			{
-				ruby: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ruby/ruby-original.svg",
-			},
-			{
-				postgre:
-					"https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg",
-			},
-		],
+		techStack: {
+			icons: [
+				{
+					name: "ruby",
+					url: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ruby/ruby-original.svg",
+				},
+				{
+					name: "postgre",
+					url: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg",
+				},
+			],
+		},
 		url: "https://www.loom.com/share/22b9f38a28494df081c97334847273c0",
 		repo: "https://github.com/Johnnie71/ruby-project-guidelines-nyc01-seng-ft-082420/tree/JohnnieG", // if no repo, the button will not show up
 	},
