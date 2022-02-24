@@ -32,7 +32,7 @@ export const projectsData = [
 		id: nanoid(),
 		img: "/images/ChatApp.gif",
 		title: "Chat App",
-		info: "A responsive chat application that mimics chat services such as Slack or Microsoft Teams. Enabling users to create groups and have individual chats.",
+		info: "A responsive chat application that mimics chat services such as Slack or Microsoft Teams. Enabling users to create groups and have individual chats. Using Stream API services to scale the app.",
 		techStack: {
 			icons: [
 				{
@@ -59,7 +59,7 @@ export const projectsData = [
 		id: nanoid(),
 		img: "/images/EZ-GIF.gif",
 		title: "E-Z Task",
-		info: "A clean and simple single-page CRUD application for note taking.",
+		info: "A clean and simple single-page CRUD application intended to serve as a desktop extension. With the functionality of organization in a posted notes format. Added a weather and stocks widget for the bottom of screen.",
 		techStack: {
 			icons: [
 				{
@@ -87,7 +87,7 @@ export const projectsData = [
 		id: nanoid(),
 		img: "/images/Eco-Demo-Gif.gif",
 		title: "Eco Share",
-		info: "A fun, interactive social media web application. Where creatives from all over the world can come together and share their eco-friendly designs.",
+		info: "A fun, interactive social media web application. Where creatives from all over the world can come together and share their eco-friendly designs. Users can follow/unfollow and comment on posts!",
 		techStack: {
 			icons: [
 				{
@@ -116,7 +116,7 @@ export const projectsData = [
 		id: nanoid(),
 		img: "/images/avatarScreenShot.png",
 		title: "Adventures of Avatar",
-		info: "Fun Interactive Ruby CLI game where a user can explore the world of Pandora.",
+		info: "Fun Interactive Ruby CLI game where a user can signup/signin and explore the world of Pandora. Music from the movie begins once game is started. User chooses paths to follow, but beware of Pandora's magical environment!",
 		techStack: {
 			icons: [
 				{
