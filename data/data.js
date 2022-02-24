@@ -36,6 +36,14 @@ export const projectsData = [
 		techStack: {
 			icons: [
 				{
+					name: "git",
+					url: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg",
+				},
+				{
+					name: "express",
+					url: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg",
+				},
+				{
 					name: "nodejs",
 					url: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
 				},
@@ -57,6 +65,10 @@ export const projectsData = [
 				{
 					name: "ruby",
 					url: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ruby/ruby-original.svg",
+				},
+				{
+					name: "rails",
+					url: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/rails/rails-original-wordmark.svg",
 				},
 				{
 					name: "postgre",
@@ -107,6 +119,10 @@ export const projectsData = [
 		info: "Fun Interactive Ruby CLI game where a user can explore the world of Pandora.",
 		techStack: {
 			icons: [
+				{
+					name: "git",
+					url: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg",
+				},
 				{
 					name: "ruby",
 					url: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ruby/ruby-original.svg",
