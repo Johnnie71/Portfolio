@@ -23,15 +23,9 @@ const Projects = () => {
 	const whiteBlack = useColorModeValue("black", "#84248c");
 	const blackPurple = useColorModeValue("white", "black");
 
-	const getUrl = (stack) => {
-		stack.icons.map((icon) => {
-			console.log(icon.url);
-		});
-	};
-
 	return (
 		<section id="projects">
-			<Container maxWidth={isMobile ? "auto" : "80%"}>
+			<Container maxWidth={isMobile ? "auto" : "1000px"}>
 				<Box align="center">
 					<Fade
 						top={!isMobile}
