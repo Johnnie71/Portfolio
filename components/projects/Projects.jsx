@@ -75,6 +75,7 @@ const Projects = () => {
 												</Flex>
 											</Box>
 											<Flex
+												wrap
 												align="center"
 												justifyContent={isMobile ? "center" : "auto"}
 											>
