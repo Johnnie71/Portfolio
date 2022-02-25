@@ -21,7 +21,6 @@ const Projects = () => {
 	const [isMobile] = useMediaQuery("(max-width: 768px)");
 
 	const whiteBlack = useColorModeValue("black", "#84248c");
-	const blackPurple = useColorModeValue("white", "black");
 
 	return (
 		<section id="projects">
