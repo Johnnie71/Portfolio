@@ -75,14 +75,14 @@ const Projects = () => {
 														))}
 												</Flex>
 											</Box>
-											<Box
-												justify="center"
-												align={isMobile ? "center" : "auto"}
+											<Flex
+												align="center"
+												justifyContent={isMobile ? "center" : "auto"}
 											>
 												{url && <Button url={url} name="Demo Video" />}
 
 												{repo && <Button url={repo} name="Source Code" />}
-											</Box>
+											</Flex>
 										</Box>
 									</Fade>
 									<Fade
