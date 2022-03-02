@@ -7,7 +7,7 @@ import AnimatedSphere from "./AnimatedSphere";
 
 const CanvasContainer = () => {
 	return (
-		<Container mt={15} h={300}>
+		<Container h={300}>
 			<Canvas>
 				<OrbitControls enableZoom={false} />
 				<ambientLight intensity={0.5} />
