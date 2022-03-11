@@ -23,6 +23,51 @@ export const aboutData = {
 		"Please feel free to explore my page and learn about my projects... 😀",
 };
 
+const git = {
+	name: "git",
+	url: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg",
+};
+
+const express = {
+	name: "express",
+	url: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg",
+};
+
+const nodejs = {
+	name: "nodejs",
+	url: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
+};
+
+const react = {
+	name: "react",
+	url: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
+};
+
+const ruby = {
+	name: "ruby",
+	url: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ruby/ruby-original.svg",
+};
+
+const rails = {
+	name: "rails",
+	url: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/rails/rails-original-wordmark.svg",
+};
+
+const postgres = {
+	name: "postgre",
+	url: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg",
+};
+
+const redux = {
+	name: "redux",
+	url: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redux/redux-original.svg",
+};
+
+const javaScript = {
+	name: "javaScript",
+	url: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
+};
+
 export const projectsData = [
 	{
 		id: nanoid(),
@@ -30,24 +75,7 @@ export const projectsData = [
 		title: "Chat App",
 		info: "A responsive chat application that mimics chat services such as Slack or Microsoft Teams. Enabling users to create groups and have individual chats. Using Stream API services to scale the app.",
 		techStack: {
-			icons: [
-				{
-					name: "git",
-					url: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg",
-				},
-				{
-					name: "express",
-					url: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg",
-				},
-				{
-					name: "nodejs",
-					url: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
-				},
-				{
-					name: "react",
-					url: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
-				},
-			],
+			icons: [git, express, nodejs, react],
 		},
 		repo: "https://github.com/Johnnie71/RM-Client", // if no repo, the button will not show up
 	},
@@ -57,24 +85,7 @@ export const projectsData = [
 		title: "E-Z Task",
 		info: "A clean and simple single-page CRUD application intended to serve as a desktop extension. With the functionality of organization in a posted notes format. Added a weather and stocks widget for the bottom of screen.",
 		techStack: {
-			icons: [
-				{
-					name: "ruby",
-					url: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ruby/ruby-original.svg",
-				},
-				{
-					name: "rails",
-					url: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/rails/rails-original-wordmark.svg",
-				},
-				{
-					name: "postgre",
-					url: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg",
-				},
-				{
-					name: "javaScript",
-					url: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
-				},
-			],
+			icons: [ruby, rails, postgres, javaScript],
 		},
 		url: "https://www.loom.com/share/00d67a6c4a7c4d5b9d67fd5ff7fcd8c9",
 		repo: "https://github.com/Johnnie71/EZ-Task-frontend", // if no repo, the button will not show up
@@ -85,24 +96,7 @@ export const projectsData = [
 		title: "Eco Share",
 		info: "A fun, interactive social media web application. Where creatives from all over the world can come together and share their eco-friendly designs. Users can follow/unfollow and comment on posts!",
 		techStack: {
-			icons: [
-				{
-					name: "ruby",
-					url: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ruby/ruby-original.svg",
-				},
-				{
-					name: "postgre",
-					url: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg",
-				},
-				{
-					name: "react",
-					url: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
-				},
-				{
-					name: "redux",
-					url: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redux/redux-original.svg",
-				},
-			],
+			icons: [ruby, postgres, react, redux],
 		},
 
 		url: "https://www.loom.com/share/ee145a72b8194b0e9d97a46a46315bdf",
@@ -114,20 +108,7 @@ export const projectsData = [
 		title: "Adventures of Avatar",
 		info: "Fun Interactive Ruby CLI game where a user can signup/signin and explore the world of Pandora. Music from the movie begins once game is started. User chooses paths to follow, but beware of Pandora's magical environment!",
 		techStack: {
-			icons: [
-				{
-					name: "git",
-					url: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg",
-				},
-				{
-					name: "ruby",
-					url: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ruby/ruby-original.svg",
-				},
-				{
-					name: "postgre",
-					url: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg",
-				},
-			],
+			icons: [git, ruby, postgres],
 		},
 		url: "https://www.loom.com/share/22b9f38a28494df081c97334847273c0",
 		repo: "https://github.com/Johnnie71/ruby-project-guidelines-nyc01-seng-ft-082420/tree/JohnnieG", // if no repo, the button will not show up
