@@ -11,17 +11,9 @@ import {
 	redux,
 } from "./techIcons";
 
-export const headData = {
-	title: "Johnnie G",
-	lang: "en",
-	description: "Johnnie G Software Engineer",
-};
-
 export const heroData = {
-	title: "",
 	name: "Johnnie Gonzalez",
 	subtitle: "Welcome to my World!!!",
-	cta: "",
 };
 
 export const aboutData = {
@@ -82,8 +74,6 @@ export const projectsData = [
 ];
 
 export const contactData = {
-	cta: "",
-	btn: "",
 	email: "johnnie.agonz71@gmail.com",
 };
 
