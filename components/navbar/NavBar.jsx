@@ -11,7 +11,7 @@ import {
 	useColorModeValue,
 	Text,
 } from "@chakra-ui/react";
-import { HamburgerIcon } from "@chakra-ui/icons";
+import { HamburgerIcon, TriangleUpIcon } from "@chakra-ui/icons";
 import ThemeToggleButton from "../theme-toggle-button";
 import { Link as ScrollLink } from "react-scroll";
 
@@ -91,7 +91,7 @@ const NavBar = (props) => {
 				<Box flex={1} align="right">
 					<ThemeToggleButton />
 					<Box ml={2} display={{ base: "inline-block", md: "none" }}>
-						<Menu>
+						<Menu closeOnSelect="true">
 							<MenuButton
 								as={IconButton}
 								icon={<HamburgerIcon />}
