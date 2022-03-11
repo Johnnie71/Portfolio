@@ -1,4 +1,15 @@
 import { nanoid } from "nanoid";
+import {
+	git,
+	express,
+	nodejs,
+	react,
+	ruby,
+	rails,
+	javaScript,
+	postgres,
+	redux,
+} from "./techIcons";
 
 export const headData = {
 	title: "Johnnie G",
@@ -21,51 +32,6 @@ export const aboutData = {
 		"With a background in architectural design, and a passion for sustainability, I have discovered programming as the perfect vehicle for leading the way toward a greener future. With an estimated 7.26 billion people (91% of the world population) owning a smartphone in 2022, access to a more sustainable world is now at our fingertips.",
 	paragraphThree:
 		"Please feel free to explore my page and learn about my projects... 😀",
-};
-
-const git = {
-	name: "git",
-	url: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg",
-};
-
-const express = {
-	name: "express",
-	url: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg",
-};
-
-const nodejs = {
-	name: "nodejs",
-	url: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
-};
-
-const react = {
-	name: "react",
-	url: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
-};
-
-const ruby = {
-	name: "ruby",
-	url: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ruby/ruby-original.svg",
-};
-
-const rails = {
-	name: "rails",
-	url: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/rails/rails-original-wordmark.svg",
-};
-
-const postgres = {
-	name: "postgre",
-	url: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg",
-};
-
-const redux = {
-	name: "redux",
-	url: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redux/redux-original.svg",
-};
-
-const javaScript = {
-	name: "javaScript",
-	url: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
 };
 
 export const projectsData = [
