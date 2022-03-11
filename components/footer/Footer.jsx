@@ -4,7 +4,6 @@ import {
 	Heading,
 	SimpleGrid,
 	useColorModeValue,
-	Box,
 } from "@chakra-ui/react";
 import PortfolioContext from "../../context/context";
 import NetworkLink from "../buttons/NetworkButton";
