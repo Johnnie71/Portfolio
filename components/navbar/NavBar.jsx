@@ -11,7 +11,7 @@ import {
 	useColorModeValue,
 	Text,
 } from "@chakra-ui/react";
-import { HamburgerIcon, TriangleUpIcon } from "@chakra-ui/icons";
+import { HamburgerIcon } from "@chakra-ui/icons";
 import ThemeToggleButton from "../theme-toggle-button";
 import { Link as ScrollLink } from "react-scroll";
 
