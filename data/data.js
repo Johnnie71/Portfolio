@@ -1,13 +1,11 @@
 import { nanoid } from "nanoid";
 
-// HEAD DATA
 export const headData = {
 	title: "Johnnie G",
 	lang: "en",
 	description: "Johnnie G Software Engineer",
 };
 
-// HERO DATA
 export const heroData = {
 	title: "",
 	name: "Johnnie Gonzalez",
@@ -15,7 +13,6 @@ export const heroData = {
 	cta: "",
 };
 
-// ABOUT DATA
 export const aboutData = {
 	img: "profile.jpg",
 	paragraphOne:
@@ -26,7 +23,6 @@ export const aboutData = {
 		"Please feel free to explore my page and learn about my projects... 😀",
 };
 
-// PROJECTS DATA
 export const projectsData = [
 	{
 		id: nanoid(),
@@ -138,14 +134,12 @@ export const projectsData = [
 	},
 ];
 
-// CONTACT DATA
 export const contactData = {
 	cta: "",
 	btn: "",
 	email: "johnnie.agonz71@gmail.com",
 };
 
-// FOOTER DATA
 export const footerData = {
 	networks: [
 		{
