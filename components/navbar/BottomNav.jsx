@@ -1,10 +1,8 @@
 import {
 	Container,
-	Box,
 	Stack,
 	useColorModeValue,
 	useMediaQuery,
-	Li,
 } from "@chakra-ui/react";
 import { Link as ScrollLink } from "react-scroll";
 
@@ -13,10 +11,10 @@ const BottomNavBar = (props) => {
 
 	return (
 		<Container
-			display={!isMobile ? "flex" : "hidden"}
+			display={!isMobile ? "none" : "hidden"}
 			position="fixed"
 			w="100%"
-			borderRadius="full"
+			borderRadius="20px"
 			as="nav"
 			h="4rem"
 			bg={useColorModeValue("#ffffff40", "#20202380")}
@@ -27,33 +25,24 @@ const BottomNavBar = (props) => {
 			bottom={0}
 			{...props}
 		>
-			<Box
-				p={2}
-				maxW="container.sm"
+			<Stack
+				direction="row"
+				display="flex"
 				wrap="wrap"
-				align="center"
-				justify="space-between"
-				color="red"
+				width="auto"
+				alignItems="center"
+				flexGrow={1}
 			>
-				<Stack
-					direction="row"
-					display="flex"
-					width="auto"
-					alignItems="center"
-					flexGrow={1}
-					mt={{ base: 2.5, md: 0 }}
-				>
-					<ScrollLink to="about" smooth duration={2000}>
-						About
-					</ScrollLink>
-					<ScrollLink to="projects" smooth duration={2000}>
-						Projects
-					</ScrollLink>
-					<ScrollLink to="footer" smooth duration={2000}>
-						Contact
-					</ScrollLink>
-				</Stack>
-			</Box>
+				<ScrollLink to="about" smooth duration={2000}>
+					About
+				</ScrollLink>
+				<ScrollLink to="projects" smooth duration={2000}>
+					Projects
+				</ScrollLink>
+				<ScrollLink to="footer" smooth duration={2000}>
+					Contact
+				</ScrollLink>
+			</Stack>
 		</Container>
 	);
 };
