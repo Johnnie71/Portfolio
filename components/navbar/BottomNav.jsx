@@ -7,20 +7,21 @@ import {
 } from "@chakra-ui/react";
 import { Link as ScrollLink } from "react-scroll";
 
-const BottomNavBar = () => {
+const BottomNavBar = (props) => {
 	const [isMobile] = useMediaQuery("(max-width: 768px)");
 
 	return (
 		<Box
 			display={!isMobile ? "none" : "hidden"}
 			position="fixed"
-			w="100%"
+			w="90%"
 			as="nav"
-			h={20}
+			h="4rem"
 			bg={useColorModeValue("#ffffff40", "#20202380")}
-			css={{ backdropFilter: "blur(5px)" }}
-			zIndex={1}
+			// css={{ backdropFilter: "blur(5px)" }}
+			zIndex={2}
 			bottom={0}
+			{...props}
 		>
 			<Container
 				display="flex"
