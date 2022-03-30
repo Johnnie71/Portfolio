@@ -29,7 +29,6 @@ const BottomNavBar = (props) => {
 				direction="row"
 				display="flex"
 				wrap="wrap"
-				width="auto"
 				alignItems="center"
 				flexGrow={1}
 			>
