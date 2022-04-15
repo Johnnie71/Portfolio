@@ -35,7 +35,7 @@ export const projectsData = [
 		techStack: {
 			icons: [git, express, nodejs, react],
 		},
-		repo: "https://github.com/Johnnie71/RM-Client", // if no repo, the button will not show up
+		repo: "https://github.com/Johnnie71/RM-Client",
 	},
 	{
 		id: nanoid(),
@@ -46,7 +46,7 @@ export const projectsData = [
 			icons: [ruby, rails, postgres, javaScript],
 		},
 		url: "https://www.loom.com/share/00d67a6c4a7c4d5b9d67fd5ff7fcd8c9",
-		repo: "https://github.com/Johnnie71/EZ-Task-frontend", // if no repo, the button will not show up
+		repo: "https://github.com/Johnnie71/EZ-Task-frontend",
 	},
 	{
 		id: nanoid(),
@@ -58,7 +58,7 @@ export const projectsData = [
 		},
 
 		url: "https://www.loom.com/share/ee145a72b8194b0e9d97a46a46315bdf",
-		repo: "https://github.com/Johnnie71/eco-designs-frontend", // if no repo, the button will not show up
+		repo: "https://github.com/Johnnie71/eco-designs-frontend",
 	},
 	{
 		id: nanoid(),
@@ -69,7 +69,7 @@ export const projectsData = [
 			icons: [git, ruby, postgres],
 		},
 		url: "https://www.loom.com/share/22b9f38a28494df081c97334847273c0",
-		repo: "https://github.com/Johnnie71/ruby-project-guidelines-nyc01-seng-ft-082420/tree/JohnnieG", // if no repo, the button will not show up
+		repo: "https://github.com/Johnnie71/ruby-project-guidelines-nyc01-seng-ft-082420/tree/JohnnieG",
 	},
 ];
 
