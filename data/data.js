@@ -19,9 +19,9 @@ export const heroData = {
 export const aboutData = {
 	img: "profile.jpg",
 	paragraphOne:
-		"I'm a software engineer with an eye for design and a love for all that is eco-friendly. I love spending time with family and friends. Love to drive with the music blasting in hopes the person next to me is Shazaming my song 😂. Other than that I love to create, learn new material, and meet new people from around the world.",
+		"I'm a software engineer with an eye for design and a passion for all that is eco-friendly. My curosity drives me to create, learn new technologies, and find new ways to implement solutions to complexed problems. I also enjoy interacting and collabortating within a diversed set of teams, coming together to push the limitless boundaries of a growth mindest.",
 	paragraphTwo:
-		"With a background in architectural design, and a passion for sustainability, I have discovered programming as the perfect vehicle for leading the way toward a greener future. With an estimated 7.26 billion people (91% of the world population) owning a smartphone in 2022, access to a more sustainable world is now at our fingertips.",
+		"With a background in architectural design, and a passion for sustainability, I have discovered programming as the perfect vehicle for leading the way toward a greener future, for generations to come. With an estimated 7.26 billion people (91% of the world population) owning a smartphone in 2022, access to a more sustainable world is now at our fingertips.",
 	paragraphThree:
 		"Please feel free to explore my page and learn about my projects... 😀",
 };
@@ -41,7 +41,7 @@ export const projectsData = [
 		id: nanoid(),
 		img: "/images/EZ-GIF.gif",
 		title: "E-Z Task",
-		info: "A clean and simple single-page CRUD application intended to serve as a desktop extension. With the functionality of organization in a posted notes format. Added a weather and stocks widget for the bottom of screen.",
+		info: "A clean and simple single-page CRUD application intended to serve as a desktop extension. With the functionality of organization in a posted notes format. Implemented a weather and stocks widget for easy visibilty.",
 		techStack: {
 			icons: [ruby, rails, postgres, javaScript],
 		},
