@@ -11,10 +11,11 @@ import CanvasContainer from "../canvas/Canvas";
 
 const Header = () => {
 	const [mobile] = useMediaQuery("(max-width: 768px)");
+	const colorTheme = useColorModeValue("#1367d4", "#8352fd");
 
 	return (
 		<section id="header">
-			<CanvasContainer />
+			<CanvasContainer color={colorTheme} />
 			<Container
 				height={!mobile ? "56vh" : "35vh"}
 				minHeight={mobile ? "57vh" : "35vh"}
