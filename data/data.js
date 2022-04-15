@@ -19,7 +19,7 @@ export const heroData = {
 export const aboutData = {
 	img: "profile.jpg",
 	paragraphOne:
-		"I'm a software engineer with an eye for design and a passion for all that is eco-friendly. My curosity drives me to create, learn new technologies, and find new ways to implement solutions to complexed problems. I also enjoy interacting and collaborating within a diversed set of teams to overcome obstacles together.",
+		"I'm a software engineer with an eye for design and a passion for all that is eco-friendly. My curosity drives me to create, learn new technologies, and finding new ways of implementing solutions to complexed problems. I also enjoy interacting and collaborating within a diversed set of teams to overcome obstacles together.",
 	paragraphTwo:
 		"With a background in architectural design, and a passion for sustainability, I have discovered programming as the perfect vehicle for leading the way toward a greener future, for generations to come. With an estimated 7.26 billion people (91% of the world population) owning a smartphone in 2022, access to a more sustainable world is now at our fingertips.",
 	paragraphThree:
