@@ -1,11 +1,10 @@
 import React, { Suspense } from "react";
-import { Container, useColorModeValue } from "@chakra-ui/react";
+import { Container } from "@chakra-ui/react";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
-import Box from "./Box";
 import AnimatedSphere from "./AnimatedSphere";
 
-const CanvasContainer = () => {
+const CanvasContainer = ({ color }) => {
 	return (
 		<Container h={300}>
 			<Canvas>
@@ -13,7 +12,7 @@ const CanvasContainer = () => {
 				<ambientLight intensity={0.5} />
 				<directionalLight position={[-2, 5, 2]} intensity={1} />
 				<Suspense fallback={null}>
-					<AnimatedSphere />
+					<AnimatedSphere color={color} />
 				</Suspense>
 			</Canvas>
 		</Container>
