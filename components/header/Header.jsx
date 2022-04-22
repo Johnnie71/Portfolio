@@ -79,7 +79,7 @@ const Header = () => {
 								borderColor={useColorModeValue("#32d142", "#84248c")}
 								borderWidth={2}
 								borderStyle="solid"
-								boxSize="120px"
+								boxSize={mobile ? "120px" : "250px"}
 								// display="inline-block"
 								borderRadius="full"
 								src="/images/cartoon.png"
