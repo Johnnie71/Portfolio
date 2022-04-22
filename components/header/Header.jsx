@@ -51,7 +51,7 @@ const Header = () => {
 						>
 							<Box
 								as="text"
-								fontSize={mobile ? "1em" : "2rem"}
+								fontSize={mobile ? "1rem" : "2rem"}
 								ml={6}
 								mb={0}
 								align="center"
@@ -77,7 +77,7 @@ const Header = () => {
 								borderColor={useColorModeValue("#32d142", "#84248c")}
 								borderWidth={2}
 								borderStyle="solid"
-								boxSize={120}
+								boxSize="12rem"
 								// display="inline-block"
 								borderRadius="full"
 								src="/images/cartoon.png"
