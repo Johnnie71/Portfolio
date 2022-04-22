@@ -29,6 +29,18 @@ export const aboutData = {
 export const projectsData = [
 	{
 		id: nanoid(),
+		img: "/images/Eco-Demo-Gif.gif",
+		title: "Eco Share",
+		info: "A fun, interactive social media web application. Where creatives from all over the world can come together and share their eco-friendly designs. Users can follow/unfollow and comment on posts!",
+		techStack: {
+			icons: [ruby, postgres, react, redux],
+		},
+
+		url: "https://www.loom.com/share/ee145a72b8194b0e9d97a46a46315bdf",
+		repo: "https://github.com/Johnnie71/eco-designs-frontend",
+	},
+	{
+		id: nanoid(),
 		img: "/images/ChatApp.gif",
 		title: "Chat App",
 		info: "A responsive chat application that mimics chat services such as Slack or Microsoft Teams. Enabling users to create groups and have individual chats. Using Stream API services to scale the app.",
@@ -47,18 +59,6 @@ export const projectsData = [
 		},
 		url: "https://www.loom.com/share/00d67a6c4a7c4d5b9d67fd5ff7fcd8c9",
 		repo: "https://github.com/Johnnie71/EZ-Task-frontend",
-	},
-	{
-		id: nanoid(),
-		img: "/images/Eco-Demo-Gif.gif",
-		title: "Eco Share",
-		info: "A fun, interactive social media web application. Where creatives from all over the world can come together and share their eco-friendly designs. Users can follow/unfollow and comment on posts!",
-		techStack: {
-			icons: [ruby, postgres, react, redux],
-		},
-
-		url: "https://www.loom.com/share/ee145a72b8194b0e9d97a46a46315bdf",
-		repo: "https://github.com/Johnnie71/eco-designs-frontend",
 	},
 	{
 		id: nanoid(),
