@@ -15,7 +15,7 @@ const Header = () => {
 
 	return (
 		<section id="header">
-			<CanvasContainer color={colorTheme} />
+			<CanvasContainer mobile={mobile} color={colorTheme} />
 			<Container
 				borderWidth="3px"
 				borderColor="red"
@@ -38,7 +38,7 @@ const Header = () => {
 									"linear(to-l, #7928CA, #FF0080)"
 								)}
 								bgClip="text"
-								fontSize={mobile ? "3xl" : "6rem"}
+								fontSize={mobile ? "3xl" : "6xl"}
 								fontWeight="extrabold"
 							>
 								Johnnie Gonzalez
@@ -79,7 +79,7 @@ const Header = () => {
 								borderColor={useColorModeValue("#32d142", "#84248c")}
 								borderWidth={2}
 								borderStyle="solid"
-								boxSize={mobile ? "120px" : "250px"}
+								boxSize={120}
 								// display="inline-block"
 								borderRadius="full"
 								src="/images/cartoon.png"
