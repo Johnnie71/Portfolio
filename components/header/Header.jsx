@@ -19,7 +19,7 @@ const Header = () => {
 			<Container
 				height={!mobile ? "56vh" : "35vh"}
 				minHeight={mobile ? "57vh" : "35vh"}
-				maxWidth={mobile ? "auto" : "90%"}
+				maxWidth={mobile ? "auto" : 800}
 			>
 				<Box borderRadius="lg" display={{ md: "flex" }}>
 					<Box flexGrow={1} justifyContent="center" align={"center"}>
@@ -49,13 +49,7 @@ const Header = () => {
 							delay={900}
 							distance="30px"
 						>
-							<Box
-								as="text"
-								fontSize={mobile ? "1em" : "2rem"}
-								ml={6}
-								mb={0}
-								align="center"
-							>
+							<Box as="text" fontSize="1em" ml={6} mb={0} align="center">
 								<p>Welcome to my world!!</p>
 							</Box>
 						</Fade>
@@ -77,7 +71,7 @@ const Header = () => {
 								borderColor={useColorModeValue("#32d142", "#84248c")}
 								borderWidth={2}
 								borderStyle="solid"
-								boxSize="12rem"
+								boxSize="120px"
 								// display="inline-block"
 								borderRadius="full"
 								src="/images/cartoon.png"
