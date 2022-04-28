@@ -51,7 +51,7 @@ const Header = () => {
 						>
 							<Box
 								as="text"
-								fontSize={{ base: "15px", md: "25px", lg: "45px" }}
+								fontSize={{ base: "15px", md: "25px", lg: "2rem" }}
 								ml={6}
 								mb={0}
 								align="center"
