@@ -17,9 +17,12 @@ const Header = () => {
 		<section id="header">
 			<CanvasContainer mobile={mobile} color={colorTheme} />
 			<Container
+				// borderStyle="solid"
+				// borderWidth="2px"
+				// borderColor="red"
 				height={!mobile ? "56vh" : "35vh"}
 				minHeight={mobile ? "57vh" : "35vh"}
-				maxWidth={mobile ? "auto" : 800}
+				maxWidth={mobile ? "auto" : "80%"}
 			>
 				<Box borderRadius="lg" display={{ md: "flex" }}>
 					<Box flexGrow={1} justifyContent="center" align={"center"}>
@@ -36,7 +39,7 @@ const Header = () => {
 									"linear(to-l, #7928CA, #FF0080)"
 								)}
 								bgClip="text"
-								fontSize={{ base: "24px", md: "40px", lg: "75px" }}
+								fontSize={{ base: "35px", md: "40px", lg: "75px" }}
 								fontWeight="extrabold"
 							>
 								Johnnie Gonzalez
