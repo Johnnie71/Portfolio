@@ -36,7 +36,7 @@ const Header = () => {
 									"linear(to-l, #7928CA, #FF0080)"
 								)}
 								bgClip="text"
-								fontSize={mobile ? "3xl" : "6xl"}
+								fontSize={{ base: "24px", md: "40px", lg: "75px" }}
 								fontWeight="extrabold"
 							>
 								Johnnie Gonzalez
@@ -49,7 +49,13 @@ const Header = () => {
 							delay={900}
 							distance="30px"
 						>
-							<Box as="text" fontSize="1em" ml={6} mb={0} align="center">
+							<Box
+								as="text"
+								fontSize={{ base: "15px", md: "25px", lg: "45px" }}
+								ml={6}
+								mb={0}
+								align="center"
+							>
 								<p>Welcome to my world!!</p>
 							</Box>
 						</Fade>
