@@ -66,7 +66,7 @@ const Header = () => {
 					<Box
 						flexShrink={1}
 						mt={{ base: 4, md: 4 }}
-						ml={{ md: 1 }}
+						// ml={{ md: 1 }}
 						align="center"
 					>
 						<Fade
