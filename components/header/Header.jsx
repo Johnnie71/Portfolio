@@ -80,13 +80,10 @@ const Header = () => {
 								borderColor={useColorModeValue("#32d142", "#84248c")}
 								borderWidth={2}
 								borderStyle="solid"
-								// boxSize="120px"
 								boxSize={{ base: "120px", md: "8rem", lg: "12rem" }}
-								// display="inline-block"
 								borderRadius="full"
 								src="/images/cartoon.png"
 								alt="Profile Image"
-								// ml={1}
 							/>
 						</Fade>
 					</Box>
