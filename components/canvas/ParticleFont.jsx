@@ -1,8 +1,10 @@
 import React, { useRef, useEffect } from "react";
+import Particle from "./Particle";
 
 const ParticleFont = (props) => {
 	const canvasRef = useRef(null);
 	const contextRef = useRef(null);
+	let particleArrayRef = useRef([]);
 
 	useEffect(() => {
 		const canvas = canvasRef.current;
@@ -11,9 +13,6 @@ const ParticleFont = (props) => {
 
 		let context = canvas.getContext("2d");
 		contextRef.current = context;
-
-		context.fillStyle = "white";
-		context.font = "30px Verdana";
 
 		const mouse = {
 			x: null,
@@ -24,11 +23,19 @@ const ParticleFont = (props) => {
 		window.addEventListener("mousemove", function (event) {
 			mouse.x = event.x;
 			mouse.y = event.y;
-			console.log(mouse.x, mouse.y);
 		});
-	}, []);
 
-	let particleArray = [];
+		context.fillStyle = "white";
+		context.font = "30px Verdana";
+
+		function init() {
+			const particleArray = particleArrayRef.current;
+			particleArray.push(new Particle(50, 50, context));
+			particleArray.push(new Particle(80, 50, context));
+			console.log(particleArray);
+		}
+		init();
+	}, []);
 
 	return <canvas ref={canvasRef}></canvas>;
 };
