@@ -27,6 +27,7 @@ const ParticleFont = (props) => {
 
 		context.fillStyle = "white";
 		context.font = "30px Verdana";
+		// const textCoordinates = context.getImageData();
 
 		function init() {
 			const particleArray = particleArrayRef.current;
