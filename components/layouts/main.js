@@ -14,7 +14,7 @@ const Main = ({ children, router }) => {
 				></link>
 			</Head>
 			<canvas id="canvas1"></canvas>
-			<Script src="particle.js"></Script>
+			<Script src="./header/particle.js"></Script>
 			<NavBar path={router.asPath} />
 			<Container maxW="98%" pt={14}>
 				{children}
