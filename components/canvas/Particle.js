@@ -1,8 +1,9 @@
 export default class Particle {
-	constructor(x, y, context) {
+	constructor(x, y, context, mouse) {
 		this.x = x;
 		this.y = y;
 		this.context = context;
+		this.mouse = mouse;
 		this.size = 3;
 		this.baseX = this.x;
 		this.baseY = this.x;
@@ -18,11 +19,11 @@ export default class Particle {
 	}
 
 	update() {
-		let dx = mouse.x - this.x;
-		let dy = mouse.y - this.y;
+		let dx = this.mouse.x - this.x;
+		let dy = this.mouse.y - this.y;
 		let distance = Math.sqrt(dx * dx + dy * dy);
-		if (distance < 500) {
-			this.size = 50;
+		if (distance < 300) {
+			this.size = 30;
 		} else {
 			this.size = 3;
 		}
