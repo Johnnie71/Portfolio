@@ -8,6 +8,7 @@ import {
 } from "@chakra-ui/react";
 import { Fade } from "react-reveal";
 import CanvasContainer from "../canvas/Canvas";
+import ParticleFont from "../canvas/ParticleFont";
 
 const Header = () => {
 	const [mobile] = useMediaQuery("(max-width: 768px)");
@@ -44,6 +45,7 @@ const Header = () => {
 							>
 								Johnnie Gonzalez
 							</Text>
+							<ParticleFont />
 						</Fade>
 						<Fade
 							top={!mobile}
