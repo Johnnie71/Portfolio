@@ -33,7 +33,7 @@ const ParticleFont = (props) => {
 			for (let i = 0; i < 100; i++) {
 				let x = Math.random() * canvas.width;
 				let y = Math.random() * canvas.height;
-				particleArray.push(new Particle(x, y, context));
+				particleArray.push(new Particle(x, y, context, mouse));
 			}
 		}
 		init();
@@ -43,6 +43,7 @@ const ParticleFont = (props) => {
 			context.clearRect(0, 0, canvas.width, canvas.height);
 			for (let i = 0; i < particleArray.length; i++) {
 				particleArray[i].draw();
+				particleArray[i].update();
 			}
 			requestAnimationFrame(animate);
 		}
