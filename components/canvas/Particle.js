@@ -16,4 +16,15 @@ export default class Particle {
 		this.context.closePath();
 		this.context.fill();
 	}
+
+	update() {
+		let dx = mouse.x - this.x;
+		let dy = mouse.y - this.y;
+		let distance = Math.sqrt(dx * dx + dy * dy);
+		if (distance < 500) {
+			this.size = 50;
+		} else {
+			this.size = 3;
+		}
+	}
 }
