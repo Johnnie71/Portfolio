@@ -35,6 +35,16 @@ const ParticleFont = (props) => {
 			console.log(particleArray);
 		}
 		init();
+
+		function animate() {
+			let particleArray = particleArrayRef.current;
+			context.clearRect(0, 0, canvas.width, canvas.height);
+			for (let i = 0; i < particleArray.length; i++) {
+				particleArray[i].draw();
+			}
+			requestAnimationFrame(animate);
+		}
+		animate();
 	}, []);
 
 	return <canvas ref={canvasRef}></canvas>;
