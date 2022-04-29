@@ -10,3 +10,9 @@ let mouse = {
 	y: null,
 	radius: 150,
 };
+
+window.addEventListener("mousemove", function (event) {
+	mouse.x = event.x;
+	mouse.y = event.y;
+	console.log(mouse.x, mouse.y);
+});
