@@ -12,6 +12,7 @@ const Main = ({ children, router }) => {
 					href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.14.0/devicon.min.css"
 				></link>
 			</Head>
+			<canvas id="canvas1"></canvas>
 			<NavBar path={router.asPath} />
 			<Container maxW="98%" pt={14}>
 				{children}
