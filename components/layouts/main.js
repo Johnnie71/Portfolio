@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Script from "next/script";
 import { Box, Container } from "@chakra-ui/react";
 import NavBar from "../navbar/NavBar";
 const Main = ({ children, router }) => {
@@ -13,6 +14,7 @@ const Main = ({ children, router }) => {
 				></link>
 			</Head>
 			<canvas id="canvas1"></canvas>
+			<Script src="particle.js"></Script>
 			<NavBar path={router.asPath} />
 			<Container maxW="98%" pt={14}>
 				{children}
