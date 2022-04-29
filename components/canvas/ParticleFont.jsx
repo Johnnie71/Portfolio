@@ -8,8 +8,8 @@ const ParticleFont = (props) => {
 
 	useEffect(() => {
 		const canvas = canvasRef.current;
-		canvas.width = canvas.clientWidth;
-		canvas.height = canvas.clientHeight;
+		canvas.width = window.innerWidth;
+		canvas.height = window.innerHeight;
 
 		let context = canvas.getContext("2d");
 		contextRef.current = context;
@@ -30,9 +30,11 @@ const ParticleFont = (props) => {
 
 		function init() {
 			const particleArray = particleArrayRef.current;
-			particleArray.push(new Particle(50, 50, context));
-			particleArray.push(new Particle(80, 50, context));
-			console.log(particleArray);
+			for (let i = 0; i < 100; i++) {
+				let x = Math.random() * canvas.width;
+				let y = Math.random() * canvas.height;
+				particleArray.push(new Particle(x, y, context));
+			}
 		}
 		init();
 
