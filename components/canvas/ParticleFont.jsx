@@ -31,12 +31,17 @@ const ParticleFont = (props) => {
 
 		function init() {
 			const particleArray = particleArrayRef.current;
-			// for (let y = 0, y2 = textCoordinates.height; y < y2; y++) {
-			// 	for (let x = 0, x2 = textCoordinates.width; x < x2; x++) {
-			// 		if (textCoordinates.data[1] > 128) {
-			// 		}
-			// 	}
-			// }
+			for (let y = 0, y2 = textCoordinates.height; y < y2; y++) {
+				for (let x = 0, x2 = textCoordinates.width; x < x2; x++) {
+					if (textCoordinates.data[y * 4 * data.width + x * 4 + 3] > 128) {
+						let positionX = x;
+						let positiony = y;
+						particleArray.push(
+							new Particle(positionX, positiony, context, mouse)
+						);
+					}
+				}
+			}
 		}
 		init();
 
