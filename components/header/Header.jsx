@@ -17,6 +17,7 @@ const Header = () => {
 	return (
 		<section id="header">
 			<CanvasContainer mobile={mobile} color={colorTheme} />
+			<ParticleFont />
 			<Container
 				// borderStyle="solid"
 				// borderWidth="2px"
@@ -45,7 +46,6 @@ const Header = () => {
 							>
 								Johnnie Gonzalez
 							</Text>
-							<ParticleFont />
 						</Fade>
 						<Fade
 							top={!mobile}
