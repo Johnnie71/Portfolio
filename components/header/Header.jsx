@@ -21,7 +21,6 @@ const Header = () => {
 	return (
 		<section id="header">
 			<CanvasContainer mobile={mobile} color={colorTheme} />
-
 			<Container
 				// borderStyle="solid"
 				// borderWidth="2px"
