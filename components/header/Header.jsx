@@ -13,11 +13,15 @@ import ParticleFont from "../canvas/ParticleFont";
 const Header = () => {
 	const [mobile] = useMediaQuery("(max-width: 768px)");
 	const colorTheme = useColorModeValue("#1367d4", "#8352fd");
+	const gradientColor = useColorModeValue(
+		"linear(to-r, #1367d4, #32d142)",
+		"linear(to-l, #7928CA, #FF0080)"
+	);
 
 	return (
 		<section id="header">
 			<CanvasContainer mobile={mobile} color={colorTheme} />
-			<ParticleFont />
+
 			<Container
 				// borderStyle="solid"
 				// borderWidth="2px"
@@ -44,7 +48,7 @@ const Header = () => {
 								fontSize={{ base: "25px", md: "40px", lg: "75px" }}
 								fontWeight="extrabold"
 							>
-								Johnnie Gonzalez
+								<ParticleFont color={gradientColor} />
 							</Text>
 						</Fade>
 						<Fade

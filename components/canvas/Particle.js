@@ -6,7 +6,7 @@ export default class Particle {
 		this.mouse = mouse;
 		this.size = 3;
 		this.baseX = this.x;
-		this.baseY = this.x;
+		this.baseY = this.y;
 		this.density = Math.random() * 40 + 5;
 	}
 

@@ -1,10 +1,13 @@
 import React, { useRef, useEffect } from "react";
 import Particle from "./Particle";
+import { useColorModeValue } from "@chakra-ui/react";
 
-const ParticleFont = (props) => {
+const ParticleFont = ({ color }) => {
 	const canvasRef = useRef(null);
 	const contextRef = useRef(null);
 	let particleArrayRef = useRef([]);
+	let adjustX = useRef(20);
+	let adjustY = useRef(20);
 
 	useEffect(() => {
 		const canvas = canvasRef.current;
@@ -17,7 +20,7 @@ const ParticleFont = (props) => {
 		const mouse = {
 			x: null,
 			y: null,
-			radius: 150,
+			radius: 80,
 		};
 
 		window.addEventListener("mousemove", function (event) {
@@ -25,19 +28,23 @@ const ParticleFont = (props) => {
 			mouse.y = event.y;
 		});
 
-		context.fillStyle = "white";
+		context.fillStyle = color;
 		context.font = "30px Verdana";
+		context.fillText("Johnnie Gonzalez", 0, 30);
 		const textCoordinates = context.getImageData(0, 0, 100, 100);
 
 		function init() {
 			const particleArray = particleArrayRef.current;
 			for (let y = 0, y2 = textCoordinates.height; y < y2; y++) {
 				for (let x = 0, x2 = textCoordinates.width; x < x2; x++) {
-					if (textCoordinates.data[y * 4 * data.width + x * 4 + 3] > 128) {
-						let positionX = x;
-						let positiony = y;
+					if (
+						textCoordinates.data[y * 4 * textCoordinates.width + x * 4 + 3] >
+						128
+					) {
+						let positionX = x + adjustX.current;
+						let positionY = y + adjustY.current;
 						particleArray.push(
-							new Particle(positionX, positiony, context, mouse)
+							new Particle(positionX * 5, positionY * 5, context, mouse)
 						);
 					}
 				}
@@ -55,7 +62,7 @@ const ParticleFont = (props) => {
 			requestAnimationFrame(animate);
 		}
 		animate();
-	}, []);
+	});
 
 	return <canvas ref={canvasRef}></canvas>;
 };
