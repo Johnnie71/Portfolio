@@ -48,7 +48,7 @@ const Header = () => {
 								fontSize={{ base: "25px", md: "40px", lg: "75px" }}
 								fontWeight="extrabold"
 							>
-								<ParticleFont color={gradientColor} />
+								Johnnie Gonzalez
 							</Text>
 						</Fade>
 						<Fade
