@@ -58,6 +58,7 @@ const Header = () => {
 								ml={6}
 								mb={0}
 								align="center"
+								fontFamily="Indie Flower, sans-serif"
 							>
 								<p>Welcome to my world!!</p>
 							</Box>
