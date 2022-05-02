@@ -39,7 +39,7 @@ const Header = () => {
 									"linear(to-l, #7928CA, #FF0080)"
 								)}
 								bgClip="text"
-								fontSize={{ base: "25px", md: "40px", lg: "75px" }}
+								fontSize={{ base: "30px", md: "40px", lg: "75px" }}
 								fontWeight="extrabold"
 							>
 								Johnnie Gonzalez
@@ -61,7 +61,7 @@ const Header = () => {
 								fontWeight="extrabold"
 								fontFamily="Indie Flower, sans-serif"
 							>
-								<p>Welcome to my world!!</p>
+								<p>Welcome to my world!</p>
 							</Box>
 						</Fade>
 					</Box>
