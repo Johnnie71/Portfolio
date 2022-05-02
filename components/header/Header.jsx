@@ -39,7 +39,7 @@ const Header = () => {
 									"linear(to-l, #7928CA, #FF0080)"
 								)}
 								bgClip="text"
-								fontSize={{ base: "29px", md: "40px", lg: "75px" }}
+								fontSize={{ base: "28px", md: "40px", lg: "75px" }}
 								fontWeight="extrabold"
 							>
 								Johnnie Gonzalez
