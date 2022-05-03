@@ -1,4 +1,4 @@
-import { Box, Flex, useColorModeValue, useMediaQuery } from "@chakra-ui/react";
+import { Box, Flex, useColorModeValue } from "@chakra-ui/react";
 import { Link as ScrollLink } from "react-scroll";
 
 const BottomNavBar = () => {
