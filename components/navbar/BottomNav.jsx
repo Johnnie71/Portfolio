@@ -2,8 +2,6 @@ import { Box, Flex, useColorModeValue, useMediaQuery } from "@chakra-ui/react";
 import { Link as ScrollLink } from "react-scroll";
 
 const BottomNavBar = () => {
-	const [isMobile] = useMediaQuery("(max-width: 768px)");
-
 	return (
 		<Flex
 			position="fixed"
