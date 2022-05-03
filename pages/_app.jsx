@@ -10,6 +10,7 @@ import {
 import { ChakraProvider } from "@chakra-ui/react";
 import theme from "../lib/theme";
 import Layout from "../components/layouts/main";
+import "@fontsource/indie-flower";
 
 function App({ Component, pageProps, router }) {
 	const [header, setHeader] = useState({});
