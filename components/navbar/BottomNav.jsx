@@ -7,6 +7,8 @@ const BottomNavBar = () => {
 	return (
 		<Flex
 			position="fixed"
+			align="center"
+			justify="space-around"
 			wrap="wrap"
 			w="100%"
 			as="nav"
