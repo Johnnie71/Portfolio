@@ -60,7 +60,7 @@ const Projects = () => {
 											<Heading color={whiteBlack} size="lg" as="h5">
 												{title}
 											</Heading>
-											<Box align="center" mt={5}>
+											<Box align="center">
 												{img && (
 													<Tilt>
 														<Image alt={title} src={img} />
