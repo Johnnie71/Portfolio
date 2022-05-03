@@ -50,6 +50,25 @@ const Projects = () => {
 
 							return (
 								<SimpleGrid columns={isMobile ? 1 : 2} mb={10} key={id}>
+									{isMobile ? (
+										<Fade
+											bottom="true"
+											duration={1000}
+											delay={1000}
+											distance="30px"
+										>
+											<Heading color={whiteBlack} size="lg" as="h5">
+												{title}
+											</Heading>
+											<Box align="center" mt={5}>
+												{img && (
+													<Tilt>
+														<Image alt={title} src={img} />
+													</Tilt>
+												)}
+											</Box>
+										</Fade>
+									) : null}
 									<Fade
 										left={!isMobile}
 										bottom={isMobile}
@@ -58,9 +77,11 @@ const Projects = () => {
 										distance="30px"
 									>
 										<Box>
-											<Heading color={whiteBlack} size="lg" as="h5">
-												{title}
-											</Heading>
+											{!isMobile ? (
+												<Heading color={whiteBlack} size="lg" as="h5">
+													{title}
+												</Heading>
+											) : null}
 											<Box mb={4}>
 												<Text mb={2}>{info}</Text>
 												<Flex justify="center" alignContent="space-around" wrap>
@@ -85,21 +106,22 @@ const Projects = () => {
 											</Flex>
 										</Box>
 									</Fade>
-									<Fade
-										right={!isMobile}
-										bottom={isMobile}
-										duration={1000}
-										delay={1000}
-										distance="30px"
-									>
-										<Box align="center" mt={5}>
-											{img && (
-												<Tilt>
-													<Image alt={title} src={img} />
-												</Tilt>
-											)}
-										</Box>
-									</Fade>
+									{!isMobile ? (
+										<Fade
+											right="true"
+											duration={1000}
+											delay={1000}
+											distance="30px"
+										>
+											<Box align="center" mt={5}>
+												{img && (
+													<Tilt>
+														<Image alt={title} src={img} />
+													</Tilt>
+												)}
+											</Box>
+										</Fade>
+									) : null}
 								</SimpleGrid>
 							);
 						})}
