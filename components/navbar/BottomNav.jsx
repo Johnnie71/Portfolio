@@ -15,16 +15,16 @@ const BottomNavBar = () => {
 			css={{ backdropFilter: "blur(5px)" }}
 			zIndex={1}
 			bottom={0}
-			borderWidth="2px"
+			borderWidth="3px"
 			borderRadius="50px"
 			borderColor={useColorModeValue("#32d142", "#84248c")}
 			padding="10px"
 		>
-			<ScrollLink to="about" smooth duration={2000}>
-				<Box flex={1}>About</Box>
-			</ScrollLink>
 			<ScrollLink to="projects" smooth duration={2000}>
 				<Box flex={1}>Projects</Box>
+			</ScrollLink>
+			<ScrollLink to="about" smooth duration={2000}>
+				<Box flex={1}>About</Box>
 			</ScrollLink>
 			<ScrollLink to="footer" smooth duration={2000}>
 				<Box flex={1}>Contact</Box>
