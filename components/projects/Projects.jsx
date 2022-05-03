@@ -51,16 +51,11 @@ const Projects = () => {
 							return (
 								<SimpleGrid columns={isMobile ? 1 : 2} mb={10} key={id}>
 									{isMobile ? (
-										<Fade
-											bottom="true"
-											duration={1000}
-											delay={1000}
-											distance="30px"
-										>
+										<Fade bottom duration={1000} delay={1000} distance="30px">
 											<Heading color={whiteBlack} size="lg" as="h5">
 												{title}
 											</Heading>
-											<Box align="center">
+											<Box mb={3} align="center">
 												{img && (
 													<Tilt>
 														<Image alt={title} src={img} />
@@ -107,12 +102,7 @@ const Projects = () => {
 										</Box>
 									</Fade>
 									{!isMobile ? (
-										<Fade
-											right="true"
-											duration={1000}
-											delay={1000}
-											distance="30px"
-										>
+										<Fade right duration={1000} delay={1000} distance="30px">
 											<Box align="center" mt={5}>
 												{img && (
 													<Tilt>
