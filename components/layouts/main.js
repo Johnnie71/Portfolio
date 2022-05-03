@@ -1,9 +1,11 @@
 import Head from "next/head";
-import { Box, Container } from "@chakra-ui/react";
+import { Box, Container, useMediaQuery } from "@chakra-ui/react";
 import NavBar from "../navbar/NavBar";
 import BottomNavBar from "../navbar/BottomNav";
 
 const Main = ({ children, router }) => {
+	const [isMobile] = useMediaQuery("(max-width: 768px)");
+
 	return (
 		<Box as="main" pb={8}>
 			<Head>
@@ -18,7 +20,7 @@ const Main = ({ children, router }) => {
 			<Container maxW="98%" pt={14}>
 				{children}
 			</Container>
-			<BottomNavBar />
+			{isMobile ? <BottomNavBar /> : null}
 		</Box>
 	);
 };
