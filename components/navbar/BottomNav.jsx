@@ -22,34 +22,25 @@ const BottomNavBar = () => {
 			zIndex={1}
 			bottom={0}
 		>
-			<Container
+			{/* <Container
 				display="flex"
 				p={2}
 				maxW="container.sm"
-				wrap="wrap"
+				// wrap="wrap"
 				align="center"
 				justify="space-between"
 				color={"red"}
-			>
-				<Stack
-					direction={{ base: "column", md: "row" }}
-					display={{ base: "none", md: "flex" }}
-					width={{ base: "full", md: "auto" }}
-					alignItems="center"
-					flexGrow={1}
-					mt={{ base: 4, md: 0 }}
-				>
-					<ScrollLink to="about" smooth duration={2000}>
-						About
-					</ScrollLink>
-					<ScrollLink to="projects" smooth duration={2000}>
-						Projects
-					</ScrollLink>
-					<ScrollLink to="footer" smooth duration={2000}>
-						Contact
-					</ScrollLink>
-				</Stack>
-			</Container>
+			> */}
+			<ScrollLink to="about" smooth duration={2000}>
+				About
+			</ScrollLink>
+			<ScrollLink to="projects" smooth duration={2000}>
+				Projects
+			</ScrollLink>
+			<ScrollLink to="footer" smooth duration={2000}>
+				Contact
+			</ScrollLink>
+			{/* </Container> */}
 		</Box>
 	);
 };
