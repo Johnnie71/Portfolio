@@ -16,7 +16,7 @@ const BottomNavBar = () => {
 			position="fixed"
 			w="100%"
 			as="nav"
-			h="70px"
+			h="72px"
 			bg={useColorModeValue("#ffffff40", "#20202380")}
 			css={{ backdropFilter: "blur(5px)" }}
 			zIndex={1}
