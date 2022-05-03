@@ -18,10 +18,7 @@ const BottomNavBar = () => {
 			zIndex={1}
 			bottom={0}
 			borderWidth="2px"
-			borderColor={useColorModeValue(
-				"linear(to-r, #1367d4, #32d142)",
-				"linear(to-l, #7928CA, #FF0080)"
-			)}
+			borderColor={useColorModeValue("#32d142", "#84248c")}
 		>
 			<ScrollLink to="about" smooth duration={2000}>
 				<Box flex={1}>About</Box>
