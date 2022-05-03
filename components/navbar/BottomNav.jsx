@@ -1,4 +1,4 @@
-import { Box, Flex, useColorModeValue } from "@chakra-ui/react";
+import { Box, Flex, useColorModeValue, Container } from "@chakra-ui/react";
 import { Link as ScrollLink } from "react-scroll";
 
 const BottomNavBar = () => {
@@ -16,6 +16,7 @@ const BottomNavBar = () => {
 			zIndex={1}
 			bottom={0}
 			borderWidth="2px"
+			borderRadius="50px"
 			borderColor={useColorModeValue("#32d142", "#84248c")}
 		>
 			<ScrollLink to="about" smooth duration={2000}>
