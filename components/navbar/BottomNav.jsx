@@ -22,15 +22,6 @@ const BottomNavBar = () => {
 			zIndex={1}
 			bottom={0}
 		>
-			{/* <Container
-				display="flex"
-				p={2}
-				maxW="container.sm"
-				// wrap="wrap"
-				align="center"
-				justify="space-between"
-				color={"red"}
-			> */}
 			<ScrollLink to="about" smooth duration={2000}>
 				About
 			</ScrollLink>
@@ -40,7 +31,6 @@ const BottomNavBar = () => {
 			<ScrollLink to="footer" smooth duration={2000}>
 				Contact
 			</ScrollLink>
-			{/* </Container> */}
 		</Box>
 	);
 };
