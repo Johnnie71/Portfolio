@@ -20,13 +20,7 @@ const Footer = () => {
 	const emailUrl = `mailto:${email}`;
 	return (
 		<section id="footer">
-			<Container
-				// mb={!isMobile ? "auto" : "50px"}
-				mb="50px"
-				mt={20}
-				justify="center"
-				align="center"
-			>
+			<Container mb="50px" mt={20} justify="center" align="center">
 				<Button url={emailUrl} name="Email" />
 				<Heading
 					paddingTop={50}
