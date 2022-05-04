@@ -79,7 +79,7 @@ const Header = () => {
 							distance="30px"
 						>
 							<Image
-								borderColor={useColorModeValue("#32d142", "#84248c")}
+								borderColor={useColorModeValue("green", "purple2")}
 								borderWidth={2}
 								borderStyle="solid"
 								boxSize={{ base: "120px", md: "8rem", lg: "12rem" }}
