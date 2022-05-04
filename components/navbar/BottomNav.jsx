@@ -15,7 +15,7 @@ const BottomNavBar = () => {
 			css={{ backdropFilter: "blur(5px)" }}
 			zIndex={1}
 			bottom={0}
-			borderWidth="3px"
+			borderWidth="2px"
 			borderRadius="50px"
 			borderColor={useColorModeValue("#32d142", "#84248c")}
 			padding="10px"
