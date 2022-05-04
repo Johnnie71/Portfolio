@@ -22,7 +22,7 @@ const Footer = () => {
 				<Button url={emailUrl} name="Email" />
 				<Heading
 					paddingTop={50}
-					borderBottomColor={useColorModeValue("#32d142", "#84248c")}
+					borderBottomColor={useColorModeValue("green", "purple2")}
 					variant="section-title"
 				>
 					Social
