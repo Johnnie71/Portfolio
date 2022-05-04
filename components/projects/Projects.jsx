@@ -20,7 +20,7 @@ const Projects = () => {
 	const { projects } = useContext(PortfolioContext);
 	const [isMobile] = useMediaQuery("(max-width: 768px)");
 
-	const whiteBlack = useColorModeValue("#1367d4", "#84248c");
+	const whiteBlack = useColorModeValue("blue", "pink");
 
 	return (
 		<section id="projects">
