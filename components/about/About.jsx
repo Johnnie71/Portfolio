@@ -73,8 +73,8 @@ const About = () => {
 									fontWeight="bold"
 									borderRadius={20}
 									bgGradient={useColorModeValue(
-										"linear(to-r, #1367d4, #32d142)",
-										"linear(to-l, #7928CA, #FF0080)"
+										"linear(to-r, blue, green)",
+										"linear(to-l, purple1, pink)"
 									)}
 									transition="padding .5s"
 									_hover={{ padding: 2 }}
