@@ -21,7 +21,7 @@ const Footer = () => {
 	return (
 		<section id="footer">
 			<Container
-				mb={isMobile ? "600px" : 0}
+				mb={isMobile ? "80px" : 0}
 				mt={20}
 				justify="center"
 				align="center"
