@@ -4,7 +4,7 @@ import NavBar from "../navbar/NavBar";
 import BottomNavBar from "../navbar/BottomNav";
 
 const Main = ({ children, router }) => {
-	const [isMobile] = useMediaQuery("(max-width: 768px)");
+	// const [isMobile] = useMediaQuery("(max-width: 768px)");
 
 	return (
 		<Box as="main" pb={8}>
