@@ -20,7 +20,7 @@ const Main = ({ children, router }) => {
 			<Container maxW="98%" pt={14}>
 				{children}
 			</Container>
-			{isMobile ? <BottomNavBar /> : null}
+			{/* {isMobile ? <BottomNavBar /> : null} */}
 		</Box>
 	);
 };
