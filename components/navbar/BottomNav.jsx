@@ -20,13 +20,13 @@ const BottomNavBar = () => {
 			borderColor={useColorModeValue("#32d142", "#84248c")}
 			padding="10px"
 		>
-			<ScrollLink to="projects" smooth duration={2000}>
+			<ScrollLink to="footer" smooth duration={2000}>
 				<Box
 					fontWeight="semibold"
 					color={useColorModeValue("blue", "pink")}
 					flex={1}
 				>
-					Projects
+					Contact
 				</Box>
 			</ScrollLink>
 			<ScrollLink to="about" smooth duration={2000}>
@@ -39,13 +39,13 @@ const BottomNavBar = () => {
 					About
 				</Box>
 			</ScrollLink>
-			<ScrollLink to="footer" smooth duration={2000}>
+			<ScrollLink to="projects" smooth duration={2000}>
 				<Box
 					fontWeight="semibold"
 					color={useColorModeValue("blue", "pink")}
 					flex={1}
 				>
-					Contact
+					Projects
 				</Box>
 			</ScrollLink>
 			<ScrollLink to="header" smooth duration={2000}>
