@@ -4,14 +4,12 @@ import {
 	Heading,
 	SimpleGrid,
 	useColorModeValue,
-	useMediaQuery,
 } from "@chakra-ui/react";
 import PortfolioContext from "../../context/context";
 import NetworkLink from "../buttons/NetworkButton";
 import Button from "../buttons/ButtonLink";
 
 const Footer = () => {
-	const [isMobile] = useMediaQuery("(max-width: 768px)");
 	const {
 		footer: { networks },
 		contact: { email },
@@ -20,12 +18,7 @@ const Footer = () => {
 	const emailUrl = `mailto:${email}`;
 	return (
 		<section id="footer">
-			<Container
-				mb={isMobile ? "50px" : 0}
-				mt={20}
-				justify="center"
-				align="center"
-			>
+			<Container mt={20} justify="center" align="center">
 				<Button url={emailUrl} name="Email" />
 				<Heading
 					paddingTop={50}
