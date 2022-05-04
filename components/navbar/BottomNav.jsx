@@ -29,6 +29,9 @@ const BottomNavBar = () => {
 			<ScrollLink to="footer" smooth duration={2000}>
 				<Box flex={1}>Contact</Box>
 			</ScrollLink>
+			<ScrollLink to="header" smooth duration={2000}>
+				<Box flex={1}>Home</Box>
+			</ScrollLink>
 		</Flex>
 	);
 };
