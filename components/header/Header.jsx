@@ -35,8 +35,8 @@ const Header = () => {
 						>
 							<Text
 								bgGradient={useColorModeValue(
-									"linear(to-r, #1367d4, #32d142)",
-									"linear(to-l, #7928CA, #FF0080)"
+									"linear(to-r, blue, green)",
+									"linear(to-l, purple1, pink)"
 								)}
 								bgClip="text"
 								fontSize={{ base: "27px", md: "40px", lg: "75px" }}
