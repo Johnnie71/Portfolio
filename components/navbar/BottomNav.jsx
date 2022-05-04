@@ -31,6 +31,7 @@ const BottomNavBar = () => {
 			</ScrollLink>
 			<ScrollLink to="about" smooth duration={2000}>
 				<Box
+					// boxShadow="0px 8px 3px -8px white"
 					fontWeight="semibold"
 					color={useColorModeValue("blue", "pink")}
 					flex={1}
