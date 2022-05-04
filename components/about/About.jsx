@@ -31,7 +31,7 @@ const About = () => {
 				>
 					<Heading
 						paddingTop={50}
-						borderBottomColor={useColorModeValue("#32d142", "#84248c")}
+						borderBottomColor={useColorModeValue("green", "purple2")}
 						as="h3"
 						variant="section-title"
 					>
