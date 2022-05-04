@@ -17,7 +17,7 @@ const BottomNavBar = () => {
 			bottom={0}
 			borderWidth="2px"
 			borderRadius="50px"
-			borderColor={useColorModeValue("#32d142", "#84248c")}
+			borderColor={useColorModeValue("green", "purple2")}
 			padding="10px"
 		>
 			<ScrollLink to="footer" smooth duration={2000}>
