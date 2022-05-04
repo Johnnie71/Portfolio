@@ -21,16 +21,40 @@ const BottomNavBar = () => {
 			padding="10px"
 		>
 			<ScrollLink to="projects" smooth duration={2000}>
-				<Box flex={1}>Projects</Box>
+				<Box
+					fontWeight="semibold"
+					color={useColorModeValue("blue", "pink")}
+					flex={1}
+				>
+					Projects
+				</Box>
 			</ScrollLink>
 			<ScrollLink to="about" smooth duration={2000}>
-				<Box flex={1}>About</Box>
+				<Box
+					fontWeight="semibold"
+					color={useColorModeValue("blue", "pink")}
+					flex={1}
+				>
+					About
+				</Box>
 			</ScrollLink>
 			<ScrollLink to="footer" smooth duration={2000}>
-				<Box flex={1}>Contact</Box>
+				<Box
+					fontWeight="semibold"
+					color={useColorModeValue("blue", "pink")}
+					flex={1}
+				>
+					Contact
+				</Box>
 			</ScrollLink>
 			<ScrollLink to="header" smooth duration={2000}>
-				<Box flex={1}>Home</Box>
+				<Box
+					fontWeight="semibold"
+					color={useColorModeValue("blue", "pink")}
+					flex={1}
+				>
+					Home
+				</Box>
 			</ScrollLink>
 		</Flex>
 	);
