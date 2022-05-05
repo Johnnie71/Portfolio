@@ -4,8 +4,6 @@ import { useColorModeValue } from "@chakra-ui/react";
 const HomeButton = (props) => {
 	const bluePink = useColorModeValue("#1367d4", "#FF0080");
 	const greenPurple = useColorModeValue("#32d142", "#7928CA");
-	const lightBlueLightPink = useColorModeValue("#87c1f5", "#ff70b7");
-	const lightGreenLightPurple = useColorModeValue("#87f5be", "#b17de5");
 	return (
 		<Icon viewBox="0 3 56 56" {...props}>
 			<svg xmlns="http://www.w3.org/2000/svg">
