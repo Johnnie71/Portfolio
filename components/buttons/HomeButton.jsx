@@ -19,8 +19,8 @@ const HomeButton = (props) => {
 						gradientTransform="scale(.3721)"
 						gradientUnits="userSpaceOnUse"
 					>
-						<stop offset="0" stopColor={lightBlueLightPink}></stop>
-						<stop offset="1" stopColor={lightGreenLightPurple}></stop>
+						<stop offset="0" stopColor={bluePink}></stop>
+						<stop offset="1" stopColor={greenPurple}></stop>
 					</linearGradient>
 					<linearGradient
 						id="b"
