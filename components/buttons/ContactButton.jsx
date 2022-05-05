@@ -7,7 +7,7 @@ const ContactButton = (props) => {
 	const lightBlueLightPink = useColorModeValue("#87c1f5", "#ff70b7");
 	const lightGreenLightPurple = useColorModeValue("#87f5be", "#b17de5");
 	return (
-		<Icon viewBox="0 3 65 65" {...props}>
+		<Icon viewBox="0 2 67 67" {...props}>
 			<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64">
 				<defs>
 					<linearGradient
