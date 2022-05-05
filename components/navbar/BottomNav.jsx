@@ -47,7 +47,7 @@ const BottomNavBar = () => {
 					color={useColorModeValue("blue", "pink")}
 					flex={1}
 				>
-					<AboutButton w="40px" h="40px" />
+					<AboutButton w="45px" h="45px" />
 				</Box>
 			</ScrollLink>
 			<ScrollLink to="header" smooth duration={2000}>
@@ -56,7 +56,7 @@ const BottomNavBar = () => {
 					color={useColorModeValue("blue", "pink")}
 					flex={1}
 				>
-					<HomeButton w="40px" h="40px" />
+					<HomeButton w="45px" h="45px" />
 				</Box>
 			</ScrollLink>
 		</Flex>
