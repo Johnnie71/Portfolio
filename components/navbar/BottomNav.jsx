@@ -25,11 +25,7 @@ const BottomNavBar = () => {
 			padding="10px"
 		>
 			<ScrollLink to="footer" smooth duration={2000}>
-				<Box
-					fontWeight="semibold"
-					color={useColorModeValue("blue", "pink")}
-					flex={1}
-				>
+				<Box fontWeight="semibold" flex={1}>
 					<ContactButton w="40px" h="40px" />
 				</Box>
 			</ScrollLink>
