@@ -1,10 +1,14 @@
 import { useColorModeValue } from "@chakra-ui/react";
 import { Icon } from "@chakra-ui/icons";
 
-function AboutButton() {
+const AboutButton = (props) => {
+	const bluePink = useColorModeValue("#1367d4", "#FF0080");
+	const greenPurple = useColorModeValue("#32d142", "#7928CA");
+	const lightBlueLightPink = useColorModeValue("#87c1f5", "#ff70b7");
+	const lightGreenLightPurple = useColorModeValue("#87f5be", "#b17de5");
 	return (
-		<Icon>
-			<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64">
+		<Icon viewBox="0 4 57 57" {...props}>
+			<svg xmlns="http://www.w3.org/2000/svg">
 				<linearGradient
 					id="a"
 					x1="32"
@@ -14,8 +18,8 @@ function AboutButton() {
 					gradientUnits="userSpaceOnUse"
 					spreadMethod="reflect"
 				>
-					<stop offset="0" stopColor="#1a6dff"></stop>
-					<stop offset="1" stopColor="#c822ff"></stop>
+					<stop offset="0" stopColor={bluePink}></stop>
+					<stop offset="1" stopColor={greenPurple}></stop>
 				</linearGradient>
 				<path
 					fill="url(#a)"
@@ -30,8 +34,8 @@ function AboutButton() {
 					gradientUnits="userSpaceOnUse"
 					spreadMethod="reflect"
 				>
-					<stop offset="0" stopColor="#1a6dff"></stop>
-					<stop offset="1" stopColor="#c822ff"></stop>
+					<stop offset="0" stopColor={bluePink}></stop>
+					<stop offset="1" stopColor={greenPurple}></stop>
 				</linearGradient>
 				<path fill="url(#b)" d="M45 23a2 2 0 100 4 2 2 0 100-4z"></path>
 				<linearGradient
@@ -43,8 +47,8 @@ function AboutButton() {
 					gradientUnits="userSpaceOnUse"
 					spreadMethod="reflect"
 				>
-					<stop offset="0" stopColor="#1a6dff"></stop>
-					<stop offset="1" stopColor="#c822ff"></stop>
+					<stop offset="0" stopColor={bluePink}></stop>
+					<stop offset="1" stopColor={greenPurple}></stop>
 				</linearGradient>
 				<path fill="url(#c)" d="M24 26h6v2h-6z"></path>
 				<linearGradient
@@ -56,8 +60,8 @@ function AboutButton() {
 					gradientUnits="userSpaceOnUse"
 					spreadMethod="reflect"
 				>
-					<stop offset="0" stopColor="#1a6dff"></stop>
-					<stop offset="1" stopColor="#c822ff"></stop>
+					<stop offset="0" stopColor={bluePink}></stop>
+					<stop offset="1" stopColor={greenPurple}></stop>
 				</linearGradient>
 				<path fill="url(#d)" d="M24 30h10v2H24z"></path>
 				<linearGradient
@@ -69,8 +73,8 @@ function AboutButton() {
 					gradientUnits="userSpaceOnUse"
 					spreadMethod="reflect"
 				>
-					<stop offset="0" stopColor="#1a6dff"></stop>
-					<stop offset="1" stopColor="#c822ff"></stop>
+					<stop offset="0" stopColor={bluePink}></stop>
+					<stop offset="1" stopColor={greenPurple}></stop>
 				</linearGradient>
 				<path fill="url(#e)" d="M24 34h14v2H24z"></path>
 				<linearGradient
@@ -82,8 +86,8 @@ function AboutButton() {
 					gradientUnits="userSpaceOnUse"
 					spreadMethod="reflect"
 				>
-					<stop offset="0" stopColor="#1a6dff"></stop>
-					<stop offset="1" stopColor="#c822ff"></stop>
+					<stop offset="0" stopColor={bluePink}></stop>
+					<stop offset="1" stopColor={greenPurple}></stop>
 				</linearGradient>
 				<path fill="url(#f)" d="M12 38h34v2H12z"></path>
 				<linearGradient
@@ -95,8 +99,8 @@ function AboutButton() {
 					gradientUnits="userSpaceOnUse"
 					spreadMethod="reflect"
 				>
-					<stop offset="0" stopColor="#1a6dff"></stop>
-					<stop offset="1" stopColor="#c822ff"></stop>
+					<stop offset="0" stopColor={bluePink}></stop>
+					<stop offset="1" stopColor={greenPurple}></stop>
 				</linearGradient>
 				<path fill="url(#g)" d="M19 42h20v2H19z"></path>
 				<linearGradient
@@ -108,8 +112,8 @@ function AboutButton() {
 					gradientUnits="userSpaceOnUse"
 					spreadMethod="reflect"
 				>
-					<stop offset="0" stopColor="#1a6dff"></stop>
-					<stop offset="1" stopColor="#c822ff"></stop>
+					<stop offset="0" stopColor={bluePink}></stop>
+					<stop offset="1" stopColor={greenPurple}></stop>
 				</linearGradient>
 				<path
 					fill="url(#h)"
@@ -124,13 +128,13 @@ function AboutButton() {
 					gradientUnits="userSpaceOnUse"
 					spreadMethod="reflect"
 				>
-					<stop offset="0" stopColor="#6dc7ff"></stop>
-					<stop offset="1" stopColor="#e6abff"></stop>
+					<stop offset="0" stopColor={lightBlueLightPink}></stop>
+					<stop offset="1" stopColor={lightGreenLightPurple}></stop>
 				</linearGradient>
 				<path fill="url(#i)" d="M20 36h-8v-2a8 8 0 018-8v10z"></path>
 			</svg>
 		</Icon>
 	);
-}
+};
 
 export default AboutButton;
