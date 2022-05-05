@@ -6,7 +6,7 @@ const AboutButton = (props) => {
 	const greenPurple = useColorModeValue("#32d142", "#7928CA");
 
 	return (
-		<Icon viewBox="0 0 63 64" {...props}>
+		<Icon viewBox="0 0 62 65" {...props}>
 			<svg xmlns="http://www.w3.org/2000/svg">
 				<linearGradient
 					id="a"
@@ -17,8 +17,8 @@ const AboutButton = (props) => {
 					gradientUnits="userSpaceOnUse"
 					spreadMethod="reflect"
 				>
-					<stop offset="0" stopColor={greenPurple}></stop>
-					<stop offset="1" stopColor={bluePink}></stop>
+					<stop offset="0" stopColor={bluePink}></stop>
+					<stop offset="1" stopColor={greenPurple}></stop>
 				</linearGradient>
 				<path
 					fill="url(#a)"
@@ -33,8 +33,8 @@ const AboutButton = (props) => {
 					gradientUnits="userSpaceOnUse"
 					spreadMethod="reflect"
 				>
-					<stop offset="0" stopColor={greenPurple}></stop>
-					<stop offset="1" stopColor={bluePink}></stop>
+					<stop offset="0" stopColor={bluePink}></stop>
+					<stop offset="1" stopColor={greenPurple}></stop>
 				</linearGradient>
 				<path
 					fill="url(#b)"
