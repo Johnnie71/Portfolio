@@ -55,7 +55,7 @@ const BottomNavBar = () => {
 					color={useColorModeValue("blue", "pink")}
 					flex={1}
 				>
-					Home
+					<HomeButton w="40px" h="40px" />
 				</Box>
 			</ScrollLink>
 		</Flex>
