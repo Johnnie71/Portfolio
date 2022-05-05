@@ -1,6 +1,7 @@
 import { Box, Flex, useColorModeValue, Icon } from "@chakra-ui/react";
 import { Link as ScrollLink } from "react-scroll";
 import AboutButton from "../buttons/AboutButton";
+import ContactButton from "../buttons/ContactButton";
 import HomeButton from "../buttons/HomeButton";
 import ProjectButton from "../buttons/ProjectButton";
 
@@ -29,7 +30,7 @@ const BottomNavBar = () => {
 					color={useColorModeValue("blue", "pink")}
 					flex={1}
 				>
-					Contact
+					<ContactButton w="40px" h="40px" />
 				</Box>
 			</ScrollLink>
 			<ScrollLink to="projects" smooth duration={2000}>
