@@ -8,7 +8,7 @@ const ContactButton = (props) => {
 	const lightGreenLightPurple = useColorModeValue("#87f5be", "#b17de5");
 	return (
 		<Icon viewBox="0 4 57 57" {...props}>
-			<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64">
+			<svg xmlns="http://www.w3.org/2000/svg">
 				<linearGradient
 					id="a"
 					x1="19"
