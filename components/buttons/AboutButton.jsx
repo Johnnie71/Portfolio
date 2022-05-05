@@ -2,6 +2,9 @@ import { useColorModeValue } from "@chakra-ui/react";
 import { Icon } from "@chakra-ui/icons";
 
 const AboutButton = (props) => {
+	const bluePink = useColorModeValue("#1367d4", "#FF0080");
+	const greenPurple = useColorModeValue("#32d142", "#7928CA");
+
 	return (
 		<Icon viewBox="0 0 64 64" {...props}>
 			<svg xmlns="http://www.w3.org/2000/svg">
@@ -14,8 +17,8 @@ const AboutButton = (props) => {
 					gradientUnits="userSpaceOnUse"
 					spreadMethod="reflect"
 				>
-					<stop offset="0" stopColor="#6dc7ff"></stop>
-					<stop offset="1" stopColor="#e6abff"></stop>
+					<stop offset="0" stopColor={greenPurple}></stop>
+					<stop offset="1" stopColor={bluePink}></stop>
 				</linearGradient>
 				<path
 					fill="url(#a)"
@@ -30,8 +33,8 @@ const AboutButton = (props) => {
 					gradientUnits="userSpaceOnUse"
 					spreadMethod="reflect"
 				>
-					<stop offset="0" stopColor="#1a6dff"></stop>
-					<stop offset="1" stopColor="#c822ff"></stop>
+					<stop offset="0" stopColor={greenPurple}></stop>
+					<stop offset="1" stopColor={bluePink}></stop>
 				</linearGradient>
 				<path
 					fill="url(#b)"
