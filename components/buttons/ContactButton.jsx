@@ -18,8 +18,8 @@ const ContactButton = (props) => {
 					gradientUnits="userSpaceOnUse"
 					spreadMethod="reflect"
 				>
-					<stop offset="0" stopColor="#6dc7ff"></stop>
-					<stop offset="1" stopColor="#e6abff"></stop>
+					<stop offset="0" stopColor={bluePink}></stop>
+					<stop offset="1" stopColor={greenPurple}></stop>
 				</linearGradient>
 				<path
 					fill="url(#a)"
