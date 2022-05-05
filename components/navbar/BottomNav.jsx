@@ -26,7 +26,7 @@ const BottomNavBar = () => {
 		>
 			<ScrollLink to="footer" smooth duration={2000}>
 				<Box fontWeight="semibold" flex={1}>
-					<ContactButton w="40px" h="40px" />
+					<ContactButton w="45px" h="45px" />
 				</Box>
 			</ScrollLink>
 			<ScrollLink to="projects" smooth duration={2000}>
