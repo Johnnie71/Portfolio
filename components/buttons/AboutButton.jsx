@@ -6,7 +6,7 @@ const AboutButton = (props) => {
 	const greenPurple = useColorModeValue("#32d142", "#7928CA");
 
 	return (
-		<Icon viewBox="0 0 64 64" {...props}>
+		<Icon viewBox="0 0 63 64" {...props}>
 			<svg xmlns="http://www.w3.org/2000/svg">
 				<linearGradient
 					id="a"
