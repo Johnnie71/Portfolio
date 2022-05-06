@@ -11,11 +11,6 @@ import {
 	redux,
 } from "./techIcons";
 
-export const heroData = {
-	name: "Johnnie Gonzalez",
-	subtitle: "Welcome to my World!!!",
-};
-
 export const aboutData = {
 	img: "profile.jpg",
 	paragraphOne:
