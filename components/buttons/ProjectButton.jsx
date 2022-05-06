@@ -4,6 +4,8 @@ import { Icon } from "@chakra-ui/icons";
 const ProjectButton = (props) => {
 	const bluePink = useColorModeValue("#1367d4", "#FF0080");
 	const greenPurple = useColorModeValue("#32d142", "#7928CA");
+	const lightBlueLightPink = useColorModeValue("#87c1f5", "#ff70b7");
+	const lightGreenLightPurple = useColorModeValue("#87f5be", "#b17de5");
 
 	return (
 		<Icon viewBox="0 0 62 67" {...props}>
@@ -17,8 +19,8 @@ const ProjectButton = (props) => {
 					gradientUnits="userSpaceOnUse"
 					spreadMethod="reflect"
 				>
-					<stop offset="0" stopColor={bluePink}></stop>
-					<stop offset="1" stopColor={greenPurple}></stop>
+					<stop offset="0" stopColor={lightBlueLightPink}></stop>
+					<stop offset="1" stopColor={lightGreenLightPurple}></stop>
 				</linearGradient>
 				<path
 					fill="url(#a)"
