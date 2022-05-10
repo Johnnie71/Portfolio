@@ -4,7 +4,10 @@ import { Canvas } from "@react-three/fiber";
 const Earth = () => {
 	return (
 		<Canvas>
-			<mesh></mesh>
+			<mesh>
+				<circleBufferGeometry attach="geometry" args={[2, 200]} />
+				<meshStandardMaterial attach="material" />
+			</mesh>
 		</Canvas>
 	);
 };
