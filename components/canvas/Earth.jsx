@@ -3,6 +3,7 @@ import { Canvas, useFrame } from "@react-three/fiber";
 
 const Earth = () => {
 	const mesh = useRef(null);
+	useFrame(() => (mesh.current.rotation.x = mesh.current.rotation.y += 0.01));
 	return (
 		<Canvas>
 			<ambientLight intensity={0.1} />
