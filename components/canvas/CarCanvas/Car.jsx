@@ -8,7 +8,9 @@ const CarShow = () => {
 const CarCanvas = () => {
 	return (
 		<Suspense fallback={null}>
-			<Canvas shadows></Canvas>
+			<Canvas shadows>
+				<CarShow />
+			</Canvas>
 		</Suspense>
 	);
 };
