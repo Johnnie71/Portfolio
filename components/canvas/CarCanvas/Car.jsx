@@ -5,7 +5,7 @@ import { OrbitControls, PerspectiveCamera } from "@react-three/drei";
 const CarShow = () => {
 	return (
 		<>
-			<OrbitControls />
+			<OrbitControls target={[0, 0.35, 0]} maxPolarAngle={1.45} />
 			<PerspectiveCamera />
 		</>
 	);
