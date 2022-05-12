@@ -2,11 +2,12 @@ import React, { useRef } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 
 const Earth = () => {
+	const mesh = useRef(null);
 	return (
 		<Canvas>
 			<ambientLight intensity={0.1} />
 			<directionalLight color="red" position={[0, 0, 5]} />
-			<mesh>
+			<mesh ref={mesh}>
 				<sphereGeometry args={[1, 16, 16]} />
 				<meshStandardMaterial color="hotpink" transparent />
 			</mesh>

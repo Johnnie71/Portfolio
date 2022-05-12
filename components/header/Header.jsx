@@ -8,6 +8,7 @@ import {
 } from "@chakra-ui/react";
 import { Fade } from "react-reveal";
 import CanvasContainer from "../canvas/Canvas";
+import Earth from "../canvas/Earth";
 
 const Header = () => {
 	const [mobile] = useMediaQuery("(max-width: 768px)");
