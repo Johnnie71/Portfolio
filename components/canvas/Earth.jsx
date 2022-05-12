@@ -7,7 +7,7 @@ const Earth = () => {
 			<ambientLight intensity={0.1} />
 			<directionalLight color="red" position={[0, 0, 5]} />
 			<mesh>
-				<circleBufferGeometry attach="geometry" args={[2, 200]} />
+				<sphereGeometry args={[1, 16, 16]} />
 				<meshStandardMaterial attach="material" />
 			</mesh>
 		</Canvas>
