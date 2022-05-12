@@ -1,11 +1,12 @@
 import React, { Suspense } from "react";
 import { Canvas } from "@react-three/fiber";
-import { OrbitControls } from "@react-three/drei";
+import { OrbitControls, PerspectiveCamera } from "@react-three/drei";
 
 const CarShow = () => {
 	return (
 		<>
 			<OrbitControls />
+			<PerspectiveCamera />
 		</>
 	);
 };
