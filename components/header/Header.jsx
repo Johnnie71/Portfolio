@@ -17,9 +17,6 @@ const Header = () => {
 		<section id="header">
 			<CanvasContainer mobile={mobile} color={colorTheme} />
 			<Container
-				// borderStyle="solid"
-				// borderWidth="2px"
-				// borderColor="red"
 				height={!mobile ? "56vh" : "35vh"}
 				minHeight={mobile ? "57vh" : "35vh"}
 				maxWidth={mobile ? "auto" : "80%"}
