@@ -8,7 +8,7 @@ const Earth = () => {
 			<directionalLight color="red" position={[0, 0, 5]} />
 			<mesh>
 				<sphereGeometry args={[1, 16, 16]} />
-				<meshStandardMaterial attach="material" />
+				<meshStandardMaterial color="hotpink" transparent />
 			</mesh>
 		</Canvas>
 	);
