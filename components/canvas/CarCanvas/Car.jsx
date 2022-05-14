@@ -12,6 +12,7 @@ const CarShow = () => {
 				<meshBasicMaterial color={"red"} />
 			</mesh> */}
 			<color args={[0, 0, 0]} attach="background" />
+			<spotLight color={[1, 0.25, 0.7]} />
 		</>
 	);
 };
