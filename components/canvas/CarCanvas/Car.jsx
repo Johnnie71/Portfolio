@@ -11,6 +11,7 @@ const CarShow = () => {
 				<boxGeometry args={[1, 1, 1]} />
 				<meshBasicMaterial color={"red"} />
 			</mesh> */}
+			<color args={[0, 0, 0]} attach="background" />
 		</>
 	);
 };
