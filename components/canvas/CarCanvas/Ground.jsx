@@ -14,6 +14,7 @@ export function Ground() {
 				mixStrength={80}
 				mixContrast={1}
 				resolution={1024}
+				mirror={0}
 			/>
 		</mesh>
 	);
