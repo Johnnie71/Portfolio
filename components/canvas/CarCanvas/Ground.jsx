@@ -8,6 +8,7 @@ export function Ground() {
 				envMapIntensity={0}
 				dithering={true}
 				color={[0.015, 0.015, 0.015]}
+				roughness={0.7}
 			/>
 		</mesh>
 	);
