@@ -9,6 +9,7 @@ export function Ground() {
 				dithering={true}
 				color={[0.015, 0.015, 0.015]}
 				roughness={0.7}
+				blur={[1000, 400]}
 			/>
 		</mesh>
 	);
