@@ -15,6 +15,7 @@ export function Ground() {
 				mixContrast={1}
 				resolution={1024}
 				mirror={0}
+				depthScale={0.01}
 			/>
 		</mesh>
 	);
