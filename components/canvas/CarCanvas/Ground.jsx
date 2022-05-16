@@ -19,6 +19,7 @@ export function Ground() {
 				minDepthThreshold={0.9}
 				maxDepthThreshold={1}
 				depthToBlurRatioBias={0.25}
+				debug={0}
 			/>
 		</mesh>
 	);
