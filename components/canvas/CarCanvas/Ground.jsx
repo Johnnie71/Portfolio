@@ -17,6 +17,7 @@ export function Ground() {
 				mirror={0}
 				depthScale={0.01}
 				minDepthThreshold={0.9}
+				maxDepthThreshold={1}
 			/>
 		</mesh>
 	);
