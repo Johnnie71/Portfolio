@@ -10,6 +10,7 @@ export function Ground() {
 				color={[0.015, 0.015, 0.015]}
 				roughness={0.7}
 				blur={[1000, 400]}
+				mixBlur={30}
 			/>
 		</mesh>
 	);
