@@ -13,6 +13,7 @@ export function Ground() {
 				mixBlur={30}
 				mixStrength={80}
 				mixContrast={1}
+				resolution={1024}
 			/>
 		</mesh>
 	);
