@@ -12,6 +12,7 @@ export function Ground() {
 				blur={[1000, 400]}
 				mixBlur={30}
 				mixStrength={80}
+				mixContrast={1}
 			/>
 		</mesh>
 	);
