@@ -11,6 +11,7 @@ export function Ground() {
 				roughness={0.7}
 				blur={[1000, 400]}
 				mixBlur={30}
+				mixStrength={80}
 			/>
 		</mesh>
 	);
