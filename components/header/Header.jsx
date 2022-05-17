@@ -16,7 +16,6 @@ const Header = () => {
 
 	return (
 		<section id="header">
-			<CarCanvas />
 			<CanvasContainer mobile={mobile} color={colorTheme} />
 			<Container
 				height={!mobile ? "56vh" : "35vh"}
