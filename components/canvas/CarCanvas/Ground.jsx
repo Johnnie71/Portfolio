@@ -1,5 +1,6 @@
 import { MeshReflectorMaterial } from "@react-three/drei";
 import { useLoader } from "@react-three/fiber";
+import { TextureLoader } from "three";
 
 export function Ground() {
 	return (
