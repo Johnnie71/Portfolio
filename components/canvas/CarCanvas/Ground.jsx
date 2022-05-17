@@ -1,12 +1,12 @@
 import { MeshReflectorMaterial } from "@react-three/drei";
 import { useLoader } from "@react-three/fiber";
-import { useEffect } from "react";
-import { TextureLoader } from "three";
+import React, { useEffect } from "react";
+import { TextureLoader, RepeatWrapping, LinearEncoding } from "three";
 
 export function Ground() {
 	const [roughness, normal] = useLoader(TextureLoader, [
-		process.env.PUBLIC_URL + "textures/white_plaster_rough_02_rough_4k.jpg",
-		process.env.PUBLIC_URL + "textures/white_plaster_rough_02_nor_gl_4k.exr",
+		process.env.PUBLIC_URL + "/textures/white_plaster_rough_02_rough_4k.jpg",
+		process.env.PUBLIC_URL + "/textures/white_plaster_rough_02_nor_gl_4k.exr",
 	]);
 
 	useEffect(() => {
