@@ -24,6 +24,7 @@ export function Ground() {
 			<planeGeometry args={[30, 30]} />
 			<MeshReflectorMaterial
 				envMapIntensity={0}
+				normalMap={normal}
 				dithering={true}
 				color={[0.015, 0.015, 0.015]}
 				roughness={0.7}
