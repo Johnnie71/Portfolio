@@ -4,10 +4,8 @@ import { TextureLoader } from "three";
 
 export function Ground() {
 	const [roughness, normal] = useLoader(TextureLoader, [
-		process.env.PUBLIC_URL +
-			"public/textures/white_plaster_rough_02_rough_4k.jpg",
-		process.env.PUBLIC_URL +
-			"public/textures/white_plaster_rough_02_nor_gl_4k.exr",
+		process.env.PUBLIC_URL + "textures/white_plaster_rough_02_rough_4k.jpg",
+		process.env.PUBLIC_URL + "textures/white_plaster_rough_02_nor_gl_4k.exr",
 	]);
 	return (
 		<mesh rotation-x={-Math.PI * 0.5} castShadow receiveShadow>
