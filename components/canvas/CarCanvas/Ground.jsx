@@ -26,6 +26,7 @@ export function Ground() {
 				envMapIntensity={0}
 				normalMap={normal}
 				normalScale={[0.15, 0.15]}
+				roughnessMap={roughness}
 				dithering={true}
 				color={[0.015, 0.015, 0.015]}
 				roughness={0.7}
