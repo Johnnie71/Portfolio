@@ -1,5 +1,6 @@
 import { MeshReflectorMaterial } from "@react-three/drei";
 import { useLoader } from "@react-three/fiber";
+import { useEffect } from "react";
 import { TextureLoader } from "three";
 
 export function Ground() {
@@ -7,6 +8,17 @@ export function Ground() {
 		process.env.PUBLIC_URL + "textures/white_plaster_rough_02_rough_4k.jpg",
 		process.env.PUBLIC_URL + "textures/white_plaster_rough_02_nor_gl_4k.exr",
 	]);
+
+	useEffect(() => {
+		[normal, roughness].forEach((t) => {
+			t.wrapS = RepeatWrapping;
+			t.wrapT = RepeatWrapping;
+			t.repeat.set(5, 5);
+		});
+
+		normal.encoding = LinearEncoding;
+	}, [normal, roughness]);
+
 	return (
 		<mesh rotation-x={-Math.PI * 0.5} castShadow receiveShadow>
 			<planeGeometry args={[30, 30]} />
