@@ -12,6 +12,10 @@ import CanvasContainer from "../canvas/Canvas";
 const Header = () => {
 	const [mobile] = useMediaQuery("(max-width: 768px)");
 	const colorTheme = useColorModeValue("#1367d4", "#8352fd");
+	const gradientColor = useColorModeValue(
+		"linear(to-r, #1367d4, #32d142)",
+		"linear(to-l, #7928CA, #FF0080)"
+	);
 
 	return (
 		<section id="header">
