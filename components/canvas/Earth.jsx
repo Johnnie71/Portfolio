@@ -15,7 +15,11 @@ const Earth = () => {
 };
 
 const EarthCanvas = () => {
-	return <Canvas></Canvas>;
+	return (
+		<Canvas>
+			<Earth />
+		</Canvas>
+	);
 };
 
 export default EarthCanvas;
