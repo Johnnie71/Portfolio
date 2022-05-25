@@ -5,14 +5,14 @@ const Earth = () => {
 	const mesh = useRef(null);
 	useFrame(() => (mesh.current.rotation.x = mesh.current.rotation.y += 0.01));
 	return (
-		<Canvas>
+		<>
 			<ambientLight intensity={0.1} />
 			<directionalLight color="red" position={[0, 0, 5]} />
 			<mesh ref={mesh}>
 				<sphereGeometry args={[1, 16, 16]} />
-				<meshStandardMaterial color="hotpink" transparent />
+				<meshPhysicalMaterial color="hotpink" transparent />
 			</mesh>
-		</Canvas>
+		</>
 	);
 };
 
