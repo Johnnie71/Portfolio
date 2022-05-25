@@ -1,19 +1,21 @@
-import React, { useRef } from "react";
-import { Canvas, useFrame } from "@react-three/fiber";
+import { Canvas } from "@react-three/fiber";
 
 const Earth = () => {
-	const mesh = useRef(null);
-	useFrame(() => (mesh.current.rotation.x = mesh.current.rotation.y += 0.01));
 	return (
-		<>
-			<ambientLight intensity={0.1} />
-			<directionalLight color="red" position={[0, 0, 5]} />
-			<mesh ref={mesh}>
-				<sphereGeometry args={[1, 16, 16]} />
-				<meshPhysicalMaterial color="hotpink" transparent />
-			</mesh>
-		</>
+		<mesh visible position={[0, 0, 0]} rotation={[0, 0, 0]} castShadow>
+			<sphereGeometry attach="geometry" args={[2, 32, 32]} />
+			<meshBasciMaterial
+				attach="material"
+				color="white"
+				roughness={0.1}
+				metalness={1}
+			/>
+		</mesh>
 	);
 };
 
-export default Earth;
+const EarthCanvas = () => {
+	return <Canvas></Canvas>;
+};
+
+export default EarthCanvas;
