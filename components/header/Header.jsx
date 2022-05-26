@@ -8,6 +8,7 @@ import {
 } from "@chakra-ui/react";
 import { Fade } from "react-reveal";
 import CanvasContainer from "../canvas/Canvas";
+import WorldCanvas from "../canvas/WorldCanvas";
 
 const Header = () => {
 	const [mobile] = useMediaQuery("(max-width: 768px)");
@@ -15,6 +16,7 @@ const Header = () => {
 
 	return (
 		<section id="header">
+			<WorldCanvas />
 			<CanvasContainer mobile={mobile} color={colorTheme} />
 			<Container
 				height={!mobile ? "56vh" : "35vh"}
