@@ -34,9 +34,8 @@ const AnimatedSphere = ({ color }) => {
 	return (
 		<mesh
 			ref={mesh}
-			rotation={[0, 0, 0]}
+			position={[0, 0, 0]}
 			visible
-			// args={[1, 200, 300]}
 			scale={1.8}
 			onPointerOver={() => (hover.current = true)}
 			onPointerOut={() => (hover.current = false)}
@@ -47,15 +46,7 @@ const AnimatedSphere = ({ color }) => {
 				vertexShader={vertexShader}
 				uniforms={uniforms}
 				wireframe={false}
-				roughness={0}
 			/>
-			{/* <MeshDistortMaterial
-				color={color}
-				attach="material"
-				distort={0.6}
-				speed={5}
-				roughness={0}
-			/> */}
 		</mesh>
 	);
 };
