@@ -1,4 +1,4 @@
-import type { Config } from "tailwindcss";
+import type { Config } from 'tailwindcss';
 
 const config: Config = {
   content: [
@@ -12,10 +12,18 @@ const config: Config = {
       padding: {
         DEFAULT: '1rem',
         md: '1.5rem',
-        lg: '2rem'
+        lg: '2rem',
+        xl: '2.5rem',
+      }
+    },
+    extend: {
+      colors: {
+        bkg: 'var(--color-background)',
+        onBkg: 'var(--color-on-background)',
       }
     }
   },
+  darkMode: ['class'],
   plugins: [],
 };
 export default config;

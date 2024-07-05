@@ -1,8 +1,12 @@
+import Header from "./components/header/Header"
+import TopNav from "./components/NavBar/TopNav"
+
 const Home = () => {
   return (
-    <section className="py-24">
+    <section className="">
       <div className="container">
-        <h1 className="txt-2xl font-bold">Next TS Starter</h1>
+        <TopNav />
+        {/* <Header /> */}
       </div>
     </section>
   
