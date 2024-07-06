@@ -20,6 +20,8 @@ const config: Config = {
       colors: {
         bkg: 'var(--color-background)',
         onBkg: 'var(--color-on-background)',
+        primary: 'var(--color-primary)',
+        secondary: 'var(--color-secondary)'
       }
     }
   },

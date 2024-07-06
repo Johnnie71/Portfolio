@@ -5,7 +5,7 @@ const Home = () => {
   return (
     <div className="flex justify-center">
       <TopNav />
-      {/* <Header /> */}
+      <Header />
     </div>
   )
 }
