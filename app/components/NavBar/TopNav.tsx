@@ -6,11 +6,11 @@ import ThemeSwitcher from '../Theme/ThemeSwitcher'
 const TopNav = () => {
 
   const handleScrollTo = (id: string) => {
-    document.getElementById(id)?.scrollIntoView({behavior: 'smooth'})
+    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
   }
   
   return (
-    <div className="container flex justify-center items-center fixed bg-white bg-opacity-40 dark:bg-[#20202380] backdrop-blur-md z-10 border-2 border-red-500">
+    <div className="container flex justify-center items-center fixed backdrop-blur-[5px] z-10 border-2 border-red-500 text-onBkg">
       <div className="container mx-auto flex justify-between items-center p-2">
         <div className="flex items-center">
           <div
@@ -38,7 +38,7 @@ const TopNav = () => {
               <button className="p-2">
                 <span className="icon-hamburger">☰</span>
               </button>
-              <div className="absolute right-0 mt-2 w-48 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded shadow-lg">
+              <div className="absolute mt-2 w-48 rounded shadow-lg">
                 <div className="p-2" onClick={() => handleScrollTo('about')}>About</div>
                 <div className="p-2" onClick={() => handleScrollTo('projects')}>Projects</div>
                 <div className="p-2" onClick={() => handleScrollTo('footer')}>Contact</div>

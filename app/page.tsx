@@ -3,13 +3,10 @@ import TopNav from "./components/NavBar/TopNav"
 
 const Home = () => {
   return (
-    <section className="">
-      <div className="container">
-        <TopNav />
-        {/* <Header /> */}
-      </div>
-    </section>
-  
+    <div className="flex justify-center">
+      <TopNav />
+      {/* <Header /> */}
+    </div>
   )
 }
 
