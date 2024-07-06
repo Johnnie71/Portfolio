@@ -23,6 +23,8 @@ const AnimatedSphere: React.FC = () => {
 	useFrame((state) => {
 		const { clock } = state;
 		if (mesh.current) {
+			mesh.current.rotation.y += 0.01;
+			mesh.current.rotation.x += 0.01
       const material = mesh.current.material as ShaderMaterial;
       material.uniforms.u_time.value = 0.4 * clock.getElapsedTime();
 
