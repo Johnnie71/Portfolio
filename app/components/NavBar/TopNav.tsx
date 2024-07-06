@@ -1,16 +1,45 @@
 'use client'
 
-import React from 'react'
+import React, { useState } from 'react'
 import ThemeSwitcher from '../Theme/ThemeSwitcher'
+import { motion } from 'framer-motion'
+import StaggeredDropDown from '../menus/DropDown'
 
 const TopNav = () => {
+  const [open, setOpen] = useState(false)
 
   const handleScrollTo = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
   }
+
+  const handleMenu = () => {
+    setOpen(!open)
+  }
+
+  const subMenuAnimate = {
+    enter: {
+      opacity: 1,
+      rotateX: 0,
+      transition: {
+        duration: 0.5
+      },
+      display: "block"
+    },
+    exit: {
+      opacity: 0,
+      rotateX: -15,
+      transition: {
+        duration: 0.5,
+        delay: 0.3
+      },
+      transitionEnd: {
+        display: "none"
+      }
+    }
+  };
   
   return (
-    <div className="container flex justify-center items-center fixed backdrop-blur-[5px] z-10 border-2 border-red-500 text-onBkg">
+    <div className="container flex justify-center items-center fixed backdrop-blur-[5px] z-10">
       <div className="container mx-auto flex justify-between items-center p-2">
         <div className="flex items-center">
           <div
@@ -33,22 +62,11 @@ const TopNav = () => {
         </div>
         <div className="flex items-center">
           <ThemeSwitcher />
-          <div className="ml-2 md:hidden">
-            <div className="relative">
-              <button className="p-2">
-                <span className="icon-hamburger">☰</span>
-              </button>
-              <div className="absolute mt-2 w-48 rounded shadow-lg">
-                <div className="p-2" onClick={() => handleScrollTo('about')}>About</div>
-                <div className="p-2" onClick={() => handleScrollTo('projects')}>Projects</div>
-                <div className="p-2" onClick={() => handleScrollTo('footer')}>Contact</div>
-              </div>
-            </div>
-          </div>
+          <StaggeredDropDown />
         </div>
       </div>
     </div>
   );
 }
 
-export default TopNav
+export default TopNav;
