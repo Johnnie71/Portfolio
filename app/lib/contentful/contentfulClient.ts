@@ -13,7 +13,8 @@ const client = createClient({
 // to fetch drafts and unpublished content.
 const previewClient = createClient({
   space: CONTENTFUL_SPACE_ID as string,
-  accessToken: CONTENTFUL_PREVIEW_ACCESS_TOKEN as string
+  accessToken: CONTENTFUL_PREVIEW_ACCESS_TOKEN as string,
+  host: 'preview.contentful.com'
 })
 
 // This little helper will let us switch between the two
