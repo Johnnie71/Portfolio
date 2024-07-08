@@ -6,17 +6,14 @@ import type {
   LocaleCode
 } from 'contentful'
 
-export interface TypePortfolioFields {
+export interface TypeHeroFields {
   name: EntryFieldTypes.Symbol
   welcomeMessage: EntryFieldTypes.Symbol
   avatar: EntryFieldTypes.AssetLink
 }
 
-export type TypePortfolioSkeleton = EntrySkeletonType<
-  TypePortfolioFields,
-  'portfolio'
->
-export type TypePortfolio<
+export type TypeHeroSkeleton = EntrySkeletonType<TypeHeroFields, 'hero'>
+export type TypeHero<
   Modifiers extends ChainModifiers,
   Locales extends LocaleCode = LocaleCode
-> = Entry<TypePortfolioSkeleton, Modifiers, Locales>
+> = Entry<TypeHeroSkeleton, Modifiers, Locales>

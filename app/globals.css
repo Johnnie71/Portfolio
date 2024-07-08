@@ -30,22 +30,3 @@ body {
   line-height: 1.5;
   color: var(--color-on-background)
 }
-
-/* Responsive text sizes */
-@media (min-width: 640px) {
-  html {
-    font-size: 18px; /* Adjust font size for small screens and up */
-  }
-}
-
-@media (min-width: 768px) {
-  html {
-    font-size: 20px; /* Adjust font size for medium screens and up */
-  }
-}
-
-@media (min-width: 1024px) {
-  html {
-    font-size: 22px; /* Adjust font size for large screens and up */
-  }
-}

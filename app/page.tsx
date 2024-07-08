@@ -1,11 +1,14 @@
-import Header from "./components/header/Header"
+import Hero from "./components/hero/Hero"
 import TopNav from "./components/NavBar/TopNav"
+import { fetchAllEntries } from "./lib/contentful/contentfulClient"
 
-const Home = () => {
+const Home = async () => {
+  const { heroData } = await fetchAllEntries()
+
   return (
     <div className="flex justify-center">
       <TopNav />
-      <Header />
+      <Hero data={heroData} />
     </div>
   )
 }

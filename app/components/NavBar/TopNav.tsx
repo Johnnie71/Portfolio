@@ -12,12 +12,12 @@ const TopNav = () => {
   }
   
   return (
-    <div className="container flex justify-center items-center fixed backdrop-blur-[5px] z-10">
+    <div className="container flex justify-center items-center fixed backdrop-blur-[5px] z-10 text-lg md:text-xl lg:text-2xlS">
       <div className="container mx-auto flex justify-between items-center p-2">
         <div className="flex items-center">
           <div
             onClick={() => handleScrollTo('header')}
-            className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary cursor-pointer"
+            className="font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary cursor-pointer"
           >
             JG
           </div>

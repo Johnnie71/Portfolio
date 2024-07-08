@@ -1,0 +1,70 @@
+'use client'
+import { motion } from 'framer-motion';
+import CanvasContainer from '../ThreeJs/Canvas'
+
+interface HeroProps {
+  data: {
+    name: string;
+    welcomeMessage: string;
+    avatar: { src: string };
+  } | null;
+}
+
+const Hero: React.FC<HeroProps> = ({data}) => {
+
+  if (!data) {
+    return (
+      <section id='hero' className='border-2 border-red-600 h-[90vh] mt-20 w-full'>
+        <CanvasContainer />
+        <h1>No hero data found</h1>
+      </section>
+    );
+  }
+
+  const {name, welcomeMessage, avatar} = data
+
+  return (
+    <section id="hero" className="relative h-[90vh] mt-20 w-full flex flex-col justify-center items-center">
+      <CanvasContainer />
+      <div className="container w-auto md:w-[80%] flex flex-col md:flex-row">
+        <motion.div
+          className="flex flex-col md:justify-center md:items-start md:flex-grow"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, delay: 0.5 }}
+        >
+          <motion.h1
+            className="bg-clip-text text-transparent text-center bg-gradient-to-r from-primary to-secondary text-4xl md:text-5xl lg:text-8xl font-extrabold w-full"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.5 }}
+          >
+            {name}
+          </motion.h1>
+          <motion.p
+            className="text-xl md:text-2xl lg:text-5xl mt-6 font-extrabold text-center w-full"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.9 }}
+          >
+            {welcomeMessage}
+          </motion.p>
+        </motion.div>
+        <motion.div
+          className="mt-4 md:mt-0 h-content flex-shrink-0 flex flex-col md:flex-row items-center md:items-start justify-center md:justify-start"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, delay: 0.5 }}
+        >
+          <img
+            className="border-4 border-primary rounded-full w-28 md:w-32 lg:w-48"
+            src={avatar.src}
+            alt="Profile Image"
+          />
+        </motion.div>
+      </div>
+    </section>
+  );
+}
+
+export default Hero

@@ -1,4 +1,5 @@
 import { createClient } from 'contentful'
+import { Hero, parseConentfulHero } from './hero'
 
 const { CONTENTFUL_SPACE_ID, CONTENTFUL_ACCESS_TOKEN, CONTENTFUL_PREVIEW_ACCESS_TOKEN } = process.env
 
@@ -19,12 +20,21 @@ const previewClient = createClient({
 
 // This little helper will let us switch between the two
 // clients easily:
-export default function contentfulClient({ preview = false }) {
-
-	if (preview) {
-		return previewClient
-	}
-
-	return client
+export const contentfulClient = ({preview = false}) => {
+  if (preview) {
+    return previewClient
+  }
+  return client
 }
 
+// Fetch all entries from the contenful space
+export const fetchAllEntries = async (preview: boolean = false): Promise<{
+  heroData: Hero | null,
+}> => {
+  const client = contentfulClient({ preview })
+  const response = await client.getEntries()
+
+  const heroData = parseConentfulHero(response.items)
+  
+  return { heroData }
+}

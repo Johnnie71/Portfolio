@@ -91,7 +91,7 @@ const StaggeredDropDown: React.FC = () => {
           initial={wrapperVariants.closed}
           variants={wrapperVariants}
           style={{ originY: 'top', translateX: '-50%' }}
-          className='flex flex-col gap-2 p-2 rounded-lg bg-white text-black shadow-xl absolute w-fit mr-10'
+          className='flex flex-col gap-2 p-2 rounded-lg bg-white text-black text-sm shadow-xl absolute w-fit mr-10'
         >
           <Option scrollTo='about' Icon={MdOutlineAccountBox} text="About" />
           <Option scrollTo='projects' Icon={MdOutlineCode} text="Projects" />

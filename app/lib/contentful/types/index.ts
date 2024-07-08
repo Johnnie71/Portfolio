@@ -1,5 +1,2 @@
-export type {
-  TypePortfolio,
-  TypePortfolioFields,
-  TypePortfolioSkeleton
-} from './TypePortfolio'
+export type { TypeAbout, TypeAboutFields, TypeAboutSkeleton } from './TypeAbout'
+export type { TypeHero, TypeHeroFields, TypeHeroSkeleton } from './TypeHero'
