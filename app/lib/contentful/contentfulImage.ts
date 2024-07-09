@@ -9,7 +9,7 @@ export interface ContentImage {
 
 export const parseConentfulContentImage = (asset?: Asset<undefined, string> | { sys: AssetLink }): ContentImage | null => {
   if (!asset || !('fields' in asset)) return null;
-
+  
   return {
     src: asset.fields.file?.url || '',
     alt: asset.fields.description || '',

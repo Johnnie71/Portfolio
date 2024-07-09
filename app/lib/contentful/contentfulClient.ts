@@ -1,6 +1,7 @@
 import { createClient } from 'contentful'
 import { Hero, parseConentfulHero } from './hero'
 import { About, parseConentfulAbout } from './about'
+import { Project, parseContentfulProjects } from './projects'
 
 const { CONTENTFUL_SPACE_ID, CONTENTFUL_ACCESS_TOKEN, CONTENTFUL_PREVIEW_ACCESS_TOKEN } = process.env
 
@@ -31,13 +32,15 @@ export const contentfulClient = ({preview = false}) => {
 // Fetch all entries from the contenful space
 export const fetchAllEntries = async (preview: boolean = false): Promise<{
   heroData: Hero | null,
-  aboutData: About | null
+  aboutData: About | null,
+  projectsData: Project[] | null
 }> => {
   const client = contentfulClient({ preview })
   const response = await client.getEntries()
 
   const heroData = parseConentfulHero(response.items)
   const aboutData = parseConentfulAbout(response.items)
-  
-  return { heroData, aboutData }
+  const projectsData = parseContentfulProjects(response.items)
+
+  return { heroData, aboutData, projectsData}
 }
