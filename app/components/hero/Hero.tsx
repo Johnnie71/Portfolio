@@ -14,7 +14,7 @@ const Hero: React.FC<HeroProps> = ({data}) => {
 
   if (!data) {
     return (
-      <section id='hero' className='border-2 border-red-600 h-[90vh] mt-20 w-full'>
+      <section id='hero' className='h-[90vh] w-full flex flex-col justify-center items-center'>
         <CanvasContainer />
         <h1>No hero data found</h1>
       </section>
