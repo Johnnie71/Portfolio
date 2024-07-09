@@ -6,7 +6,7 @@ const Home = async () => {
   const { heroData } = await fetchAllEntries()
 
   return (
-    <div className="flex justify-center">
+    <div className="flex justify-center font-kodeMono">
       <TopNav />
       <Hero data={heroData} />
     </div>

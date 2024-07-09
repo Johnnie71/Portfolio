@@ -1,9 +1,14 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import { Inter, Kode_Mono } from 'next/font/google';
 import ThemeProvider from '@/app/components/Theme/ThemeProvider'
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
+const kodeMono = Kode_Mono({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-kode-mono'
+})
 
 export const metadata: Metadata = {
   title: "Johnnie G Portfolio",
@@ -17,8 +22,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${inter.className} bg-bkg antialiased`}>
+    <html lang="en" className={`${inter.className} ${kodeMono.variable} bg-bkg antialiased`}>
+      <body>
         <ThemeProvider>
           <main>
             {children}

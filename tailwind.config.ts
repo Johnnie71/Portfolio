@@ -22,6 +22,9 @@ const config: Config = {
         onBkg: 'var(--color-on-background)',
         primary: 'var(--color-primary)',
         secondary: 'var(--color-secondary)'
+      },
+      fontFamily: {
+        kodeMono: ["var(--font-kode-mono)"]
       }
     }
   },
