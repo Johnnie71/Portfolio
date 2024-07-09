@@ -33,8 +33,8 @@ const TopNav = () => {
             Contact
           </div>
         </div>
-        <div className="flex items-center">
-          <ThemeSwitcher />
+        <div className="flex items-center md:hidden">
+          {/* <ThemeSwitcher /> */}
           <StaggeredDropDown />
         </div>
       </div>

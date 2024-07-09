@@ -24,7 +24,7 @@ const Hero: React.FC<HeroProps> = ({data}) => {
   const {name, welcomeMessage, avatar} = data
 
   return (
-    <section id="hero" className="relative h-[90vh] mt-20 w-full flex flex-col justify-center items-center">
+    <section id="hero" className="relative h-[90vh] w-full flex flex-col justify-center items-center">
       <CanvasContainer />
       <div className="container w-auto md:w-[80%] flex flex-col md:flex-row">
         <motion.div
@@ -34,7 +34,7 @@ const Hero: React.FC<HeroProps> = ({data}) => {
           transition={{ duration: 1, delay: 0.5 }}
         >
           <motion.h1
-            className="bg-clip-text text-transparent text-center bg-gradient-to-r from-primary to-secondary text-4xl md:text-5xl lg:text-8xl font-extrabold w-full"
+            className="bg-clip-text text-transparent text-center bg-gradient-to-r from-primary to-secondary text-3xl md:text-4xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-extrabold w-full"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.5 }}
