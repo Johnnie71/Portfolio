@@ -1,13 +1,10 @@
 'use client'
 import { motion } from 'framer-motion';
 import CanvasContainer from '../ThreeJs/Canvas'
+import { Hero as HeroType } from '@/app/lib/contentful/hero';
 
 interface HeroProps {
-  data: {
-    name: string;
-    welcomeMessage: string;
-    avatar: { src: string };
-  } | null;
+  data: HeroType | null;
 }
 
 const Hero: React.FC<HeroProps> = ({data}) => {

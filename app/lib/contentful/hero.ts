@@ -1,7 +1,7 @@
 import { TypeHeroSkeleton } from "./types";
 import { Entry, EntrySkeletonType } from "contentful";
 import { contentfulClient } from "./contentfulClient";
-import { ContentImage, parseConentfulContentImage } from "./contentImage";
+import { ContentImage, parseConentfulContentImage } from "./contentfulImage";
 
 type HeroEntry = Entry<TypeHeroSkeleton, undefined, string>
 
