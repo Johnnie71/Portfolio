@@ -8,6 +8,7 @@ import type {
 
 export interface TypeAboutFields {
   about?: EntryFieldTypes.Text
+  resume: EntryFieldTypes.AssetLink
 }
 
 export type TypeAboutSkeleton = EntrySkeletonType<TypeAboutFields, 'about'>
