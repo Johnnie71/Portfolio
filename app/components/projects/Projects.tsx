@@ -38,7 +38,7 @@ const Projects: React.FC<Props> = ({ projects }) => {
                 whileInView={{opacity: 1, y: 0}}
                 transition={{ duration: 1, delay: 1 }}
               >
-                <h3 className="border-b-2 border-secondary text-primary mb-4 w-[90%] text-center">{title}</h3>
+                <h3 className="border-b-2 border-secondary text-primary mb-4 w-[90%] text-center text-2xl font-semibold">{title}</h3>
                 <p className="text-center mb-4">{info}</p>
                 <img 
                   className="w-full max-w-sm md:max-w-lg lg:max-w-xl object-cover mb-4" 
@@ -69,7 +69,7 @@ const Projects: React.FC<Props> = ({ projects }) => {
                 transition={{ duration: 1, delay: 1 }}
               >
                 <div className="grid grid-cols-2 grid-rows-5 gap-4 max-w-5xl">
-                  <h3 className="border-b-2 border-secondary text-primary text-2xl">{title}</h3>
+                  <h3 className="border-b-2 border-secondary text-primary text-3xl font-semibold">{title}</h3>
                   <p className="row-span-2 col-start-1 row-start-2">{info}</p>
                   <div id={`${idx}`} className="flex justify-around w-full col-start-1 row-start-4">
                     {techStack.map((tech, index) => {
