@@ -1,4 +1,5 @@
 'use client'
+import React, {} from 'react';
 import { motion } from "framer-motion";
 import { About as AboutType } from '@/app/lib/contentful/about';
 
@@ -22,15 +23,16 @@ const About: React.FC<Props> = ({data}) => {
     <section id="about" className="flex flex-col items-center py-24">
       <motion.div
         initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, delay: 1 }}
         className="text-center mb-8"
+        whileInView={{opacity: 1, y: 0}}
       >
         <h3 className="text-3xl font-bold border-b-2 border-primary pb-2">About</h3>
       </motion.div>
       <motion.div
         initial={{ opacity: 0, x: -30 }}
-        animate={{ opacity: 1, x: 0 }}
+        // animate={{ opacity: 1, x: 0 }}
+        whileInView={{ opacity: 1, x:0}}
         transition={{ duration: 1, delay: 1 }}
         className="sm:text-lg md:text-xl mb-6 text-center max-w-4xl"
       >
