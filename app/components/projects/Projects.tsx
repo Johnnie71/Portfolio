@@ -54,9 +54,12 @@ const Projects: React.FC<Props> = ({ projects }) => {
                   })}
                 </div>
                 <div className="flex justify-around items-center w-full">
-                  <button className="flex gap-3 cursor-pointer text-black font-semibold bg-gradient-to-r from-primary to-secondary px-7 py-3 rounded-full border border-red-600">
+                  {url && (
+                    <button className="flex gap-3 cursor-pointer text-black font-semibold bg-gradient-to-r from-primary to-secondary px-7 py-3 rounded-full border border-red-600">
                       <a href={url} title="Demo Video">Demo Video</a>
-                  </button>
+                    </button>
+                  )
+                  }
                   <button className="flex gap-3 cursor-pointer text-black font-semibold bg-gradient-to-r from-primary to-secondary px-7 py-3 rounded-full border border-red-600">
                     <a href={repo} title="Repo">Source Code</a>
                   </button>
@@ -85,9 +88,12 @@ const Projects: React.FC<Props> = ({ projects }) => {
                     alt={picture.alt || 'project preview'} 
                   />
                   <div className="flex justify-around items-center w-full col-start-1 row-start-5">
-                    <button className="flex gap-3 cursor-pointer text-black font-semibold bg-gradient-to-r from-primary to-secondary px-7 py-3 rounded-full border border-red-600 hover:scale-105 duration-200 hover:border-gray-800 hover:from-secondary hover:to-primary">
+                    {url && (
+                      <button className="flex gap-3 cursor-pointer text-black font-semibold bg-gradient-to-r from-primary to-secondary px-7 py-3 rounded-full border border-red-600">
                         <a href={url} title="Demo Video">Demo Video</a>
-                    </button>
+                      </button>
+                    )
+                    }
                     <button className="flex gap-3 cursor-pointer text-black font-semibold bg-gradient-to-r from-primary to-secondary px-7 py-3 rounded-full border border-red-600 hover:scale-105 duration-200 transition-colors hover:border-gray-800 hover:from-secondary hover:to-primary">
                       <a href={repo} title="Repo">Source Code</a>
                     </button>
