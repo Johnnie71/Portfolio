@@ -21,7 +21,7 @@ const Projects: React.FC<Props> = ({ projects }) => {
     <section id='projects' className="py-16">
       <motion.div
         initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
+        whileInView={{opacity: 1, y: 0}}
         transition={{ duration: 1, delay: 1 }}
         className="text-center mb-8"
       >
@@ -34,6 +34,9 @@ const Projects: React.FC<Props> = ({ projects }) => {
             <React.Fragment key={idx}>
               <motion.div
                 className="md:hidden grid sm:grid-cols-1 md:grid-cols-2 mb-10 w-full max-w-screen-lg place-items-center"
+                initial={{ opacity: 0, y: 30}}
+                whileInView={{opacity: 1, y: 0}}
+                transition={{ duration: 1, delay: 1 }}
               >
                 <h3 className="border-b-2 border-secondary text-primary mb-4 w-[90%] text-center">{title}</h3>
                 <p className="text-center mb-4">{info}</p>
@@ -61,6 +64,9 @@ const Projects: React.FC<Props> = ({ projects }) => {
               </motion.div>
               <motion.div
                 className="hidden md:block mb-10"
+                initial={{ opacity: 0, y: 30}}
+                whileInView={{opacity: 1, y: 0}}
+                transition={{ duration: 1, delay: 1 }}
               >
                 <div className="grid grid-cols-2 grid-rows-5 gap-4 max-w-5xl">
                   <h3 className="border-b-2 border-secondary text-primary text-2xl">{title}</h3>
