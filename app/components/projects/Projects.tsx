@@ -27,7 +27,7 @@ const Projects: React.FC<Props> = ({ projects }) => {
       >
         <h3 className="text-3xl font-bold border-b-2 border-primary pb-2 inline-block">Projects</h3>
       </motion.div>
-      <div className="flex flex-col justify-center items-center">
+      <div className="flex flex-col justify-center items-center w-full">
         {projects.map((project, idx) => {
           const { title, info, techStack, url, repo, picture } = project;
           return (
@@ -55,7 +55,7 @@ const Projects: React.FC<Props> = ({ projects }) => {
                 </div>
                 <div className="flex justify-around items-center w-full">
                   {url && (
-                    <button className="flex gap-3 cursor-pointer text-black font-semibold bg-gradient-to-r from-primary to-secondary px-7 py-3 rounded-full border border-red-600">
+                    <button className="flex gap-3 cursor-pointer text-black font-semibold bg-gradient-to-r from-primary to-secondary px-7 py-3 rounded-full">
                       <a href={url} title="Demo Video">Demo Video</a>
                     </button>
                   )
@@ -66,14 +66,14 @@ const Projects: React.FC<Props> = ({ projects }) => {
                 </div>
               </motion.div>
               <motion.div
-                className="hidden md:block mb-10"
+                className="hidden md:flex md:justify-center md:items-center mb-10 w-full"
                 initial={{ opacity: 0, y: 30}}
                 whileInView={{opacity: 1, y: 0}}
                 transition={{ duration: 1, delay: 1 }}
               >
-                <div className="grid grid-cols-2 grid-rows-5 gap-4 max-w-5xl">
+                <div className="grid grid-cols-2 grid-rows-5 gap-4 max-w-7xl p-2">
                   <h3 className="border-b-2 border-secondary text-primary text-3xl font-semibold">{title}</h3>
-                  <p className="row-span-2 col-start-1 row-start-2">{info}</p>
+                  <p className="row-span-2 col-start-1 row-start-2 text-lg">{info}</p>
                   <div id={`${idx}`} className="flex justify-around w-full col-start-1 row-start-4">
                     {techStack.map((tech, index) => {
                       const { alt, src } = tech;
