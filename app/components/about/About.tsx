@@ -20,7 +20,7 @@ const About: React.FC<Props> = ({data}) => {
   const { about } = data;
 
   return (
-    <section id="about" className="flex flex-col items-center py-24">
+    <section id="about" className="flex flex-col items-center py-32">
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         transition={{ duration: 1, delay: 1 }}
@@ -31,7 +31,6 @@ const About: React.FC<Props> = ({data}) => {
       </motion.div>
       <motion.div
         initial={{ opacity: 0, x: -30 }}
-        // animate={{ opacity: 1, x: 0 }}
         whileInView={{ opacity: 1, x:0}}
         transition={{ duration: 1, delay: 1 }}
         className="sm:text-lg md:text-xl mb-6 text-center max-w-4xl"
