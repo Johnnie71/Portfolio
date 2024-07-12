@@ -29,8 +29,8 @@ const TopNav = () => {
           <div onClick={() => handleScrollTo('projects')} className="cursor-pointer">
             Projects
           </div>
-          <div onClick={() => handleScrollTo('footer')} className="cursor-pointer">
-            Contact
+          <div onClick={() => handleScrollTo('socials')} className="cursor-pointer">
+            Connect
           </div>
         </div>
         <div className="flex items-center md:hidden">
