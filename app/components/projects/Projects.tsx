@@ -71,8 +71,8 @@ const Projects: React.FC<Props> = ({ projects }) => {
               {/* Desktop section */}
               <motion.div
                 className="hidden md:flex md:justify-center md:items-center mb-10 w-full"
-                initial={{ opacity: 0, y: 30}}
-                whileInView={{opacity: 1, y: 0}}
+                initial={{ opacity: 0, x: idx % 2 === 0 ? 30 : -30}}
+                whileInView={{opacity: 1, x: 0}}
                 viewport={{ once: true }}
                 transition={{ duration: 1, delay: 1 }}
               >
