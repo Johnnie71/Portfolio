@@ -1,7 +1,7 @@
 'use client'
 import { Project } from "@/app/lib/contentful/projects"
-import { motion } from "framer-motion"
-import React from "react"
+import { motion, useMotionValue, useSpring, useTransform } from "framer-motion"
+import React, {useState} from "react"
 
 interface Props {
   projects: Project[] | null
@@ -15,6 +15,28 @@ const Projects: React.FC<Props> = ({ projects }) => {
         <h1>No projects projects found</h1>
       </section>
     );
+  }
+
+  const [xValues] = useState(projects.map(() => useMotionValue(0)));
+  const [yValues] = useState(projects.map(() => useMotionValue(0)));
+
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>, idx: number) => {
+    const { width, height , top, left } = e.currentTarget.getBoundingClientRect();
+
+    const mouseX = e.clientX - left;
+    const mouseY = e.clientY - top;
+    
+    const xPct = mouseX / width - 0.5;
+    const yPct = mouseY / height - 0.5;
+
+    xValues[idx].set(xPct);
+    yValues[idx].set(yPct);
+  };
+
+  const handleMouseLeave = (idx: number) => {
+    xValues[idx].set(0);
+    yValues[idx].set(0);
   }
 
   return (
@@ -31,6 +53,22 @@ const Projects: React.FC<Props> = ({ projects }) => {
       <div className="flex flex-col justify-center items-center w-full">
         {projects.map((project, idx) => {
           const { title, info, techStack, url, repo, picture } = project;
+
+          const mouseXSpring = useSpring(xValues[idx]);
+          const mouseYSpring = useSpring(yValues[idx]);
+
+          const rotateX = useTransform(
+            mouseYSpring, 
+            [-0.5, 0.5],
+            ['7.5deg', '-7.5deg']
+          );
+        
+          const rotateY = useTransform(
+            mouseXSpring,
+            [-0.5, 0.5],
+            ['-7.5deg', '7.5deg']
+          )
+
           return (
             <React.Fragment key={idx}>
               {/* Mobile section */}
@@ -100,13 +138,26 @@ const Projects: React.FC<Props> = ({ projects }) => {
                       </button>
                     </div>
                   </div>
-                  <div className={`${idx % 2 == 0 ? 'order-2' : 'order-1'} flex justify-center items-center w-full`}>
+                  <motion.div 
+                    onMouseMove={(e) => handleMouseMove(e, idx)}
+                    onMouseLeave={() => handleMouseLeave(idx)}
+                    style={{
+                      rotateX,
+                      rotateY,
+                      transformStyle: 'preserve-3d',
+                    }} 
+                    className={`${idx % 2 == 0 ? 'order-2' : 'order-1'} flex justify-center items-center w-full`}
+                  >
                     <img
+                      style={{
+                        transform: 'translateZ(75px)',
+                        transformStyle: 'preserve-3d'
+                      }}
                       className="w-full max-w-sm md:max-w-lg lg:max-w-xl object-cover"
                       src={picture.src} 
                       alt={picture.alt || 'project preview'} 
                     />
-                  </div>
+                  </motion.div>
                 </div>
               </motion.div>
             </React.Fragment>
