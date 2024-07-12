@@ -22,7 +22,14 @@ const Hero: React.FC<HeroProps> = ({data}) => {
 
   return (
     <section id="hero" className="relative h-[90vh] w-full flex flex-col justify-center items-center">
-      <CanvasContainer />
+      <motion.div
+      className='w-full'
+        initial={{ opacity: 0, y: -30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1, delay: 0.5 }}
+      >
+        <CanvasContainer />
+      </motion.div>
       <div className="container w-auto md:w-[80%] flex flex-col md:flex-row">
         <motion.div
           className="flex flex-col md:justify-center md:items-start md:flex-grow"
