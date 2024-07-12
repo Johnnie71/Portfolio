@@ -2,6 +2,7 @@
 import { Project } from "@/app/lib/contentful/projects"
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion"
 import React, {useState} from "react"
+import Image from 'next/image';
 
 interface Props {
   projects: Project[] | null
@@ -81,16 +82,26 @@ const Projects: React.FC<Props> = ({ projects }) => {
               >
                 <h3 className="border-b-2 border-secondary text-primary mb-4 w-[90%] text-center text-2xl font-semibold">{title}</h3>
                 <p className="text-center mb-4">{info}</p>
-                <img 
+                <Image 
                   className="w-full max-w-sm md:max-w-lg lg:max-w-xl object-cover mb-4" 
-                  src={picture.src} 
+                  src={`${"https:" + picture.src}`} 
                   alt={picture.alt || 'project preview'} 
+                  height={20}
+                  width={20}
+                  unoptimized
                 />
                 <div id={`${idx}`} className="flex justify-around w-full mb-4">
                   {techStack.map((tech, index) => {
                     const { alt, src } = tech;
                     return (
-                      <img src={src} alt={alt} className='w-10 h-10' key={index}/>
+                      <Image
+                        src={`${"https:" + src}`}
+                        alt={alt}
+                        className='w-10 h-10'
+                        width={10}
+                        height={10} 
+                        key={index}
+                      />
                     )
                   })}
                 </div>
@@ -122,7 +133,14 @@ const Projects: React.FC<Props> = ({ projects }) => {
                       {techStack.map((tech, index) => {
                         const { alt, src } = tech;
                         return (
-                          <img src={src} alt={alt} className='w-10 h-10' key={index}/>
+                          <Image 
+                            src={`${"https:" + src}`} 
+                            alt={alt} 
+                            className='w-10 h-10'
+                            height={10}
+                            width={10}
+                            key={index}
+                          />
                         )
                       })}
                     </div>
@@ -148,14 +166,17 @@ const Projects: React.FC<Props> = ({ projects }) => {
                     }} 
                     className={`${idx % 2 == 0 ? 'order-2' : 'order-1'} flex justify-center items-center w-full`}
                   >
-                    <img
+                    <Image
                       style={{
                         transform: 'translateZ(75px)',
                         transformStyle: 'preserve-3d'
                       }}
                       className="w-full max-w-sm md:max-w-lg lg:max-w-xl object-cover"
-                      src={picture.src} 
-                      alt={picture.alt || 'project preview'} 
+                      height={20}
+                      width={20}
+                      src={`${"https:" + picture.src}`} 
+                      alt={picture.alt || 'project preview'}
+                      unoptimized
                     />
                   </motion.div>
                 </div>

@@ -2,6 +2,7 @@
 import { motion } from 'framer-motion';
 import CanvasContainer from '../ThreeJs/Canvas'
 import { Hero as HeroType } from '@/app/lib/contentful/hero';
+import Image from 'next/image'; 
 
 interface HeroProps {
   data: HeroType | null;
@@ -60,10 +61,14 @@ const Hero: React.FC<HeroProps> = ({data}) => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.5 }}
         >
-          <img
+          <Image
             className="border-4 border-primary rounded-full w-28 md:w-32 lg:w-48"
-            src={avatar.src}
+            src={`${"https:" + avatar.src}`}
             alt="Profile Image"
+            width={40}
+            height={40}
+            priority
+            unoptimized
           />
         </motion.div>
       </div>

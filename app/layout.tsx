@@ -7,7 +7,8 @@ const inter = Inter({ subsets: ["latin"] });
 const kodeMono = Kode_Mono({
   subsets: ['latin'],
   display: 'swap',
-  variable: '--font-kode-mono'
+  variable: '--font-kode-mono',
+  adjustFontFallback: false
 })
 
 export const metadata: Metadata = {

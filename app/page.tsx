@@ -3,7 +3,7 @@ import TopNav from "./components/NavBar/TopNav"
 import { fetchAllEntries } from "./lib/contentful/contentfulClient"
 import About from "./components/about/About"
 import Projects from "./components/projects/Projects"
-import Socials from "./components/socials/Socials"
+import Socials from "./components/Social/Socials"
 
 const Home = async () => {
   const { heroData, aboutData, projectsData, socialsData } = await fetchAllEntries()

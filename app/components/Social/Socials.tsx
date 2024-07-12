@@ -3,6 +3,7 @@
 import React from 'react';
 import { motion } from 'framer-motion'
 import { Social } from '@/app/lib/contentful/socials';
+import Image from 'next/image';
 
 interface Props {
   socials: Social[] | null
@@ -40,7 +41,13 @@ const Socials: React.FC<Props> = ({ socials }) => {
                     {site}
                   </span>
                   <a className="" href={link} target='_blank' rel='noopener noreferrer'>
-                    <img src={`${icon?.src}`} alt={site} className="w-16 h-16 md:w-6 md:h-6 lg:w-24 lg:h-24 transition-all ease-in-out duration-300 hover:scale-75" />
+                    <Image 
+                      src={`${icon?.src}`} 
+                      alt={site} 
+                      className="w-16 h-16 md:w-6 md:h-6 lg:w-24 lg:h-24 transition-all ease-in-out duration-300 hover:scale-75"
+                      height={20}
+                      width={20}
+                    />
                   </a>
                 </li>
               )
