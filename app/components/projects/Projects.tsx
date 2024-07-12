@@ -22,6 +22,7 @@ const Projects: React.FC<Props> = ({ projects }) => {
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{opacity: 1, y: 0}}
+        viewport={{ once: true }}
         transition={{ duration: 1, delay: 1 }}
         className="text-center mb-8"
       >
@@ -36,6 +37,7 @@ const Projects: React.FC<Props> = ({ projects }) => {
                 className="md:hidden grid sm:grid-cols-1 md:grid-cols-2 mb-10 w-full max-w-screen-lg place-items-center"
                 initial={{ opacity: 0, y: 30}}
                 whileInView={{opacity: 1, y: 0}}
+                viewport={{ once: true }}
                 transition={{ duration: 1, delay: 1 }}
               >
                 <h3 className="border-b-2 border-secondary text-primary mb-4 w-[90%] text-center text-2xl font-semibold">{title}</h3>
@@ -69,6 +71,7 @@ const Projects: React.FC<Props> = ({ projects }) => {
                 className="hidden md:flex md:justify-center md:items-center mb-10 w-full"
                 initial={{ opacity: 0, y: 30}}
                 whileInView={{opacity: 1, y: 0}}
+                viewport={{ once: true }}
                 transition={{ duration: 1, delay: 1 }}
               >
                 <div className="grid grid-cols-2 grid-rows-5 gap-4 max-w-7xl p-2">
