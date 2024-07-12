@@ -36,7 +36,7 @@ const Socials: React.FC<Props> = ({ socials }) => {
               return (
                 <li key={index} className='group flex flex-col justify-center items-center'>
                   <span
-                    className="pointer-events-none absolute opacity-0 group-hover:opacity-100 group-hover:text-white group-hover:text-lg group-hover:-translate-y-16 duration-700"
+                    className="pointer-events-none absolute opacity-0 group-hover:opacity-100 group-hover:text-white group-hover:text-lg group-hover:-translate-y-10 duration-700"
                   >
                     {site}
                   </span>
@@ -44,9 +44,9 @@ const Socials: React.FC<Props> = ({ socials }) => {
                     <Image 
                       src={`${icon?.src}`} 
                       alt={site} 
-                      className="w-16 h-16 md:w-6 md:h-6 lg:w-24 lg:h-24 transition-all ease-in-out duration-300 hover:scale-75"
-                      height={20}
-                      width={20}
+                      className="w-16 h-16 md:w-6 md:h-6 lg:w-14 lg:h-14 transition-all ease-in-out duration-300 hover:scale-75"
+                      height={18}
+                      width={18}
                     />
                   </a>
                 </li>
