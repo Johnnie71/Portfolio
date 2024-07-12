@@ -33,6 +33,7 @@ const Projects: React.FC<Props> = ({ projects }) => {
           const { title, info, techStack, url, repo, picture } = project;
           return (
             <React.Fragment key={idx}>
+              {/* Mobile section */}
               <motion.div
                 className="md:hidden grid sm:grid-cols-1 md:grid-cols-2 mb-10 w-full max-w-screen-lg place-items-center"
                 initial={{ opacity: 0, y: 30}}
@@ -67,6 +68,7 @@ const Projects: React.FC<Props> = ({ projects }) => {
                   </button>
                 </div>
               </motion.div>
+              {/* Desktop section */}
               <motion.div
                 className="hidden md:flex md:justify-center md:items-center mb-10 w-full"
                 initial={{ opacity: 0, y: 30}}
@@ -74,32 +76,36 @@ const Projects: React.FC<Props> = ({ projects }) => {
                 viewport={{ once: true }}
                 transition={{ duration: 1, delay: 1 }}
               >
-                <div className="grid grid-cols-2 grid-rows-5 gap-4 max-w-7xl p-2">
-                  <h3 className="border-b-2 border-secondary text-primary text-3xl font-semibold">{title}</h3>
-                  <p className="row-span-2 col-start-1 row-start-2 text-lg">{info}</p>
-                  <div id={`${idx}`} className="flex justify-around w-full col-start-1 row-start-4">
-                    {techStack.map((tech, index) => {
-                      const { alt, src } = tech;
-                      return (
-                        <img src={src} alt={alt} className='w-10 h-10' key={index}/>
+                <div className="grid grid-cols-2 gap-4 max-w-7xl ">
+                  <div className={`${idx % 2 == 0 ? 'order-1' : 'order-2'} flex flex-col justify-between w-full`}>
+                    <h3 className="border-b-2 border-secondary text-primary text-3xl font-semibold">{title}</h3>
+                    <p className="text-lg">{info}</p>
+                    <div id={`${idx}`} className="flex justify-around w-full">
+                      {techStack.map((tech, index) => {
+                        const { alt, src } = tech;
+                        return (
+                          <img src={src} alt={alt} className='w-10 h-10' key={index}/>
+                        )
+                      })}
+                    </div>
+                    <div className="flex justify-around items-center w-full">
+                      {url && (
+                        <button className="flex gap-3 cursor-pointer text-black font-semibold bg-gradient-to-r from-primary to-secondary px-7 py-3 rounded-full border border-red-600 hover:scale-105 duration-200 transition-colors hover:border-gray-800 hover:from-secondary hover:to-primary">
+                          <a href={url} title="Demo Video">Demo Video</a>
+                        </button>
                       )
-                    })}
-                  </div>
-                  <img 
-                    className="w-full max-w-sm md:max-w-lg lg:max-w-xl object-cover row-span-5 col-start-2 row-start-1" 
-                    src={picture.src} 
-                    alt={picture.alt || 'project preview'} 
-                  />
-                  <div className="flex justify-around items-center w-full col-start-1 row-start-5">
-                    {url && (
+                      }
                       <button className="flex gap-3 cursor-pointer text-black font-semibold bg-gradient-to-r from-primary to-secondary px-7 py-3 rounded-full border border-red-600 hover:scale-105 duration-200 transition-colors hover:border-gray-800 hover:from-secondary hover:to-primary">
-                        <a href={url} title="Demo Video">Demo Video</a>
+                        <a href={repo} title="Repo">Source Code</a>
                       </button>
-                    )
-                    }
-                    <button className="flex gap-3 cursor-pointer text-black font-semibold bg-gradient-to-r from-primary to-secondary px-7 py-3 rounded-full border border-red-600 hover:scale-105 duration-200 transition-colors hover:border-gray-800 hover:from-secondary hover:to-primary">
-                      <a href={repo} title="Repo">Source Code</a>
-                    </button>
+                    </div>
+                  </div>
+                  <div className={`${idx % 2 == 0 ? 'order-2' : 'order-1'} flex justify-center items-center w-full`}>
+                    <img
+                      className="w-full max-w-sm md:max-w-lg lg:max-w-xl object-cover"
+                      src={picture.src} 
+                      alt={picture.alt || 'project preview'} 
+                    />
                   </div>
                 </div>
               </motion.div>
