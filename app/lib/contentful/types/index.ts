@@ -5,3 +5,8 @@ export type {
   TypeProjectsFields,
   TypeProjectsSkeleton
 } from './TypeProjects'
+export type {
+  TypeSocials,
+  TypeSocialsFields,
+  TypeSocialsSkeleton
+} from './TypeSocials'
