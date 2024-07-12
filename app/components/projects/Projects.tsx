@@ -1,7 +1,7 @@
 'use client'
 import { Project } from "@/app/lib/contentful/projects"
-import { motion, useMotionValue, useSpring, useTransform } from "framer-motion"
-import React, {useState} from "react"
+import { motion } from "framer-motion"
+import React from "react"
 import Image from 'next/image';
 
 interface Props {
@@ -18,28 +18,6 @@ const Projects: React.FC<Props> = ({ projects }) => {
     );
   }
 
-  const [xValues] = useState(projects.map(() => useMotionValue(0)));
-  const [yValues] = useState(projects.map(() => useMotionValue(0)));
-
-
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>, idx: number) => {
-    const { width, height , top, left } = e.currentTarget.getBoundingClientRect();
-
-    const mouseX = e.clientX - left;
-    const mouseY = e.clientY - top;
-    
-    const xPct = mouseX / width - 0.5;
-    const yPct = mouseY / height - 0.5;
-
-    xValues[idx].set(xPct);
-    yValues[idx].set(yPct);
-  };
-
-  const handleMouseLeave = (idx: number) => {
-    xValues[idx].set(0);
-    yValues[idx].set(0);
-  }
-
   return (
     <section id='projects' className="py-16">
       <motion.div
@@ -54,21 +32,6 @@ const Projects: React.FC<Props> = ({ projects }) => {
       <div className="flex flex-col justify-center items-center w-full">
         {projects.map((project, idx) => {
           const { title, info, techStack, url, repo, picture } = project;
-
-          const mouseXSpring = useSpring(xValues[idx]);
-          const mouseYSpring = useSpring(yValues[idx]);
-
-          const rotateX = useTransform(
-            mouseYSpring, 
-            [-0.5, 0.5],
-            ['7.5deg', '-7.5deg']
-          );
-        
-          const rotateY = useTransform(
-            mouseXSpring,
-            [-0.5, 0.5],
-            ['-7.5deg', '7.5deg']
-          )
 
           return (
             <React.Fragment key={idx}>
@@ -88,7 +51,6 @@ const Projects: React.FC<Props> = ({ projects }) => {
                   alt={picture.alt || 'project preview'} 
                   height={20}
                   width={20}
-                  unoptimized
                 />
                 <div id={`${idx}`} className="flex justify-around w-full mb-4">
                   {techStack.map((tech, index) => {
@@ -156,27 +118,15 @@ const Projects: React.FC<Props> = ({ projects }) => {
                       </button>
                     </div>
                   </div>
-                  <motion.div 
-                    onMouseMove={(e) => handleMouseMove(e, idx)}
-                    onMouseLeave={() => handleMouseLeave(idx)}
-                    style={{
-                      rotateX,
-                      rotateY,
-                      transformStyle: 'preserve-3d',
-                    }} 
+                  <motion.div
                     className={`${idx % 2 == 0 ? 'order-2' : 'order-1'} flex justify-center items-center w-full`}
                   >
                     <Image
-                      style={{
-                        transform: 'translateZ(75px)',
-                        transformStyle: 'preserve-3d'
-                      }}
                       className="w-full max-w-sm md:max-w-lg lg:max-w-xl object-cover"
                       height={20}
                       width={20}
                       src={`${"https:" + picture.src}`} 
-                      alt={picture.alt || 'project preview'}
-                      unoptimized
+                      alt={picture.alt || 'project preview'} 
                     />
                   </motion.div>
                 </div>
