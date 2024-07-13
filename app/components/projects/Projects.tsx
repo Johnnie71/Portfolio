@@ -31,7 +31,7 @@ const Projects: React.FC<Props> = ({ projects }) => {
       </motion.div>
       <div className="flex flex-col justify-center items-center w-full">
         {projects.map((project, idx) => {
-          const { title, info, techStack, url, repo, picture } = project;
+          const { title, description, techStack, demoURL, repo, picture, liveSite } = project;
 
           return (
             <React.Fragment key={idx}>
@@ -44,7 +44,7 @@ const Projects: React.FC<Props> = ({ projects }) => {
                 transition={{ duration: 1, delay: 1 }}
               >
                 <h3 className="border-b-2 border-secondary text-primary mb-4 w-[90%] text-center text-2xl font-semibold">{title}</h3>
-                <p className="text-center mb-4">{info}</p>
+                <p className="text-center mb-4">{description}</p>
                 <Image 
                   className="w-full max-w-sm md:max-w-lg lg:max-w-xl object-cover mb-4" 
                   src={`${"https:" + picture.src}`} 
@@ -69,15 +69,22 @@ const Projects: React.FC<Props> = ({ projects }) => {
                   })}
                 </div>
                 <div className="flex justify-around items-center w-full">
-                  {url && (
-                    <button className="flex gap-3 cursor-pointer text-black font-semibold bg-gradient-to-r from-primary to-secondary px-7 py-3 rounded-full">
-                      <a href={url} title="Demo Video">Demo Video</a>
+                  {demoURL && (
+                    <button className="flex gap-3 cursor-pointer text-black font-semibold bg-gradient-to-r from-primary to-secondary px-7 py-3 rounded-full border border-red-600">
+                      <a href={demoURL} title="Demo Video">Demo Video</a>
                     </button>
                   )
                   }
-                  <button className="flex gap-3 cursor-pointer text-black font-semibold bg-gradient-to-r from-primary to-secondary px-7 py-3 rounded-full border border-red-600">
+                  {liveSite && (
+                    <button className="flex gap-3 cursor-pointer text-black font-semibold bg-gradient-to-r from-primary to-secondary px-7 py-3 rounded-full border border-red-600">
+                    <a href={liveSite} title="Demo Video">Go to site</a>
+                  </button>
+                  )}
+                  {repo && (
+                    <button className="flex gap-3 cursor-pointer text-black font-semibold bg-gradient-to-r from-primary to-secondary px-7 py-3 rounded-full border border-red-600">
                     <a href={repo} title="Repo">Source Code</a>
                   </button>
+                  )}
                 </div>
               </motion.div>
               {/* Desktop section */}
@@ -91,7 +98,7 @@ const Projects: React.FC<Props> = ({ projects }) => {
                 <div className="grid grid-cols-2 gap-4 max-w-7xl ">
                   <div className={`${idx % 2 == 0 ? 'order-1' : 'order-2'} flex flex-col justify-between w-full`}>
                     <h3 className="border-b-2 border-secondary text-primary text-3xl font-semibold">{title}</h3>
-                    <p className="text-lg">{info}</p>
+                    <p className="text-lg">{description}</p>
                     <div id={`${idx}`} className="flex justify-around w-full">
                       {techStack.map((tech, index) => {
                         const { alt, src } = tech;
@@ -108,15 +115,23 @@ const Projects: React.FC<Props> = ({ projects }) => {
                       })}
                     </div>
                     <div className="flex justify-around items-center w-full">
-                      {url && (
+                      {demoURL && (
                         <button className="flex gap-3 cursor-pointer text-black font-semibold bg-gradient-to-r from-primary to-secondary px-7 py-3 rounded-full border border-red-600 hover:scale-105 duration-200 transition-colors hover:border-gray-800 hover:from-secondary hover:to-primary">
-                          <a href={url} title="Demo Video">Demo Video</a>
+                          <a href={demoURL} title="Demo Video">Demo Video</a>
                         </button>
                       )
                       }
-                      <button className="flex gap-3 cursor-pointer text-black font-semibold bg-gradient-to-r from-primary to-secondary px-7 py-3 rounded-full border border-red-600 hover:scale-105 duration-200 transition-colors hover:border-gray-800 hover:from-secondary hover:to-primary">
-                        <a href={repo} title="Repo">Source Code</a>
-                      </button>
+                      {liveSite && (
+                        <button className="flex gap-3 cursor-pointer text-black font-semibold bg-gradient-to-r from-primary to-secondary px-7 py-3 rounded-full border border-red-600 hover:scale-105 duration-200 transition-colors hover:border-gray-800 hover:from-secondary hover:to-primary">
+                          <a href={liveSite} title="Demo Video">Live Site</a>
+                        </button>
+                      )
+                      }
+                      {repo && (
+                         <button className="flex gap-3 cursor-pointer text-black font-semibold bg-gradient-to-r from-primary to-secondary px-7 py-3 rounded-full border border-red-600 hover:scale-105 duration-200 transition-colors hover:border-gray-800 hover:from-secondary hover:to-primary">
+                         <a href={repo} title="Repo">Source Code</a>
+                       </button>
+                      )}
                     </div>
                   </div>
                   <motion.div

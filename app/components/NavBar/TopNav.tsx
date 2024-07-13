@@ -12,7 +12,7 @@ const TopNav = () => {
   }
   
   return (
-    <div className="container flex justify-center items-center fixed backdrop-blur-[5px] z-10 text-lg md:text-xl lg:text-2xl">
+    <div className="flex justify-center items-center sticky top-0 backdrop-blur-[5px] z-10 text-lg md:text-xl lg:text-2xl w-full">
       <div className="container mx-auto flex justify-between items-center p-2">
         <div className="flex items-center">
           <div

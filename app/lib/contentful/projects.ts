@@ -6,11 +6,12 @@ type ProjectEntry = Entry<TypeProjectsSkeleton, undefined, string>
 
 export interface Project {
   title: string,
-  info: string,
+  description: string,
   techStack: ContentImage[],
-  url?: string,
+  demoURL?: string,
   picture: ContentImage,
-  repo: string
+  repo: string,
+  liveSite: string
 }
 
 export const parseContentfulProjects = (entries?: Entry<EntrySkeletonType, undefined, string>[]): Project[] | null => {
@@ -21,10 +22,11 @@ export const parseContentfulProjects = (entries?: Entry<EntrySkeletonType, undef
   const projects: Project[] = projectsEntries.map(project => {
     return {
       title: project.fields.title || '',
-      info: project.fields.info || '',
+      description: project.fields.description || '',
       picture: parseConentfulContentImage(project.fields.picture),
       repo: project.fields.repo || '',
-      url: project.fields.url || '',
+      demoURL: project.fields.demoURL || '',
+      liveSite: project.fields.liveSite || '',
       techStack: project.fields.techStack?.map(tech => {
         // Ensure tech is defined and parse the tech image
         return parseConentfulContentImage(tech)

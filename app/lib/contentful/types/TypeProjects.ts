@@ -8,11 +8,12 @@ import type {
 
 export interface TypeProjectsFields {
   title: EntryFieldTypes.Symbol
-  info: EntryFieldTypes.Text
+  description: EntryFieldTypes.Text
   picture: EntryFieldTypes.AssetLink
-  url?: EntryFieldTypes.Symbol
+  demoURL?: EntryFieldTypes.Symbol
   repo: EntryFieldTypes.Symbol
   techStack: EntryFieldTypes.Array<EntryFieldTypes.AssetLink>
+  liveSite?: EntryFieldTypes.Symbol
 }
 
 export type TypeProjectsSkeleton = EntrySkeletonType<

@@ -9,7 +9,7 @@ const Home = async () => {
   const { heroData, aboutData, projectsData, socialsData } = await fetchAllEntries()
 
   return (
-    <div className="font-kodeMono mx-auto max-w-screen-2xl px-4">
+    <div className="font-kodeMono mx-auto max-w-screen-2xl px-4 relative">
       <TopNav />
       <Hero data={heroData} />
       <About data={aboutData} />
