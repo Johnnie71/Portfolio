@@ -14,6 +14,7 @@ export interface TypeProjectsFields {
   repo: EntryFieldTypes.Symbol
   techStack: EntryFieldTypes.Array<EntryFieldTypes.AssetLink>
   liveSite?: EntryFieldTypes.Symbol
+  order: EntryFieldTypes.Integer
 }
 
 export type TypeProjectsSkeleton = EntrySkeletonType<
