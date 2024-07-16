@@ -44,7 +44,7 @@ const Socials: React.FC<Props> = ({ socials }) => {
                     <Image 
                       src={`${icon?.src}`} 
                       alt={site} 
-                      className="w-16 h-16 md:w-6 md:h-6 lg:w-14 lg:h-14 transition-all ease-in-out duration-300 hover:scale-75"
+                      className=" w-12 h-12 md:w-6 md:h-6 lg:w-14 lg:h-14 transition-all ease-in-out duration-300 hover:scale-75"
                       height={18}
                       width={18}
                     />
