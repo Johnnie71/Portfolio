@@ -70,18 +70,18 @@ const Projects: React.FC<Props> = ({ projects }) => {
                 </div>
                 <div className="flex justify-around items-center w-full">
                   {demoURL && (
-                    <button className="flex gap-3 cursor-pointer text-black font-semibold bg-gradient-to-r from-primary to-secondary px-7 py-3 rounded-full">
+                    <button className="flex gap-3 cursor-pointer text-black font-semibold bg-gradient-to-r from-primary to-secondary px-7 py-3 rounded-full shadow-md shadow-black">
                       <a href={demoURL} title="Demo Video">Demo Video</a>
                     </button>
                   )
                   }
                   {liveSite && (
-                    <button className="flex gap-3 cursor-pointer text-black font-semibold bg-gradient-to-r from-primary to-secondary px-7 py-3 rounded-full">
+                    <button className="flex gap-3 cursor-pointer text-black font-semibold bg-gradient-to-r from-primary to-secondary px-7 py-3 rounded-full shadow-md shadow-black">
                     <a href={liveSite} title="Demo Video">Go to site</a>
                   </button>
                   )}
                   {repo && (
-                    <button className="flex gap-3 cursor-pointer text-black font-semibold bg-gradient-to-r from-primary to-secondary px-7 py-3 rounded-full">
+                    <button className="flex gap-3 cursor-pointer text-black font-semibold bg-gradient-to-r from-primary to-secondary px-7 py-3 rounded-full shadow-md shadow-black">
                     <a href={repo} title="Repo">Source Code</a>
                   </button>
                   )}
@@ -116,19 +116,19 @@ const Projects: React.FC<Props> = ({ projects }) => {
                     </div>
                     <div className="flex justify-around items-center w-full">
                       {demoURL && (
-                        <button className="flex gap-3 cursor-pointer text-black font-semibold bg-gradient-to-r from-primary to-secondary px-7 py-3 rounded-full hover:scale-105 duration-200 transition-colors hover:border-gray-800 hover:from-secondary hover:to-primary">
+                        <button className="flex gap-3 cursor-pointer text-black font-semibold bg-gradient-to-r from-primary to-secondary px-7 py-3 rounded-full hover:scale-105 duration-200 transition-colors hover:border-gray-800 hover:from-secondary hover:to-primary shadow-md shadow-black">
                           <a href={demoURL} title="Demo Video">Demo Video</a>
                         </button>
                       )
                       }
                       {liveSite && (
-                        <button className="flex gap-3 cursor-pointer text-black font-semibold bg-gradient-to-r from-primary to-secondary px-7 py-3 rounded-full hover:scale-105 duration-200 transition-colors hover:border-gray-800 hover:from-secondary hover:to-primary">
+                        <button className="flex gap-3 cursor-pointer text-black font-semibold bg-gradient-to-r from-primary to-secondary px-7 py-3 rounded-full hover:scale-105 duration-200 transition-colors hover:border-gray-800 hover:from-secondary hover:to-primary shadow-md shadow-black">
                           <a href={liveSite} title="Demo Video">Live Site</a>
                         </button>
                       )
                       }
                       {repo && (
-                         <button className="flex gap-3 cursor-pointer text-black font-semibold bg-gradient-to-r from-primary to-secondary px-7 py-3 rounded-full hover:scale-105 duration-200 transition-colors hover:border-gray-800 hover:from-secondary hover:to-primary">
+                         <button className="flex gap-3 cursor-pointer text-black font-semibold bg-gradient-to-r from-primary to-secondary px-7 py-3 rounded-full hover:scale-105 duration-200 transition-colors hover:border-gray-800 hover:from-secondary hover:to-primary shadow-md shadow-black">
                          <a href={repo} title="Repo">Source Code</a>
                        </button>
                       )}
