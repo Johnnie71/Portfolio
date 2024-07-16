@@ -37,7 +37,9 @@ const About: React.FC<Props> = ({data}) => {
         viewport={{ once: true }}
         className="sm:text-lg md:text-xl mb-6 text-center max-w-4xl"
       >
-        <p>{about}</p>
+        {about.map((text, index) => (
+          <p key={index} className='mb-4'>{text}</p>
+        ))}
       </motion.div>
     </section>
   );

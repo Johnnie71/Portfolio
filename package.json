@@ -23,6 +23,7 @@
     "three": "^0.165.0"
   },
   "devDependencies": {
+    "@contentful/rich-text-types": "^16.7.0",
     "@netlify/plugin-nextjs": "^5.5.1",
     "@types/node": "^20",
     "@types/react": "^18",

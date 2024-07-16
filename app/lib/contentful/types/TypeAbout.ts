@@ -7,8 +7,7 @@ import type {
 } from 'contentful'
 
 export interface TypeAboutFields {
-  about?: EntryFieldTypes.Text
-  resume: EntryFieldTypes.AssetLink
+  about: EntryFieldTypes.RichText
 }
 
 export type TypeAboutSkeleton = EntrySkeletonType<TypeAboutFields, 'about'>
