@@ -31,3 +31,7 @@ body {
   line-height: 1.5;
   color: var(--color-on-background)
 }
+
+.reflect {
+  -webkit-box-reflect: below 8px linear-gradient(transparent 20%, #22232e20);
+}

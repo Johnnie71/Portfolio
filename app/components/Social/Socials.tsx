@@ -44,11 +44,12 @@ const Socials: React.FC<Props> = ({ socials }) => {
                     <Image 
                       src={`${icon?.src}`} 
                       alt={site} 
-                      className=" w-12 h-12 md:w-6 md:h-6 lg:w-14 lg:h-14 transition-all ease-in-out duration-300 hover:scale-75"
+                      className="w-12 h-12 md:w-6 md:h-6 lg:w-14 lg:h-14 transition-all ease-in-out duration-300 hover:scale-75 reflect"
                       height={18}
                       width={18}
                     />
                   </a>
+                  <span className='border-2 border-primary w-[90%] mt-4 rounded-lg blur group-hover:w-[60%] group-hover:-translate-y-2 transition-all duration-300 ease-in-out'></span>
                 </li>
               )
             })}
