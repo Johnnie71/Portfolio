@@ -26,9 +26,9 @@ const Socials: React.FC<Props> = ({ socials }) => {
         whileInView={{opacity: 1, y: 0}}
         viewport={{ once: true }}
         transition={{ duration: 1, delay: 1 }}
-        className="text-center left-0 right-0 p-0 mb-10"
+        className="text-center left-0 right-0 p-0 mb-5 md:mb-10"
       >
-        <h3 className="text-3xl font-bold border-b-2 border-primary pb-2 inline-block">Connect with me!</h3>
+        <h3 className="text-2xl md:text-3xl font-bold border-b-2 border-primary pb-2 inline-block">Connect with me!</h3>
         <div className='w-full flex justify-center items-center mt-5'>
           <ul className='w-full md:w-[30%] flex justify-around items-center p-3'>
             {socials.map((social, index) => {
