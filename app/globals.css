@@ -32,6 +32,10 @@ body {
   color: var(--color-on-background)
 }
 
+* {
+  box-sizing: border-box;
+}
+
 .reflect {
   -webkit-box-reflect: below 8px linear-gradient(transparent 20%, #22232e20);
 }
