@@ -62,7 +62,7 @@ const Hero: React.FC<HeroProps> = ({data}) => {
           transition={{ duration: 1, delay: 0.5 }}
         >
           <Image
-            className="border-4 border-primary rounded-full w-28 md:w-32 lg:w-48"
+            className="border-2 border-primary rounded-full w-28 md:w-32 lg:w-48"
             src={`${"https:" + avatar.src}`}
             alt="Profile Image"
             width={40}
