@@ -46,7 +46,7 @@ const Projects: React.FC<Props> = ({ projects }) => {
                 <h3 className="border-b-2 border-secondary text-primary mb-4 w-[90%] text-center text-2xl font-semibold">{title}</h3>
                 <p className="text-center mb-4">{description}</p>
                 <Image 
-                  className="w-full max-w-sm md:max-w-lg lg:max-w-xl object-cover mb-4" 
+                  className="w-full max-w-sm md:max-w-lg lg:max-w-xl object-cover mb-4 rounded-lg shadow-lg shadow-black" 
                   src={`${"https:" + picture.src}`} 
                   alt={picture.alt || 'project preview'} 
                   height={20}
@@ -70,18 +70,18 @@ const Projects: React.FC<Props> = ({ projects }) => {
                 </div>
                 <div className="flex justify-around items-center w-full">
                   {demoURL && (
-                    <button className="flex gap-3 cursor-pointer text-black font-semibold bg-gradient-to-r from-primary to-secondary px-7 py-3 rounded-full border border-red-600">
+                    <button className="flex gap-3 cursor-pointer text-black font-semibold bg-gradient-to-r from-primary to-secondary px-7 py-3 rounded-full">
                       <a href={demoURL} title="Demo Video">Demo Video</a>
                     </button>
                   )
                   }
                   {liveSite && (
-                    <button className="flex gap-3 cursor-pointer text-black font-semibold bg-gradient-to-r from-primary to-secondary px-7 py-3 rounded-full border border-red-600">
+                    <button className="flex gap-3 cursor-pointer text-black font-semibold bg-gradient-to-r from-primary to-secondary px-7 py-3 rounded-full">
                     <a href={liveSite} title="Demo Video">Go to site</a>
                   </button>
                   )}
                   {repo && (
-                    <button className="flex gap-3 cursor-pointer text-black font-semibold bg-gradient-to-r from-primary to-secondary px-7 py-3 rounded-full border border-red-600">
+                    <button className="flex gap-3 cursor-pointer text-black font-semibold bg-gradient-to-r from-primary to-secondary px-7 py-3 rounded-full">
                     <a href={repo} title="Repo">Source Code</a>
                   </button>
                   )}
@@ -116,19 +116,19 @@ const Projects: React.FC<Props> = ({ projects }) => {
                     </div>
                     <div className="flex justify-around items-center w-full">
                       {demoURL && (
-                        <button className="flex gap-3 cursor-pointer text-black font-semibold bg-gradient-to-r from-primary to-secondary px-7 py-3 rounded-full border border-red-600 hover:scale-105 duration-200 transition-colors hover:border-gray-800 hover:from-secondary hover:to-primary">
+                        <button className="flex gap-3 cursor-pointer text-black font-semibold bg-gradient-to-r from-primary to-secondary px-7 py-3 rounded-full hover:scale-105 duration-200 transition-colors hover:border-gray-800 hover:from-secondary hover:to-primary">
                           <a href={demoURL} title="Demo Video">Demo Video</a>
                         </button>
                       )
                       }
                       {liveSite && (
-                        <button className="flex gap-3 cursor-pointer text-black font-semibold bg-gradient-to-r from-primary to-secondary px-7 py-3 rounded-full border border-red-600 hover:scale-105 duration-200 transition-colors hover:border-gray-800 hover:from-secondary hover:to-primary">
+                        <button className="flex gap-3 cursor-pointer text-black font-semibold bg-gradient-to-r from-primary to-secondary px-7 py-3 rounded-full hover:scale-105 duration-200 transition-colors hover:border-gray-800 hover:from-secondary hover:to-primary">
                           <a href={liveSite} title="Demo Video">Live Site</a>
                         </button>
                       )
                       }
                       {repo && (
-                         <button className="flex gap-3 cursor-pointer text-black font-semibold bg-gradient-to-r from-primary to-secondary px-7 py-3 rounded-full border border-red-600 hover:scale-105 duration-200 transition-colors hover:border-gray-800 hover:from-secondary hover:to-primary">
+                         <button className="flex gap-3 cursor-pointer text-black font-semibold bg-gradient-to-r from-primary to-secondary px-7 py-3 rounded-full hover:scale-105 duration-200 transition-colors hover:border-gray-800 hover:from-secondary hover:to-primary">
                          <a href={repo} title="Repo">Source Code</a>
                        </button>
                       )}
