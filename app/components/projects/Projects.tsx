@@ -138,7 +138,7 @@ const Projects: React.FC<Props> = ({ projects }) => {
                     className={`${idx % 2 == 0 ? 'order-2' : 'order-1'} flex justify-center items-center w-full`}
                   >
                     <Image
-                      className="w-full max-w-sm md:max-w-lg lg:max-w-xl object-cover"
+                      className="w-full max-w-sm md:max-w-lg lg:max-w-xl object-cover rounded-lg shadow-lg shadow-black"
                       height={20}
                       width={20}
                       src={`${"https:" + picture.src}`} 
