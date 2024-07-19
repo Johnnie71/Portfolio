@@ -3,6 +3,7 @@ import { Project } from "@/app/lib/contentful/projects"
 import { motion } from "framer-motion"
 import React from "react"
 import Image from 'next/image';
+import ProjectButton from "../buttons/ProjectButton";
 
 interface Props {
   projects: Project[] | null
@@ -70,20 +71,14 @@ const Projects: React.FC<Props> = ({ projects }) => {
                 </div>
                 <div className="flex justify-around items-center w-full">
                   {demoURL && (
-                    <button className="flex gap-3 cursor-pointer text-black font-semibold bg-gradient-to-r from-primary to-secondary px-7 py-3 rounded-full shadow-md shadow-black">
-                      <a href={demoURL} title="Demo Video">Demo Video</a>
-                    </button>
+                    <ProjectButton url={demoURL} text="Demo Video" />
                   )
                   }
                   {liveSite && (
-                    <button className="flex gap-3 cursor-pointer text-black font-semibold bg-gradient-to-r from-primary to-secondary px-7 py-3 rounded-full shadow-md shadow-black">
-                    <a href={liveSite} title="Demo Video">Go to site</a>
-                  </button>
+                    <ProjectButton url={liveSite} text="Live Site" />
                   )}
                   {repo && (
-                    <button className="flex gap-3 cursor-pointer text-black font-semibold bg-gradient-to-r from-primary to-secondary px-7 py-3 rounded-full shadow-md shadow-black">
-                    <a href={repo} title="Repo">Source Code</a>
-                  </button>
+                    <ProjectButton url={repo} text="Source Code" />
                   )}
                 </div>
               </motion.div>
@@ -117,21 +112,15 @@ const Projects: React.FC<Props> = ({ projects }) => {
                     </div>
                     <div className="flex justify-around items-center w-full">
                       {demoURL && (
-                        <button className="flex gap-3 cursor-pointer text-black font-semibold bg-gradient-to-r from-primary to-secondary px-7 py-3 rounded-full hover:scale-105 duration-200 transition-colors hover:border-gray-800 hover:from-secondary hover:to-primary shadow-md shadow-black">
-                          <a href={demoURL} title="Demo Video">Demo Video</a>
-                        </button>
+                        <ProjectButton url={demoURL} text="Demo Video" />
                       )
                       }
                       {liveSite && (
-                        <button className="flex gap-3 cursor-pointer text-black font-semibold bg-gradient-to-r from-primary to-secondary px-7 py-3 rounded-full hover:scale-105 duration-200 transition-colors hover:border-gray-800 hover:from-secondary hover:to-primary shadow-md shadow-black">
-                          <a href={liveSite} title="Demo Video">Live Site</a>
-                        </button>
+                        <ProjectButton url={liveSite} text="Live Site" />
                       )
                       }
                       {repo && (
-                         <button className="flex gap-3 cursor-pointer text-black font-semibold bg-gradient-to-r from-primary to-secondary px-7 py-3 rounded-full hover:scale-105 duration-200 transition-colors hover:border-gray-800 hover:from-secondary hover:to-primary shadow-md shadow-black">
-                         <a href={repo} title="Repo">Source Code</a>
-                       </button>
+                         <ProjectButton url={repo} text="Source Code" />
                       )}
                     </div>
                   </div>
