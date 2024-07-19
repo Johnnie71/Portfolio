@@ -1,14 +1,14 @@
 import type { Metadata } from 'next';
-import { Inter, Kode_Mono } from 'next/font/google';
+import { Kode_Mono } from 'next/font/google';
 import ThemeProvider from '@/app/components/Theme/ThemeProvider'
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
 const kodeMono = Kode_Mono({
   subsets: ['latin'],
   display: 'swap',
   variable: '--font-kode-mono',
-  adjustFontFallback: false
+  adjustFontFallback: false,
+  preload: false
 })
 
 export const metadata: Metadata = {
@@ -23,7 +23,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.className} ${kodeMono.variable} bg-bkg antialiased`}>
+    <html lang="en" className={`${kodeMono.variable} bg-bkg antialiased`}>
       <body>
         <ThemeProvider>
           <main>

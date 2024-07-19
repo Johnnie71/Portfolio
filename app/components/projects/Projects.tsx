@@ -110,6 +110,7 @@ const Projects: React.FC<Props> = ({ projects }) => {
                             height={10}
                             width={10}
                             key={index}
+                            priority
                           />
                         )
                       })}
