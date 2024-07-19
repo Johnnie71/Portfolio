@@ -16,7 +16,7 @@ const TopNav = () => {
       <div className="container mx-auto flex justify-between items-center p-2">
         <div className="flex items-center">
           <div
-            onClick={() => handleScrollTo('header')}
+            onClick={() => handleScrollTo('hero')}
             className="font-bold text-2xl md:text-3xl bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary cursor-pointer"
           >
             JG
