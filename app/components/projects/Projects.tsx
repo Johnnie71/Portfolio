@@ -53,6 +53,7 @@ const Projects: React.FC<Props> = ({ projects }) => {
                   height={20}
                   width={20}
                   unoptimized
+                  priority
                 />
                 <div id={`${idx}`} className="flex justify-around w-full mb-4">
                   {techStack.map((tech, index) => {
@@ -65,6 +66,7 @@ const Projects: React.FC<Props> = ({ projects }) => {
                         width={10}
                         height={10} 
                         key={index}
+                        priority
                       />
                     )
                   })}
@@ -134,6 +136,7 @@ const Projects: React.FC<Props> = ({ projects }) => {
                       src={`${"https:" + picture.src}`} 
                       alt={picture.alt || 'project preview'}
                       unoptimized
+                      priority
                     />
                   </motion.div>
                 </div>

@@ -83,15 +83,15 @@ const StaggeredDropDown: React.FC = () => {
       >
         <button 
           onClick={handleMenu}
-          className='flex items-center justify-center gap-2 px-3 py-2 text-2xl'
+          className='flex items-center justify-center gap-2 py-2 text-2xl'
         >
           ☰
         </button>
         <motion.ul
           initial={wrapperVariants.closed}
           variants={wrapperVariants}
-          style={{ originY: 'top', translateX: '-50%' }}
-          className='flex flex-col gap-2 p-2 rounded-lg bg-white text-black text-sm shadow-xl absolute w-fit mr-10'
+          style={{ originY: 'top', translateX: '-80%' }}
+          className='flex flex-col gap-2 p-2 rounded-lg bg-white text-black text-sm shadow-xl absolute w-fit'
         >
           <Option scrollTo='about' Icon={MdOutlineAccountBox} text="About" />
           <Option scrollTo='projects' Icon={MdOutlineCode} text="Projects" />
