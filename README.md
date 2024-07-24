@@ -3,6 +3,7 @@
 Welcome to my responsive software engineering portfolio website! This project showcases my skills and projects using modern web technologies such as React, Next.js, React Three Fiber, Tailwind CSS, and Contentful.
 
 ## 🚀 Technologies Used
+- TypeScript: A typed superset of JavaScript that compiles to plain JavaScript.
 - React: A JavaScript library for building user interfaces.
 - Next.js: A React framework for production-grade applications.
 - React Three Fiber: A React renderer for Three.js to create stunning 3D experiences.
