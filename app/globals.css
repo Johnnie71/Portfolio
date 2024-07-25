@@ -65,7 +65,7 @@ ul#downArrow li {
   list-style: none;
   width: 8px;
   height: 8px;
-  background-color: var(--color-secondary);
+  background-color: var(--color-primary);
   border-radius: 100%;
   margin-bottom: 10px;
   animation: ani 0.8s infinite ease-in-out;
