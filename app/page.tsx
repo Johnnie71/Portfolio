@@ -4,6 +4,7 @@ import { fetchAllEntries } from "./lib/contentful/contentfulClient"
 import About from "./components/about/About"
 import Projects from "./components/projects/Projects"
 import Socials from "./components/Social/Socials"
+import ScrollArrow from "./components/icons/ScrollArrow"
 
 const Home = async () => {
   const { heroData, aboutData, projectsData, socialsData } = await fetchAllEntries()
@@ -11,6 +12,7 @@ const Home = async () => {
   return (
     <div className="font-kodeMono mx-auto max-w-screen-2xl relative">
       <TopNav />
+      <ScrollArrow />
       <div className="px-4">
         <Hero data={heroData} />
         <About data={aboutData} />

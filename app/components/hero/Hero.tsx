@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import CanvasContainer from '../ThreeJs/Canvas'
 import { Hero as HeroType } from '@/app/lib/contentful/hero';
 import Image from 'next/image'; 
+import ScrollArrow from '../icons/ScrollArrow';
 
 interface HeroProps {
   data: HeroType | null;
