@@ -1,9 +1,9 @@
-import Hero from "./components/hero/Hero"
+import Hero from "./components/Sections/hero/Hero"
 import TopNav from "./components/NavBar/TopNav"
 import { fetchAllEntries } from "./lib/contentful/contentfulClient"
-import About from "./components/about/About"
-import Projects from "./components/projects/Projects"
-import Socials from "./components/Social/Socials"
+import About from "./components/Sections/about/About"
+import Projects from "./components/Sections/projects/Projects"
+import Socials from "./components/Sections/social/Socials"
 import ScrollArrow from "./components/icons/ScrollArrow"
 
 const Home = async () => {

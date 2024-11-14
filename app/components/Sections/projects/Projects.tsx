@@ -3,7 +3,7 @@ import { Project } from "@/app/lib/contentful/projects"
 import { motion } from "framer-motion"
 import React from "react"
 import Image from 'next/image';
-import ProjectButton from "../buttons/ProjectButton";
+import ProjectButton from "../../buttons/ProjectButton";
 
 interface Props {
   projects: Project[] | null
