@@ -84,7 +84,7 @@ const AnimatedSphere: React.FC = () => {
 			ref={mesh}
 			position={[0, 0, 0]}
 			visible
-			scale={1.7}
+			scale={1.4}
 			geometry={geometry}
 		>
 			<CustomShaderMaterial
