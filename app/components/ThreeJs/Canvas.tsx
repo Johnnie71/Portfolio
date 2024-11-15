@@ -11,7 +11,14 @@ const CanvasContainer: React.FC = () => {
     <Canvas camera={{ position: [0.0, 0.0, 8.0] }}>
 				<OrbitControls enableZoom={false} />
 				<ambientLight intensity={0.5} />
-				<directionalLight position={[-2, 5, 2]} intensity={1} />
+				<directionalLight
+          position={[0.25, 1, .1]}
+          intensity={3}
+          castShadow
+          shadow-mapSize={[1024, 1024]}
+          shadow-camera-far={15}
+          shadow-normalBias={0.05}
+        />
 				<Suspense fallback={null}>
 					<AnimatedSphere />
 				</Suspense>

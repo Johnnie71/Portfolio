@@ -21,7 +21,8 @@ const config: Config = {
         bkg: 'var(--color-background)',
         onBkg: 'var(--color-on-background)',
         primary: 'var(--color-primary)',
-        secondary: 'var(--color-secondary)'
+        secondary: 'var(--color-secondary)',
+        ternary: 'var(--color-ternary)'
       },
       fontFamily: {
         kodeMono: ["var(--font-kode-mono)"]
