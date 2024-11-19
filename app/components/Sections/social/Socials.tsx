@@ -26,9 +26,10 @@ const Socials: React.FC<Props> = ({ socials }) => {
         whileInView={{opacity: 1, y: 0}}
         viewport={{ once: true }}
         transition={{ duration: 1, delay: 1 }}
-        className="text-center left-0 right-0 p-0 mb-5 md:mb-10"
+        className="text-center left-0 right-0 p-0 mb-5 md:mb-10 flex flex-col items-center"
       >
-        <h3 className="text-2xl md:text-3xl font-bold border-b-2 border-primary pb-2 inline-block">Connect with me!</h3>
+        <h2 className="sm:text-[18px] text-[14px] uppercase">connect with me</h2>
+        <h2 className="text-[30px] xs:text-[40px] sm:text-[50px] md:text-[60px] font-bold border-b-2 border-primary w-fit">Socials</h2>
         <div className='w-full flex justify-center items-center mt-5'>
           <ul className='w-full md:w-[30%] flex justify-around items-center p-3'>
             {socials.map((social, index) => {
@@ -49,7 +50,7 @@ const Socials: React.FC<Props> = ({ socials }) => {
                       width={18}
                     />
                   </a>
-                  <span className='border-2 border-primary w-[90%] mt-4 rounded-lg blur group-hover:w-[60%] group-hover:-translate-y-2 transition-all duration-300 ease-in-out'></span>
+                  <span className='border-2 border-secondary w-[90%] mt-4 rounded-lg blur group-hover:w-[60%] group-hover:-translate-y-2 transition-all duration-300 ease-in-out'></span>
                 </li>
               )
             })}

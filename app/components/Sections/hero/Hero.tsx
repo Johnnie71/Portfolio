@@ -39,7 +39,7 @@ const Hero: React.FC<HeroProps> = ({data}) => {
           transition={{ duration: 1, delay: 0.5 }}
         >
           <motion.h1
-            className="bg-clip-text text-transparent text-center bg-gradient-to-r from-primary to-secondary text-3xl md:text-4xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-extrabold w-full"
+            className="bg-clip-text text-transparent text-center bg-gradient-to-br from-primary to-secondary text-3xl md:text-4xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-extrabold w-full"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.5 }}
@@ -62,7 +62,7 @@ const Hero: React.FC<HeroProps> = ({data}) => {
           transition={{ duration: 1, delay: 0.5 }}
         >
           <Image
-            className="border-2 border-primary rounded-full w-28 md:w-32 lg:w-48"
+            className="border-[1px] border-primary rounded-full w-28 md:w-32 lg:w-48"
             src={`${"https:" + avatar.src}`}
             alt="Profile Image"
             width={40}

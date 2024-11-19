@@ -5,10 +5,10 @@
 @layer base {
 
   .dark {
-    --color-background: #202023;
-    --color-on-background: #e3e2e6;
-    --color-primary: #ff7504;
-    --color-secondary: #FFD700;
+    --color-background: #060d1d;
+    --color-on-background: #D3D3D3;
+    --color-primary: #00bfff;
+    --color-secondary: #ff7504;
     --color-ternary: #ee1010;
   }
 
@@ -65,7 +65,7 @@ ul#downArrow li {
   list-style: none;
   width: 8px;
   height: 8px;
-  background-color: var(--color-primary);
+  background-color: var(--color-secondary);
   border-radius: 100%;
   margin-bottom: 10px;
   animation: ani 0.8s infinite ease-in-out;
@@ -76,7 +76,7 @@ ul#downArrow::before,
 ul#downArrow::after {
   position: absolute;
   content: '';
-  background-color: var(--color-primary);
+  background-color: var(--color-secondary);
   width: 30px;
   height: 3px;
   bottom: 0;

@@ -20,22 +20,23 @@ const About: React.FC<Props> = ({data}) => {
   const { about } = data;
 
   return (
-    <section id="about" className="flex flex-col items-center py-32">
+    <section id="about" className="flex flex-col items-left py-32">
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         transition={{ duration: 1, delay: 1 }}
-        className="text-center mb-8"
+        className="text-left mb-4"
         whileInView={{opacity: 1, y: 0}}
         viewport={{ once: true }}
       >
-        <h3 className="text-3xl font-bold border-b-2 border-primary pb-2">About</h3>
+        <h6 className="sm:text-[18px] text-[14px] uppercase">introduction</h6>
+        <h2 className="text-[30px] xs:text-[40px]  sm:text-[50px] md:text-[60px] font-bold border-b-2 border-primary w-fit">Overview</h2>
       </motion.div>
       <motion.div
         initial={{ opacity: 0, x: -30 }}
         whileInView={{ opacity: 1, x:0}}
         transition={{ duration: 1, delay: 1 }}
         viewport={{ once: true }}
-        className="sm:text-lg md:text-xl mb-6 text-center max-w-4xl"
+        className="sm:text-lg md:text-xl mb-6 text-left max-w-4xl"
       >
         {about.map((text, index) => (
           <p key={index} className='mb-4'>{text}</p>

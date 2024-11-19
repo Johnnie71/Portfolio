@@ -13,14 +13,14 @@ const AnimatedSphere: React.FC = () => {
 	const mesh = useRef<Mesh>(null);
 	const materialRef = useRef(null);
 	const [colorA, setColorA] = useState<string>('#ec9d2e')
-	const [colorB, setColorB] = useState<string>('#ee1010')
+	const [colorB, setColorB] = useState<string>('#00bfff')
 
 	const gui = new GUI({ width: 325 })
 	gui.domElement.style.display = 'none'
 
 	const debugObject = {
 		colorA: colorA,
-		colorB: colorB
+		colorB: colorB,
 	}
 
 	const uniforms = useMemo(() => ({
@@ -34,7 +34,7 @@ const AnimatedSphere: React.FC = () => {
 		uWarpStrength: new THREE.Uniform(1.7),
 
 		uColorA: new THREE.Uniform( new THREE.Color( colorA )),
-		uColorB: new THREE.Uniform( new THREE.Color( colorB ))
+		uColorB: new THREE.Uniform( new THREE.Color( colorB )),
 	}), [colorA, colorB]);
 
 	const geometry = useMemo(() => {
