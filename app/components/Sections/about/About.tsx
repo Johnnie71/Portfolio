@@ -29,7 +29,7 @@ const About: React.FC<Props> = ({data}) => {
         viewport={{ once: true }}
       >
         <h6 className="sm:text-[18px] text-[14px] uppercase">introduction</h6>
-        <h2 className="text-[30px] xs:text-[40px]  sm:text-[50px] md:text-[60px] font-bold border-b-2 border-primary w-fit">Overview</h2>
+        <h2 className="text-[30px] xs:text-[40px]  sm:text-[50px] md:text-[60px] font-bold border-b-2 border-primary filter brightness-90 w-fit">Overview</h2>
       </motion.div>
       <motion.div
         initial={{ opacity: 0, x: -30 }}

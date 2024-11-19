@@ -29,7 +29,7 @@ const Projects: React.FC<Props> = ({ projects }) => {
         className="text-center mb-8 flex flex-col items-center"
       >
         <h2 className="sm:text-[18px] text-[14px] uppercase">my work</h2>
-        <h2 className="text-[30px] xs:text-[40px] sm:text-[50px] md:text-[60px] font-bold border-b-2 border-primary w-fit">Projects</h2>
+        <h2 className="text-[30px] xs:text-[40px] sm:text-[50px] md:text-[60px] font-bold border-b-2 border-primary filter brightness-90 w-fit">Projects</h2>
         {/* <h3 className="text-3xl font-bold border-b-2 border-primary pb-2 inline-block">Projects</h3> */}
       </motion.div>
       <div className="flex flex-col justify-center items-center w-full">
@@ -99,7 +99,7 @@ const Projects: React.FC<Props> = ({ projects }) => {
               >
                 <div className="grid grid-cols-2 gap-4 max-w-7xl ">
                   <div className={`${idx % 2 == 0 ? 'order-1' : 'order-2'} flex flex-col justify-between w-full`}>
-                    <h3 className="border-b-2 border-secondary text-primary text-3xl font-semibold">{title}</h3>
+                    <h3 className="border-b-2 border-secondary text-primary filter brightness-90 text-3xl">{title}</h3>
                     <p className="text-lg">{description}</p>
                     <div id={`${idx}`} className="flex justify-around w-full">
                       {techStack.map((tech, index) => {
