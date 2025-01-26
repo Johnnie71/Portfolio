@@ -12,7 +12,7 @@ export interface Project {
   picture: ContentImage,
   repo: string,
   liveSite: string,
-  order: number
+  createdAt: string
 }
 
 export const parseContentfulProjects = (entries?: Entry<EntrySkeletonType, undefined, string>[]): Project[] | null => {
@@ -28,19 +28,19 @@ export const parseContentfulProjects = (entries?: Entry<EntrySkeletonType, undef
       repo: project.fields.repo || '',
       demoURL: project.fields.demoURL || '',
       liveSite: project.fields.liveSite || '',
-      order: project.fields.order || 0,
+      createdAt: project.sys.createdAt.split("T")[0],
       techStack: project.fields.techStack?.map(tech => {
         // Ensure tech is defined and parse the tech image
         return parseConentfulContentImage(tech)
       }).filter(Boolean) as ContentImage[] // Filter out any null values and ensure proper type
     };
   }).sort((a, b) => {
-    const order1 = a.order;
-    const order2 = b.order;
+    const date1 = new Date(a.createdAt);
+    const date2 = new Date(b.createdAt)
 
-    if (order1 > order2) return -1;
+    if (date1 > date2) return 1;
 
-    if (order1 < order2) return 1;
+    if (date1 < date2) return -1;
 
     return 0
   }) as Project[]; // Filter out any null values from the projects array
