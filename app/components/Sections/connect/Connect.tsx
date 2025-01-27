@@ -21,7 +21,7 @@ const Connect: React.FC<Props> = ({ socials }) => {
   }
 
   return (
-    <section id='socials'>
+    <section id='connect'>
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{opacity: 1, y: 0}}
