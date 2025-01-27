@@ -82,7 +82,7 @@ const EmailForm = () => {
         {error && <span className='text-red-700'>{error}</span>}
         <div className="flex justify-end mt-2">
           <button
-            className="bg-gradient-to-r bg-primary text-white px-4 py-2 font-bold rounded-full hover:opacity-80"
+            className="bg-gradient-to-r bg-primary text-white px-4 py-2 font-bold rounded-full hover:opacity-80 filter brightness-90"
             type="submit"
           >
             {buttonText}
