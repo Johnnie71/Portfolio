@@ -1,5 +1,6 @@
 import React, { useRef, useState } from 'react'
 import emailjs from '@emailjs/browser'
+import { motion } from "framer-motion";
 
 const EmailForm = () => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
@@ -35,8 +36,12 @@ const EmailForm = () => {
   };
 
   return (
-    <div
+    <motion.div
       className="w-[90%] md:w-[40%] mt-8 relative overflow-hidden z-10 bg-gray-800 p-8 rounded-lg shadow-md before:w-24 before:h-24 before:absolute before:bg-primary before:rounded-full before:-z-10 before:blur-2xl after:w-32 after:h-32 after:absolute after:bg-secondary after:rounded-full after:-z-10 after:blur-xl after:top-24 after:-right-12"
+      initial={{ scale: 0.5, opacity: 0.5 }}
+      whileInView={{ scale: 1, opacity: 1 }}
+      viewport={{ once: true }}  // Triggers only once when it comes into view
+      transition={{ duration: 1 }}
     >
       <h2 className="text-2xl font-bold text-white mb-6">Contact Me</h2>
 
@@ -82,7 +87,7 @@ const EmailForm = () => {
           </button>
         </div>
       </form>
-    </div>
+    </motion.div>
   )
 }
 
