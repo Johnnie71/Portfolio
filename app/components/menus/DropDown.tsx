@@ -95,7 +95,7 @@ const StaggeredDropDown: React.FC = () => {
         >
           <Option scrollTo='about' Icon={MdOutlineAccountBox} text="About" />
           <Option scrollTo='projects' Icon={MdOutlineCode} text="Projects" />
-          <Option scrollTo='socials' Icon={MdConnectWithoutContact} text="Connect" />
+          <Option scrollTo='connect' Icon={MdConnectWithoutContact} text="Connect" />
         </motion.ul>
       </motion.div>
     </div>
