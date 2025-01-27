@@ -6,10 +6,11 @@ const EmailForm = () => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const formRef = useRef<HTMLFormElement | null>(null);
   const [error, setError] = useState<string | null>(null)
+  const [buttonText, setButtonText] = useState<string>('Send')
 
   const sendEmail = async (e: React.FormEvent) => {
     e.preventDefault();
-    setIsLoading(true);
+    setButtonText("Sending...")
     setError(null)
 
     if (formRef.current) {
@@ -26,10 +27,11 @@ const EmailForm = () => {
           publicKey
         );
         formRef.current.reset()
+        setButtonText('Send')
       } catch (error) {
         console.error('Failed to send email: ', error)
-      } finally {
-        setIsLoading(false)
+        setError("Failed to send message!")
+        setButtonText('Try again')
       }
     }
 
@@ -37,10 +39,10 @@ const EmailForm = () => {
 
   return (
     <motion.div
-      className="w-[90%] md:w-[40%] mt-8 relative overflow-hidden bg-gray-800 p-8 rounded-lg shadow-md before:w-24 before:h-24 before:absolute before:bg-primary before:rounded-full before:-z-10 before:blur-2xl after:w-32 after:h-32 after:absolute after:bg-secondary after:rounded-full after:-z-10 after:blur-xl after:top-24 after:-right-12"
+      className="w-[90%] md:w-[40%] mt-8 p-2"
       initial={{ scale: 0.5, opacity: 0.5 }}
       whileInView={{ scale: 1, opacity: 1 }}
-      viewport={{ once: true }}  // Triggers only once when it comes into view
+      viewport={{ once: true }}
       transition={{ duration: 1 }}
     >
       <h2 className="text-2xl font-bold text-white mb-6">Contact Me</h2>
@@ -49,7 +51,7 @@ const EmailForm = () => {
         <div className="mb-4">
           <label className="block text-sm font-medium text-gray-300" htmlFor="from_name" >Full Name </label>
           <input
-            className="mt-1 p-2 w-full bg-gray-700 border border-gray-600 rounded-md text-white"
+            className="mt-1 p-2 w-full shadow-xs bg-transparent border border-gray-300 rounded-full text-white shadow-[inset_0_-8px_10px_#8fdfff1f]"
             type="text"
             name="from_name"
             required
@@ -59,7 +61,7 @@ const EmailForm = () => {
         <div className="mb-4">
           <label className="block text-sm font-medium text-gray-300" htmlFor="from_email">Email Address</label>
           <input
-            className="mt-1 p-2 w-full bg-gray-700 border border-gray-600 rounded-md text-white"
+            className="mt-1 p-2 w-full shadow-xs bg-transparent border border-gray-300 rounded-full text-white shadow-[inset_0_-8px_10px_#8fdfff1f]"
             name="from_email"
             id="email"
             type="email"
@@ -67,23 +69,23 @@ const EmailForm = () => {
           />
         </div>
 
-        <div className="mb-4">
+        <div className="mb-2">
           <label className="block text-sm font-medium text-gray-300" htmlFor="message">Message</label>
           <textarea
-            className="mt-1 p-2 w-full bg-gray-700 border border-gray-600 rounded-md text-white"
+            className="block w-full h-40 px-5 py-2.5 leading-7 resize-none bg-transparent border border-gray-300 rounded-2xl shadow-[inset_0_-8px_10px_#8fdfff1f]"
             rows={3}
             name="message"
             id="message"
             required
           ></textarea>
         </div>
-
-        <div className="flex justify-end">
+        {error && <span className='text-red-700'>{error}</span>}
+        <div className="flex justify-end mt-2">
           <button
-            className="bg-gradient-to-r bg-primary text-white px-4 py-2 font-bold rounded-md hover:opacity-80"
+            className="bg-gradient-to-r bg-primary text-white px-4 py-2 font-bold rounded-full hover:opacity-80 filter brightness-90"
             type="submit"
           >
-            {isLoading ? 'Sending...' : 'Send'}
+            {buttonText}
           </button>
         </div>
       </form>

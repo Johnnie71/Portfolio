@@ -56,7 +56,7 @@ const Projects: React.FC<Props> = ({ projects }) => {
                   unoptimized
                   priority
                 />
-                <h3 className="text-primary mb-2 w-fit text-2xl font-semibold">{title}</h3>
+                <h3 className="text-primary mb-2 w-fit text-2xl font-semibold filter brightness-90">{title}</h3>
                 <p className="mb-4">{description}</p>
                 
                 <div id={`${idx}`} className="flex justify-around w-full mb-4">
