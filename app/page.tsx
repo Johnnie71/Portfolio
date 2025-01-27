@@ -3,7 +3,7 @@ import TopNav from "./components/NavBar/TopNav"
 import { fetchAllEntries } from "./lib/contentful/contentfulClient"
 import About from "./components/Sections/about/About"
 import Projects from "./components/Sections/projects/Projects"
-import Socials from "./components/Sections/social/Socials"
+import Connect from "./components/Sections/connect/Connect"
 import ScrollArrow from "./components/icons/ScrollArrow"
 
 const Home = async () => {
@@ -17,7 +17,7 @@ const Home = async () => {
         <Hero data={heroData} />
         <About data={aboutData} />
         <Projects projects={projectsData} />
-        <Socials socials={socialsData} />
+        <Connect socials={socialsData} />
       </div>
     </div>
   )

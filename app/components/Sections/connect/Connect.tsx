@@ -4,12 +4,13 @@ import React from 'react';
 import { motion } from 'framer-motion'
 import { Social } from '@/app/lib/contentful/socials';
 import Image from 'next/image';
+import EmailForm from '../../EmailForm/EmailForm';
 
 interface Props {
   socials: Social[] | null
 }
 
-const Socials: React.FC<Props> = ({ socials }) => {
+const Connect: React.FC<Props> = ({ socials }) => {
 
   if (!socials) {
     return (
@@ -29,7 +30,8 @@ const Socials: React.FC<Props> = ({ socials }) => {
         className="text-center left-0 right-0 p-0 mb-5 md:mb-10 flex flex-col items-center"
       >
         <h2 className="sm:text-[18px] text-[14px] uppercase">connect with me</h2>
-        <h2 className="text-[30px] xs:text-[40px] sm:text-[50px] md:text-[60px] font-bold border-b-2 border-primary filter brightness-90 w-fit">Socials</h2>
+        <h2 className="text-[30px] xs:text-[40px] sm:text-[50px] md:text-[60px] font-bold border-b-2 border-primary filter brightness-90 w-fit">Get in Touch</h2>
+        <EmailForm />
         <div className='w-full flex justify-center items-center mt-5'>
           <ul className='w-full md:w-[30%] flex justify-around items-center p-3'>
             {socials.map((social, index) => {
@@ -61,4 +63,4 @@ const Socials: React.FC<Props> = ({ socials }) => {
   )
 }
 
-export default Socials;
+export default Connect;
