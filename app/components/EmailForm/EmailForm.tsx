@@ -54,6 +54,7 @@ const EmailForm = () => {
             className="mt-1 p-2 w-full shadow-xs bg-transparent border border-gray-300 rounded-full text-white shadow-[inset_0_-8px_10px_#8fdfff1f]"
             type="text"
             name="from_name"
+            placeholder='Enter your full name'
             aria-required={true}
             required
           />
@@ -66,6 +67,7 @@ const EmailForm = () => {
             name="from_email"
             id="email"
             type="email"
+            placeholder='Enter email address'
             aria-required={true}
             required
           />
@@ -78,6 +80,7 @@ const EmailForm = () => {
             rows={3}
             name="message"
             id="message"
+            placeholder='Have thoughts? Let&apos;s chat! I&apos;m all ears...'
             aria-required={true}
             required
           ></textarea>
