@@ -12,7 +12,7 @@ const TopNav = () => {
   }
   
   return (
-    <div className="flex justify-center items-center sticky top-0 backdrop-blur-[5px] z-10 text-lg md:text-xl lg:text-2xl w-full px-2">
+    <div className="flex justify-center items-center sticky top-0 backdrop-blur-[5px] z-50 text-lg md:text-xl lg:text-2xl w-full px-2">
       <div className="container mx-auto flex justify-between items-center p-2">
         <div className="flex items-center">
           <div
@@ -29,7 +29,7 @@ const TopNav = () => {
           <div onClick={() => handleScrollTo('projects')} className="cursor-pointer">
             Projects
           </div>
-          <div onClick={() => handleScrollTo('socials')} className="cursor-pointer">
+          <div onClick={() => handleScrollTo('connect')} className="cursor-pointer">
             Connect
           </div>
         </div>
