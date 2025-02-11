@@ -1,4 +1,4 @@
-import { useFrame } from "@react-three/fiber";
+import { useFrame, useThree } from "@react-three/fiber";
 import React, { useMemo, useRef, useState, useEffect } from "react";
 import { Mesh, IcosahedronGeometry } from "three";
 import { mergeVertices } from "three/examples/jsm/utils/BufferGeometryUtils.js";
@@ -12,6 +12,8 @@ import GUI from 'lil-gui';
 const AnimatedSphere: React.FC = () => {
 	const mesh = useRef<Mesh>(null);
 	const materialRef = useRef(null);
+	const { viewport } = useThree();
+
 	const [colorA, setColorA] = useState<string>('#ec9d2e')
 	const [colorB, setColorB] = useState<string>('#00bfff')
 
@@ -79,12 +81,14 @@ const AnimatedSphere: React.FC = () => {
     return () => gui.destroy(); // Cleanup the GUI
   }, [uniforms]);
 
+	const scaleFactor = viewport.width < 6 ? -.6 : .8;
+
 	return (
 		<mesh
 			ref={mesh}
 			position={[0, 0, 0]}
 			visible
-			scale={1.5}
+			scale={scaleFactor}
 			geometry={geometry}
 		>
 			<CustomShaderMaterial
