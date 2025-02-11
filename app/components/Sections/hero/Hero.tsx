@@ -2,7 +2,7 @@
 import { motion } from 'framer-motion';
 import CanvasContainer from '../../ThreeJs/Canvas'
 import { Hero as HeroType } from '@/app/lib/contentful/hero';
-import Image from 'next/image'; 
+import Image from 'next/image';
 
 interface HeroProps {
   data: HeroType | null;
@@ -22,7 +22,14 @@ const Hero: React.FC<HeroProps> = ({data}) => {
   const {name, welcomeMessage, avatar} = data
 
   return (
-    <section id="hero" className="relative h-[90vh] w-full flex flex-col justify-center items-center">
+    <section 
+      id="hero" 
+      className="h-screen w-full flex flex-col justify-center items-center"
+      style={{
+        WebkitMaskImage: "linear-gradient(to bottom, rgba(0, 0, 0, 1) 90%, rgba(0, 0, 0, 0) 100%)",
+        maskImage: "linear-gradient(to bottom, rgba(0, 0, 0, 1) 90%, rgba(0, 0, 0, 0) 100%)",
+      }}
+    >
       <motion.div
       className='w-full'
         initial={{ opacity: 0, y: -30 }}
@@ -31,7 +38,7 @@ const Hero: React.FC<HeroProps> = ({data}) => {
       >
         <CanvasContainer />
       </motion.div>
-      <div className="container w-auto md:w-[80%] flex flex-col md:flex-row">
+      {/* <div className="container w-auto md:w-[80%] flex flex-col md:flex-row">
         <motion.div
           className="flex flex-col md:justify-center md:items-start md:flex-grow"
           initial={{ opacity: 0, y: 30 }}
@@ -71,7 +78,7 @@ const Hero: React.FC<HeroProps> = ({data}) => {
             unoptimized
           />
         </motion.div>
-      </div>
+      </div> */}
     </section>
   );
 }
