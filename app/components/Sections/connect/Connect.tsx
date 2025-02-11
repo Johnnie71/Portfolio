@@ -14,7 +14,7 @@ const Connect: React.FC<Props> = ({ socials }) => {
 
   if (!socials) {
     return (
-      <section id='projects' className='h-[90vh] w-full flex flex-col justify-center items-center'>
+      <section id='connect' className='h-[90vh] w-full flex flex-col justify-center items-center'>
         <h1>No socials data found</h1>
       </section>
     );
