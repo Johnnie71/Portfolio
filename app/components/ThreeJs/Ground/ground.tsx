@@ -1,7 +1,7 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef } from 'react';
 import * as THREE from 'three';
-import { useLoader, useThree } from "@react-three/fiber";
-import { Reflector, useTexture, MeshReflectorMaterial } from '@react-three/drei';
+import { useLoader, useThree, useFrame } from "@react-three/fiber";
+import {  MeshReflectorMaterial } from '@react-three/drei';
 
 const Ground: React.FC = () => {
   const [roughness, normal, displacement] = useLoader(THREE.TextureLoader, [
@@ -10,12 +10,22 @@ const Ground: React.FC = () => {
     './textures/Ground/Displacement.jpg'
   ])
 
-  const { viewport } = useThree()
+  const { viewport, pointer } = useThree();
+  const groundRef = useRef<THREE.Mesh>(null);
 
   const height = viewport.width < 6 ? -2 : -2.5
+
+  useFrame(() => {
+    if (groundRef.current) {
+      // Tilt the ground slightly based on pointer movement
+      const zRotation = THREE.MathUtils.lerp(groundRef.current.rotation.z, -pointer.x * 0.1, 0.2);
+      
+      groundRef.current.rotation.set(-Math.PI * 0.5, 0, zRotation);
+    }
+  })
   
   return (
-    <mesh rotation-x={-Math.PI * 0.5} castShadow receiveShadow position={[0.0, height, 0]}>
+    <mesh ref={groundRef} rotation-x={-Math.PI * 0.5} castShadow receiveShadow position={[0.0, height, 0]}>
       <circleGeometry args={[10, 32]} />
       <MeshReflectorMaterial
           mirror={1} // Lower reflection so it interacts more with light
