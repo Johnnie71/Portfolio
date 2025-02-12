@@ -12,7 +12,8 @@ import GUI from 'lil-gui';
 const AnimatedSphere: React.FC = () => {
 	const mesh = useRef<Mesh>(null);
 	const materialRef = useRef(null);
-	const { viewport } = useThree();
+	const { size } = useThree();
+	const [scale, setScale] = useState(0)
 
 	const [colorA, setColorA] = useState<string>('#ec9d2e')
 	const [colorB, setColorB] = useState<string>('#00bfff')
@@ -81,14 +82,23 @@ const AnimatedSphere: React.FC = () => {
     return () => gui.destroy(); // Cleanup the GUI
   }, [uniforms]);
 
-	const scaleFactor = viewport.width < 6 ? -.6 : .8;
+	  // Dynamically adjust scale based on viewport width
+		useEffect(() => {
+			if (size.width < 768) {
+				setScale(0.6); // Mobile
+			} else if (size.width < 1024) {
+				setScale(0.8); // Tablet
+			} else {
+				setScale(0.8); // Desktop
+			}
+		}, [size.width]);
 
 	return (
 		<mesh
 			ref={mesh}
 			position={[0, 0, 0]}
 			visible
-			scale={scaleFactor}
+			scale={scale}
 			geometry={geometry}
 		>
 			<CustomShaderMaterial
