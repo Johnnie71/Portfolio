@@ -1,10 +1,9 @@
 'use client'
-import React, { Suspense, useRef, useEffect } from 'react'
-import { Canvas, useThree } from '@react-three/fiber'
+import React, { Suspense } from 'react'
+import { Canvas } from '@react-three/fiber'
 import { OrbitControls, SoftShadows } from "@react-three/drei";
 import AnimatedSphere from './AnimatedSphere'
 import Ground from './Ground/ground'
-import * as THREE from 'three'
 
 const CanvasContainer: React.FC = () => {
   
