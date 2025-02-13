@@ -38,7 +38,12 @@ const CanvasContainer: React.FC<Props> = ({ name, welcomeMessage }) => {
       <SceneTxt name={name} message={welcomeMessage} />
       <Canvas shadows camera={{ position: [0.0, 0.0, 8.0] }}>
         <SoftShadows size={20} samples={25} focus={0.9} />
-        <OrbitControls enableZoom={false} enableRotate={false} enablePan={false} />
+        <OrbitControls 
+          enableZoom={false} 
+          enableRotate={false} 
+          enablePan={false}
+          touches={{ ONE: undefined, TWO: undefined }}
+        />
         <ambientLight intensity={0.2} />
         <directionalLight
           position={[0, 2, 3]}
