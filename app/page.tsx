@@ -11,10 +11,17 @@ const Home = async () => {
 
   return (
     <div className="font-kodeMono mx-auto max-w-screen-2xl relative">
-      <TopNav />
-      <ScrollArrow />
-      <div className="px-4">
+      <div 
+        className="h-screen"
+        style={{ background: "linear-gradient(to bottom, black 80%, rgba(0, 0, 0, 0) 100%)" }}
+      >
+        <div className='fixed left-0 top-0 w-full z-50'>
+          <TopNav />
+        </div>
+        <ScrollArrow />
         <Hero data={heroData} />
+      </div>
+      <div className="px-4">
         <About data={aboutData} />
         <Projects projects={projectsData} />
         <Connect socials={socialsData} />

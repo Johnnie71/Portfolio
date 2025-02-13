@@ -1,4 +1,4 @@
-import { useFrame } from "@react-three/fiber";
+import { useFrame, useThree } from "@react-three/fiber";
 import React, { useMemo, useRef, useState, useEffect } from "react";
 import { Mesh, IcosahedronGeometry } from "three";
 import { mergeVertices } from "three/examples/jsm/utils/BufferGeometryUtils.js";
@@ -12,6 +12,11 @@ import GUI from 'lil-gui';
 const AnimatedSphere: React.FC = () => {
 	const mesh = useRef<Mesh>(null);
 	const materialRef = useRef(null);
+	const { size } = useThree();
+	const [scale, setScale] = useState<number>(0);
+	const [zPosition, setZPosition] = useState<number>(-5);
+	const [opacity, setOpacity] = useState<number>(0)
+
 	const [colorA, setColorA] = useState<string>('#ec9d2e')
 	const [colorB, setColorB] = useState<string>('#00bfff')
 
@@ -35,6 +40,7 @@ const AnimatedSphere: React.FC = () => {
 
 		uColorA: new THREE.Uniform( new THREE.Color( colorA )),
 		uColorB: new THREE.Uniform( new THREE.Color( colorB )),
+		uOpacity: new THREE.Uniform(0),
 	}), [colorA, colorB]);
 
 	const geometry = useMemo(() => {
@@ -45,7 +51,17 @@ const AnimatedSphere: React.FC = () => {
 	}, [])
 
 	useFrame(({ clock }) => {
-		uniforms.uTime.value = clock.getElapsedTime()
+		uniforms.uTime.value = clock.getElapsedTime();
+
+		if (zPosition < 0) {
+			setZPosition((prev) => Math.min(prev + 0.025, 0));
+		}
+
+		if (opacity < 1) {
+			setOpacity((prev) => Math.min(prev + 0.01, 1));
+		}
+
+		uniforms.uOpacity.value = opacity;
 	})
 
 	// Tweaks
@@ -79,12 +95,23 @@ const AnimatedSphere: React.FC = () => {
     return () => gui.destroy(); // Cleanup the GUI
   }, [uniforms]);
 
+	  // Dynamically adjust scale based on viewport width
+		useEffect(() => {
+			if (size.width < 768) {
+				setScale(0.6); // Mobile
+			} else if (size.width < 1024) {
+				setScale(0.8); // Tablet
+			} else {
+				setScale(0.8); // Desktop
+			}
+		}, [size.width]);
+
 	return (
 		<mesh
 			ref={mesh}
-			position={[0, 0, 0]}
+			position={[0, 0, zPosition]}
 			visible
-			scale={1.5}
+			scale={scale}
 			geometry={geometry}
 		>
 			<CustomShaderMaterial
