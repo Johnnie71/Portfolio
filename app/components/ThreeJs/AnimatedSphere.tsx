@@ -58,7 +58,7 @@ const AnimatedSphere: React.FC = () => {
 		}
 
 		if (opacity < 1) {
-			setOpacity((prev) => Math.min(prev + 0.025, 1));
+			setOpacity((prev) => Math.min(prev + 0.01, 1));
 		}
 
 		uniforms.uOpacity.value = opacity;
