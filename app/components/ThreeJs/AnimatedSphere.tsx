@@ -65,6 +65,10 @@ const AnimatedSphere: React.FC = () => {
 			setOpacity((prev) => Math.min(prev + 0.01, 1));
 		}
 
+		if (mesh.current) {
+			mesh.current.rotation.y += 0.01;
+		}
+
 		uniforms.uOpacity.value = opacity;
 
 		if (!isDragging.current && mesh.current) {
