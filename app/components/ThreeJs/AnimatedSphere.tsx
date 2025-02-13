@@ -8,20 +8,18 @@ import simplexNoise4d from './Shaders/includes/simplexNoise4d.glsl'
 import * as THREE from "three";
 import GUI from 'lil-gui';
 
-interface Props {
-	onInteract: () => void;
-	onEndInteract: () => void;
-}
-
-const AnimatedSphere: React.FC<Props> = ({ onInteract, onEndInteract }) => {
+const AnimatedSphere: React.FC = () => {
 	const mesh = useRef<THREE.Mesh>(null);
 	const materialRef = useRef(null);
 	const { size } = useThree();
 	const [scale, setScale] = useState<number>(0);
 	const [zPosition, setZPosition] = useState<number>(-5);
 	const [opacity, setOpacity] = useState<number>(0);
-	const [isDragging, setIsDragging] = useState(false);
-	const previousMousePosition = useRef({ x: 0, y: 0 });
+
+	const isDragging = useRef(false);
+	const lastPosition = useRef<{ x: number, y: number}>({ x: 0, y: 0 });
+	const velocity = useRef<{ x: number, y: number}>({ x: 0, y: 0 });
+	const decay = 0.95;
 
 	const [colorA, setColorA] = useState<string>('#ec9d2e')
 	const [colorB, setColorB] = useState<string>('#00bfff')
@@ -68,6 +66,18 @@ const AnimatedSphere: React.FC<Props> = ({ onInteract, onEndInteract }) => {
 		}
 
 		uniforms.uOpacity.value = opacity;
+
+		if (!isDragging.current && mesh.current) {
+      // Apply inertia (gradual stop)
+      mesh.current.rotation.y += velocity.current.x;
+      mesh.current.rotation.x += velocity.current.y;
+
+      velocity.current.x *= decay;
+      velocity.current.y *= decay;
+
+      if (Math.abs(velocity.current.x) < 0.0001) velocity.current.x = 0;
+      if (Math.abs(velocity.current.y) < 0.0001) velocity.current.y = 0;
+    }
 	})
 
 	// Tweaks
@@ -101,41 +111,30 @@ const AnimatedSphere: React.FC<Props> = ({ onInteract, onEndInteract }) => {
     return () => gui.destroy(); // Cleanup the GUI
   }, [uniforms]);
 
-	 // Throttling pointer move updates
-	 const throttleTimeout = useRef<any>(null);
+	const handlePointerDown = (event: ThreeEvent<PointerEvent>) => {
+		if (!mesh.current) return;
 
-	// Handle mouse/touch movement
-  const handlePointerDown = (event: ThreeEvent<PointerEvent>) => {
-    event.stopPropagation();
-    setIsDragging(true);
-		onInteract()
-    previousMousePosition.current = { x: event.clientX, y: event.clientY };
-  };
+		event.stopPropagation();
+		isDragging.current = true;
+		lastPosition.current = { x: event.clientX, y: event.clientY};
+	};
 
-  const handlePointerMove = (event: ThreeEvent<PointerEvent>) => {
-    if (!isDragging || !mesh.current) return;
+	const handlePointerMove = (event: PointerEvent) => {
+		if (!isDragging.current || !mesh.current) return;
 
-    // Throttle the move event using requestAnimationFrame or setTimeout
-    if (throttleTimeout.current) cancelAnimationFrame(throttleTimeout.current);
+		const deltaX = event.clientX - lastPosition.current.x;
+		const deltaY = event.clientY - lastPosition.current.y;
 
-    throttleTimeout.current = requestAnimationFrame(() => {
-      const deltaX = event.clientX - previousMousePosition.current.x;
-      const deltaY = event.clientY - previousMousePosition.current.y;
+		velocity.current = { x: deltaX * 0.01, y: deltaY * 0.01 };
+		lastPosition.current = { x: event.clientX, y: event.clientY };
 
-      // Apply rotation based on drag movement
-      mesh.current!.rotation.y += deltaX * 0.005; // Rotate left/right
-      mesh.current!.rotation.x += deltaY * 0.005; // Rotate up/down
+    mesh.current.rotation.y += velocity.current.x;
+    mesh.current.rotation.x += velocity.current.y;
+	}
 
-      previousMousePosition.current = { x: event.clientX, y: event.clientY };
-    });
-  };
-
-  const handlePointerUp = () => {
-    setIsDragging(false);
-		onEndInteract();
-		if (throttleTimeout.current) cancelAnimationFrame(throttleTimeout.current);
-  };
-
+	const handlePointerUp = () => {
+		isDragging.current = false;
+	}
 
 	// Dynamically adjust scale based on viewport width
 	useEffect(() => {
@@ -148,6 +147,16 @@ const AnimatedSphere: React.FC<Props> = ({ onInteract, onEndInteract }) => {
 		}
 	}, [size.width]);
 
+	useEffect(() => {
+    window.addEventListener("pointermove", handlePointerMove);
+    window.addEventListener("pointerup", handlePointerUp);
+
+    return () => {
+      window.removeEventListener("pointermove", handlePointerMove);
+      window.removeEventListener("pointerup", handlePointerUp);
+    };
+  }, []);
+
 	return (
 		<mesh
 			ref={mesh}
@@ -156,9 +165,6 @@ const AnimatedSphere: React.FC<Props> = ({ onInteract, onEndInteract }) => {
 			scale={scale}
 			geometry={geometry}
 			onPointerDown={handlePointerDown}
-      onPointerMove={handlePointerMove}
-      onPointerUp={handlePointerUp}
-      onPointerLeave={handlePointerUp}
 		>
 			<CustomShaderMaterial
 				ref={materialRef}
