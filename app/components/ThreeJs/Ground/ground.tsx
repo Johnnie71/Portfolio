@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import * as THREE from 'three';
 import { useLoader, useThree, useFrame } from "@react-three/fiber";
 import {  MeshReflectorMaterial } from '@react-three/drei';
@@ -12,11 +12,12 @@ const Ground: React.FC = () => {
 
   const { viewport, pointer } = useThree();
   const groundRef = useRef<THREE.Mesh>(null);
+  const [isHovered, setIsHovered] = useState<boolean>(false);
 
   const height = viewport.width < 6 ? -2 : -2.5
 
   useFrame(() => {
-    if (groundRef.current) {
+    if (groundRef.current && isHovered) {
       // Tilt the ground slightly based on pointer movement
       const zRotation = THREE.MathUtils.lerp(groundRef.current.rotation.z, -pointer.x * 0.1, 0.2);
       
@@ -25,7 +26,15 @@ const Ground: React.FC = () => {
   })
   
   return (
-    <mesh ref={groundRef} rotation-x={-Math.PI * 0.5} castShadow receiveShadow position={[0.0, height, 0]}>
+    <mesh 
+      ref={groundRef} 
+      rotation-x={-Math.PI * 0.5} 
+      castShadow 
+      receiveShadow 
+      position={[0.0, height, 0]}
+      onPointerOver={() => setIsHovered(true)}
+      onPointerOut={() => setIsHovered(false)}
+    >
       <circleGeometry args={[10, 32]} />
       <MeshReflectorMaterial
           mirror={1} // Lower reflection so it interacts more with light
