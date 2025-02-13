@@ -54,7 +54,7 @@ const AnimatedSphere: React.FC = () => {
 		uniforms.uTime.value = clock.getElapsedTime();
 
 		if (zPosition < 0) {
-			setZPosition((prev) => Math.min(prev + 0.01, 0));
+			setZPosition((prev) => Math.min(prev + 0.025, 0));
 		}
 
 		if (opacity < 1) {
