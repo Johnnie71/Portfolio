@@ -58,9 +58,9 @@ const CanvasContainer: React.FC<Props> = ({ name, welcomeMessage }) => {
         />
         <Suspense fallback={<Loader />}>
           {/* <TextComponent position={[-5, 0, 0]} color="#ff7504" text="engineer" /> */}
-          <AnimatedSphere onInteract={() => setIsInteracting(true)} onEndInteract={() => setIsInteracting(false)} />
+          <AnimatedSphere />
           {/* <TextComponent position={[5, 0, 0]} color="#00bfff" text="<coder>" /> */}
-          <Ground onInteract={() => setIsInteracting(true)} onEndInteract={() => setIsInteracting(false)} />
+          <Ground />
         </Suspense>
         {/* <axesHelper /> */}
         </Canvas>

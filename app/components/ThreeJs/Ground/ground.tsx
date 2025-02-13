@@ -3,12 +3,7 @@ import * as THREE from 'three';
 import { useLoader, useThree, useFrame } from "@react-three/fiber";
 import {  MeshReflectorMaterial } from '@react-three/drei';
 
-interface Props {
-	onInteract: () => void;
-	onEndInteract: () => void;
-}
-
-const Ground: React.FC<Props> = ({ onInteract, onEndInteract }) => {
+const Ground: React.FC = () => {
   const [roughness, normal, displacement] = useLoader(THREE.TextureLoader, [
     './textures/Ground/Roughness.jpg',
     './textures/Ground/Normal.jpg',
@@ -32,12 +27,10 @@ const Ground: React.FC<Props> = ({ onInteract, onEndInteract }) => {
 
   const handlePointerOver = () => {
     setIsHovered(true)
-    onInteract()
   }
 
   const handlePointerOut = () => {
     setIsHovered(false)
-    onEndInteract()
   }
   
   return (
