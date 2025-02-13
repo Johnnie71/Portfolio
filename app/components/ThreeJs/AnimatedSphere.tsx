@@ -13,7 +13,9 @@ const AnimatedSphere: React.FC = () => {
 	const mesh = useRef<Mesh>(null);
 	const materialRef = useRef(null);
 	const { size } = useThree();
-	const [scale, setScale] = useState(0)
+	const [scale, setScale] = useState<number>(0);
+	const [zPosition, setZPosition] = useState<number>(-5);
+	const [opacity, setOpacity] = useState<number>(0)
 
 	const [colorA, setColorA] = useState<string>('#ec9d2e')
 	const [colorB, setColorB] = useState<string>('#00bfff')
@@ -38,6 +40,7 @@ const AnimatedSphere: React.FC = () => {
 
 		uColorA: new THREE.Uniform( new THREE.Color( colorA )),
 		uColorB: new THREE.Uniform( new THREE.Color( colorB )),
+		uOpacity: new THREE.Uniform(0),
 	}), [colorA, colorB]);
 
 	const geometry = useMemo(() => {
@@ -48,7 +51,17 @@ const AnimatedSphere: React.FC = () => {
 	}, [])
 
 	useFrame(({ clock }) => {
-		uniforms.uTime.value = clock.getElapsedTime()
+		uniforms.uTime.value = clock.getElapsedTime();
+
+		if (zPosition < 0) {
+			setZPosition((prev) => Math.min(prev + 0.1, 0));
+		}
+
+		if (opacity < 1) {
+			setOpacity((prev) => Math.min(prev + 0.025, 1));
+		}
+
+		uniforms.uOpacity.value = opacity;
 	})
 
 	// Tweaks
@@ -96,7 +109,7 @@ const AnimatedSphere: React.FC = () => {
 	return (
 		<mesh
 			ref={mesh}
-			position={[0, 0, 0]}
+			position={[0, 0, zPosition]}
 			visible
 			scale={scale}
 			geometry={geometry}

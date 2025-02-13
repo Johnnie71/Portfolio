@@ -15,7 +15,7 @@ const SceneTxt: React.FC<Props> = ({ name, message }) => {
               className="bg-clip-text text-transparent text-center bg-gradient-to-br from-primary to-secondary text-3xl sm:text-4xl lg:text-6xl font-extrabold w-full"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, delay: 0.5 }}
+              transition={{ duration: 2, delay: 0.5 }}
             >
               {name || "Johnnie Gonzalez"}
             </motion.h1>
@@ -23,7 +23,7 @@ const SceneTxt: React.FC<Props> = ({ name, message }) => {
             className="sm:hidden text-xl md:text-2xl lg:text-5xl mt-6 font-extrabold text-center w-full"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.9 }}
+            transition={{ duration: 2, delay: 0.9 }}
           >
             {message || "Software Engineer"}
           </motion.p>
