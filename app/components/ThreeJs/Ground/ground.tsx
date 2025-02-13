@@ -3,7 +3,12 @@ import * as THREE from 'three';
 import { useLoader, useThree, useFrame } from "@react-three/fiber";
 import {  MeshReflectorMaterial } from '@react-three/drei';
 
-const Ground: React.FC = () => {
+interface Props {
+	onInteract: () => void;
+	onEndInteract: () => void;
+}
+
+const Ground: React.FC<Props> = ({ onInteract, onEndInteract }) => {
   const [roughness, normal, displacement] = useLoader(THREE.TextureLoader, [
     './textures/Ground/Roughness.jpg',
     './textures/Ground/Normal.jpg',
@@ -24,6 +29,16 @@ const Ground: React.FC = () => {
       groundRef.current.rotation.set(-Math.PI * 0.5, 0, zRotation);
     }
   })
+
+  const handlePointerOver = () => {
+    setIsHovered(true)
+    onInteract()
+  }
+
+  const handlePointerOut = () => {
+    setIsHovered(false)
+    onEndInteract()
+  }
   
   return (
     <mesh 
@@ -32,8 +47,8 @@ const Ground: React.FC = () => {
       castShadow 
       receiveShadow 
       position={[0.0, height, 0]}
-      onPointerOver={() => setIsHovered(true)}
-      onPointerOut={() => setIsHovered(false)}
+      onPointerOver={handlePointerOver}
+      onPointerOut={handlePointerOut}
     >
       <circleGeometry args={[10, 32]} />
       <MeshReflectorMaterial

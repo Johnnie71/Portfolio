@@ -8,7 +8,12 @@ import simplexNoise4d from './Shaders/includes/simplexNoise4d.glsl'
 import * as THREE from "three";
 import GUI from 'lil-gui';
 
-const AnimatedSphere: React.FC = () => {
+interface Props {
+	onInteract: () => void;
+	onEndInteract: () => void;
+}
+
+const AnimatedSphere: React.FC<Props> = ({ onInteract, onEndInteract }) => {
 	const mesh = useRef<THREE.Mesh>(null);
 	const materialRef = useRef(null);
 	const { size } = useThree();
@@ -100,6 +105,7 @@ const AnimatedSphere: React.FC = () => {
   const handlePointerDown = (event: ThreeEvent<PointerEvent>) => {
     event.stopPropagation();
     setIsDragging(true);
+		onInteract()
     previousMousePosition.current = { x: event.clientX, y: event.clientY };
   };
 
@@ -118,6 +124,7 @@ const AnimatedSphere: React.FC = () => {
 
   const handlePointerUp = () => {
     setIsDragging(false);
+		onEndInteract()
   };
 
 

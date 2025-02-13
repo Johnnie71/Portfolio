@@ -1,5 +1,5 @@
 'use client'
-import React, { Suspense } from 'react'
+import React, { Suspense, useState } from 'react'
 import { Canvas } from '@react-three/fiber'
 import { Html, OrbitControls, SoftShadows, useProgress } from "@react-three/drei";
 import AnimatedSphere from './AnimatedSphere'
@@ -32,17 +32,18 @@ aspect-square w-10 flex justify-center items-center text-primary"></div>
 }
 
 const CanvasContainer: React.FC<Props> = ({ name, welcomeMessage }) => {
+  const [isInteracting, setIsInteracting] = useState<boolean>(false)
 
   return (
     <div className="h-[100vh] w-full relative mt-10">
       <SceneTxt name={name} message={welcomeMessage} />
-      <Canvas shadows camera={{ position: [0.0, 0.0, 8.0] }}>
+      <Canvas shadows camera={{ position: [0.0, 0.0, 8.0] }} style={{ touchAction: isInteracting ? "none" : 'auto' }}>
         <SoftShadows size={20} samples={25} focus={0.9} />
-        {/* <OrbitControls 
+        <OrbitControls 
           enableZoom={false} 
           enableRotate={false} 
           enablePan={false}
-        /> */}
+        />
         <ambientLight intensity={0.2} />
         <directionalLight
           position={[0, 2, 3]}
@@ -53,9 +54,9 @@ const CanvasContainer: React.FC<Props> = ({ name, welcomeMessage }) => {
         />
         <Suspense fallback={<Loader />}>
           {/* <TextComponent position={[-5, 0, 0]} color="#ff7504" text="engineer" /> */}
-          <AnimatedSphere />
+          <AnimatedSphere onInteract={() => setIsInteracting(true)} onEndInteract={() => setIsInteracting(false)} />
           {/* <TextComponent position={[5, 0, 0]} color="#00bfff" text="<coder>" /> */}
-          <Ground />
+          <Ground onInteract={() => setIsInteracting(true)} onEndInteract={() => setIsInteracting(false)} />
         </Suspense>
         {/* <axesHelper /> */}
         </Canvas>
