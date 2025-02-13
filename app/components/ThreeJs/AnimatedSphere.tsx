@@ -101,6 +101,9 @@ const AnimatedSphere: React.FC<Props> = ({ onInteract, onEndInteract }) => {
     return () => gui.destroy(); // Cleanup the GUI
   }, [uniforms]);
 
+	 // Throttling pointer move updates
+	 const throttleTimeout = useRef<any>(null);
+
 	// Handle mouse/touch movement
   const handlePointerDown = (event: ThreeEvent<PointerEvent>) => {
     event.stopPropagation();
@@ -112,19 +115,25 @@ const AnimatedSphere: React.FC<Props> = ({ onInteract, onEndInteract }) => {
   const handlePointerMove = (event: ThreeEvent<PointerEvent>) => {
     if (!isDragging || !mesh.current) return;
 
-    const deltaX = event.clientX - previousMousePosition.current.x;
-    const deltaY = event.clientY - previousMousePosition.current.y;
-    
-    // Apply rotation based on drag movement
-    mesh.current.rotation.y += deltaX * 0.005; // Rotate left/right
-    mesh.current.rotation.x += deltaY * 0.005; // Rotate up/down
+    // Throttle the move event using requestAnimationFrame or setTimeout
+    if (throttleTimeout.current) cancelAnimationFrame(throttleTimeout.current);
 
-    previousMousePosition.current = { x: event.clientX, y: event.clientY };
+    throttleTimeout.current = requestAnimationFrame(() => {
+      const deltaX = event.clientX - previousMousePosition.current.x;
+      const deltaY = event.clientY - previousMousePosition.current.y;
+
+      // Apply rotation based on drag movement
+      mesh.current!.rotation.y += deltaX * 0.005; // Rotate left/right
+      mesh.current!.rotation.x += deltaY * 0.005; // Rotate up/down
+
+      previousMousePosition.current = { x: event.clientX, y: event.clientY };
+    });
   };
 
   const handlePointerUp = () => {
     setIsDragging(false);
-		onEndInteract()
+		onEndInteract();
+		if (throttleTimeout.current) cancelAnimationFrame(throttleTimeout.current);
   };
 
 

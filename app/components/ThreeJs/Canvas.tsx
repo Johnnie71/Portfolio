@@ -37,7 +37,11 @@ const CanvasContainer: React.FC<Props> = ({ name, welcomeMessage }) => {
   return (
     <div className="h-[100vh] w-full relative mt-10">
       <SceneTxt name={name} message={welcomeMessage} />
-      <Canvas shadows camera={{ position: [0.0, 0.0, 8.0] }} style={{ touchAction: isInteracting ? "none" : 'auto' }}>
+      <Canvas 
+        shadows 
+        camera={{ position: [0.0, 0.0, 8.0] }} 
+        // style={{ touchAction: isInteracting ? "none" : 'auto' }}
+      >
         <SoftShadows size={20} samples={25} focus={0.9} />
         <OrbitControls 
           enableZoom={false} 
