@@ -1,6 +1,5 @@
-import { useFrame, useThree } from "@react-three/fiber";
+import { useFrame, useThree, ThreeEvent } from "@react-three/fiber";
 import React, { useMemo, useRef, useState, useEffect } from "react";
-import { Mesh, IcosahedronGeometry } from "three";
 import { mergeVertices } from "three/examples/jsm/utils/BufferGeometryUtils.js";
 import CustomShaderMaterial from 'three-custom-shader-material'
 import WobbelVertexShader from './Shaders/wobble/vertex.glsl'
@@ -9,13 +8,20 @@ import simplexNoise4d from './Shaders/includes/simplexNoise4d.glsl'
 import * as THREE from "three";
 import GUI from 'lil-gui';
 
-const AnimatedSphere: React.FC = () => {
-	const mesh = useRef<Mesh>(null);
+interface Props {
+	onInteract: () => void;
+	onEndInteract: () => void;
+}
+
+const AnimatedSphere: React.FC<Props> = ({ onInteract, onEndInteract }) => {
+	const mesh = useRef<THREE.Mesh>(null);
 	const materialRef = useRef(null);
 	const { size } = useThree();
 	const [scale, setScale] = useState<number>(0);
 	const [zPosition, setZPosition] = useState<number>(-5);
-	const [opacity, setOpacity] = useState<number>(0)
+	const [opacity, setOpacity] = useState<number>(0);
+	const [isDragging, setIsDragging] = useState(false);
+	const previousMousePosition = useRef({ x: 0, y: 0 });
 
 	const [colorA, setColorA] = useState<string>('#ec9d2e')
 	const [colorB, setColorB] = useState<string>('#00bfff')
@@ -44,7 +50,7 @@ const AnimatedSphere: React.FC = () => {
 	}), [colorA, colorB]);
 
 	const geometry = useMemo(() => {
-		const baseGeometry = new IcosahedronGeometry(2.5, 50)
+		const baseGeometry = new THREE.IcosahedronGeometry(2.5, 50)
 		const mergedGeometry = mergeVertices(baseGeometry)
 		mergedGeometry.computeTangents();
 		return mergedGeometry;
@@ -95,16 +101,52 @@ const AnimatedSphere: React.FC = () => {
     return () => gui.destroy(); // Cleanup the GUI
   }, [uniforms]);
 
-	  // Dynamically adjust scale based on viewport width
-		useEffect(() => {
-			if (size.width < 768) {
-				setScale(0.6); // Mobile
-			} else if (size.width < 1024) {
-				setScale(0.8); // Tablet
-			} else {
-				setScale(0.8); // Desktop
-			}
-		}, [size.width]);
+	 // Throttling pointer move updates
+	 const throttleTimeout = useRef<any>(null);
+
+	// Handle mouse/touch movement
+  const handlePointerDown = (event: ThreeEvent<PointerEvent>) => {
+    event.stopPropagation();
+    setIsDragging(true);
+		onInteract()
+    previousMousePosition.current = { x: event.clientX, y: event.clientY };
+  };
+
+  const handlePointerMove = (event: ThreeEvent<PointerEvent>) => {
+    if (!isDragging || !mesh.current) return;
+
+    // Throttle the move event using requestAnimationFrame or setTimeout
+    if (throttleTimeout.current) cancelAnimationFrame(throttleTimeout.current);
+
+    throttleTimeout.current = requestAnimationFrame(() => {
+      const deltaX = event.clientX - previousMousePosition.current.x;
+      const deltaY = event.clientY - previousMousePosition.current.y;
+
+      // Apply rotation based on drag movement
+      mesh.current!.rotation.y += deltaX * 0.005; // Rotate left/right
+      mesh.current!.rotation.x += deltaY * 0.005; // Rotate up/down
+
+      previousMousePosition.current = { x: event.clientX, y: event.clientY };
+    });
+  };
+
+  const handlePointerUp = () => {
+    setIsDragging(false);
+		onEndInteract();
+		if (throttleTimeout.current) cancelAnimationFrame(throttleTimeout.current);
+  };
+
+
+	// Dynamically adjust scale based on viewport width
+	useEffect(() => {
+		if (size.width < 768) {
+			setScale(0.6); // Mobile
+		} else if (size.width < 1024) {
+			setScale(0.8); // Tablet
+		} else {
+			setScale(0.8); // Desktop
+		}
+	}, [size.width]);
 
 	return (
 		<mesh
@@ -113,6 +155,10 @@ const AnimatedSphere: React.FC = () => {
 			visible
 			scale={scale}
 			geometry={geometry}
+			onPointerDown={handlePointerDown}
+      onPointerMove={handlePointerMove}
+      onPointerUp={handlePointerUp}
+      onPointerLeave={handlePointerUp}
 		>
 			<CustomShaderMaterial
 				ref={materialRef}
