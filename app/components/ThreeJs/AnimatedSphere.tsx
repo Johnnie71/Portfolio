@@ -6,7 +6,7 @@ import WobbelVertexShader from './Shaders/wobble/vertex.glsl'
 import WobbleFragmentShader from './Shaders/wobble/fragment.glsl';
 import simplexNoise4d from './Shaders/includes/simplexNoise4d.glsl'
 import * as THREE from "three";
-import GUI from 'lil-gui';
+// import GUI from 'lil-gui';
 
 const AnimatedSphere: React.FC = () => {
 	const mesh = useRef<THREE.Mesh>(null);
@@ -24,13 +24,13 @@ const AnimatedSphere: React.FC = () => {
 	const [colorA, setColorA] = useState<string>('#ec9d2e')
 	const [colorB, setColorB] = useState<string>('#00bfff')
 
-	const gui = new GUI({ width: 325 })
-	gui.domElement.style.display = 'none'
+	// const gui = new GUI({ width: 325 })
+	// gui.domElement.style.display = 'none'
 
-	const debugObject = {
-		colorA: colorA,
-		colorB: colorB,
-	}
+	// const debugObject = {
+	// 	colorA: colorA,
+	// 	colorB: colorB,
+	// }
 
 	const uniforms = useMemo(() => ({
 		uTime: new THREE.Uniform(0),
@@ -85,35 +85,35 @@ const AnimatedSphere: React.FC = () => {
 	})
 
 	// Tweaks
-	useEffect(() => {
-    gui.add(uniforms.uPositionFrequency, 'value', 0, 2, 0.001).name('uPositionFrequency');
-    gui.add(uniforms.uTimeFrequency, 'value', 0, 2, 0.001).name('uTimeFrequency');
-    gui.add(uniforms.uStrength, 'value', 0, 2, 0.001).name('uStrength');
-    gui.add(uniforms.uWarpPositionFrequency, 'value', 0, 2, 0.001).name('uWarpPositionFrequency');
-    gui.add(uniforms.uWarpTimeFrequency, 'value', 0, 2, 0.001).name('uWarpTimeFrequency');
-    gui.add(uniforms.uWarpStrength, 'value', 0, 2, 0.001).name('uWarpStrength');
+	// useEffect(() => {
+  //   gui.add(uniforms.uPositionFrequency, 'value', 0, 2, 0.001).name('uPositionFrequency');
+  //   gui.add(uniforms.uTimeFrequency, 'value', 0, 2, 0.001).name('uTimeFrequency');
+  //   gui.add(uniforms.uStrength, 'value', 0, 2, 0.001).name('uStrength');
+  //   gui.add(uniforms.uWarpPositionFrequency, 'value', 0, 2, 0.001).name('uWarpPositionFrequency');
+  //   gui.add(uniforms.uWarpTimeFrequency, 'value', 0, 2, 0.001).name('uWarpTimeFrequency');
+  //   gui.add(uniforms.uWarpStrength, 'value', 0, 2, 0.001).name('uWarpStrength');
 
-    gui.addColor(debugObject, 'colorA').onChange((newColor: string) => {
-      setColorA(newColor);
-      uniforms.uColorA.value.set(newColor);
-    });
+  //   gui.addColor(debugObject, 'colorA').onChange((newColor: string) => {
+  //     setColorA(newColor);
+  //     uniforms.uColorA.value.set(newColor);
+  //   });
 
-    gui.addColor(debugObject, 'colorB').onChange((newColor: string) => {
-      setColorB(newColor);
-      uniforms.uColorB.value.set(newColor);
-    });
+  //   gui.addColor(debugObject, 'colorB').onChange((newColor: string) => {
+  //     setColorB(newColor);
+  //     uniforms.uColorB.value.set(newColor);
+  //   });
 
-    // Add material properties to the GUI
-    if (materialRef.current) {
-      gui.add(materialRef.current, 'metalness', 0, 1, 0.001);
-      gui.add(materialRef.current, 'roughness', 0, 1, 0.001);
-      gui.add(materialRef.current, 'transmission', 0, 1, 0.001);
-      gui.add(materialRef.current, 'ior', 0, 10, 0.001);
-      gui.add(materialRef.current, 'thickness', 0, 10, 0.001);
-    }
+  //   // Add material properties to the GUI
+  //   if (materialRef.current) {
+  //     gui.add(materialRef.current, 'metalness', 0, 1, 0.001);
+  //     gui.add(materialRef.current, 'roughness', 0, 1, 0.001);
+  //     gui.add(materialRef.current, 'transmission', 0, 1, 0.001);
+  //     gui.add(materialRef.current, 'ior', 0, 10, 0.001);
+  //     gui.add(materialRef.current, 'thickness', 0, 10, 0.001);
+  //   }
 
-    return () => gui.destroy(); // Cleanup the GUI
-  }, [uniforms]);
+  //   return () => gui.destroy(); // Cleanup the GUI
+  // }, [uniforms]);
 
 	const handlePointerDown = (event: ThreeEvent<PointerEvent>) => {
 		if (!mesh.current) return;

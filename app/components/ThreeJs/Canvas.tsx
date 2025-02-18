@@ -38,6 +38,7 @@ const CanvasContainer: React.FC<Props> = ({ name, welcomeMessage }) => {
 
   useEffect(() => {
     const handleTouchStart = (e: TouchEvent) => {
+      e.preventDefault();
       setTouchStartY(e.touches[0].clientY);
     };
 
@@ -71,7 +72,11 @@ const CanvasContainer: React.FC<Props> = ({ name, welcomeMessage }) => {
   }, [touchStartY]);
 
   return (
-    <div className="h-[100vh] w-full relative mt-10" ref={canvasRef}>
+    <div 
+      className="h-[100vh] w-full relative mt-10" 
+      ref={canvasRef}
+      style={{ pointerEvents: 'none' }}
+    >
       <SceneTxt name={name} message={welcomeMessage} />
       <Canvas 
         shadows 
