@@ -23,7 +23,7 @@ const Hero: React.FC<HeroProps> = ({data}) => {
   return (
     <section 
       id="hero" 
-      className="h-screen w-full flex flex-col justify-center items-center"
+      className="w-full flex flex-col justify-center items-center"
       style={{
         WebkitMaskImage: "linear-gradient(to bottom, rgba(0, 0, 0, 1) 90%, rgba(0, 0, 0, 0) 100%)",
         maskImage: "linear-gradient(to bottom, rgba(0, 0, 0, 1) 90%, rgba(0, 0, 0, 0) 100%)",
