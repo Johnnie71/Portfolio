@@ -75,7 +75,7 @@ const CanvasContainer: React.FC<Props> = ({ name, welcomeMessage }) => {
     <div 
       className="h-[100vh] w-full relative mt-10" 
       ref={canvasRef}
-      // style={{ pointerEvents: 'none'}}
+      style={{ pointerEvents: 'none' }}
     >
       <SceneTxt name={name} message={welcomeMessage} />
       <Canvas 

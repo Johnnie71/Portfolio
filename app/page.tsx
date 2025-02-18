@@ -10,7 +10,7 @@ const Home = async () => {
   const { heroData, aboutData, projectsData, socialsData } = await fetchAllEntries()
 
   return (
-    <div className="font-kodeMono mx-auto max-w-screen-2xl relative">
+    <div className="font-kodeMono mx-auto max-w-screen-2xl relative overscroll-none">
       <div 
         className="h-screen"
         style={{ background: "linear-gradient(to bottom, black 80%, rgba(0, 0, 0, 0) 100%)" }}
