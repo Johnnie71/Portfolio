@@ -23,7 +23,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${kodeMono.variable} bg-bkg antialiased`}>
+    <html 
+      lang="en" 
+      className={`${kodeMono.variable} bg-bkg antialiased`}
+      style={{ backgroundColor: '#060d1d' }}
+    >
       <body>
         <ThemeProvider>
           <main>
