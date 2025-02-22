@@ -1,20 +1,20 @@
 import React, { useRef, useState } from 'react'
 import emailjs from '@emailjs/browser'
 import { motion } from "framer-motion";
+import SpinLoader from '../Loaders/SpinLoader';
 
 const EmailForm = () => {
-  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [showForm, setshowForm] = useState<boolean>(true);
+  const [isSending, setIsSending] = useState<boolean>(false);
   const formRef = useRef<HTMLFormElement | null>(null);
   const [error, setError] = useState<string | null>(null)
-  const [buttonText, setButtonText] = useState<string>('Send')
 
   const sendEmail = async (e: React.FormEvent) => {
     e.preventDefault();
-    setButtonText("Sending...")
     setError(null)
 
     if (formRef.current) {
-      
+      setIsSending(true)
       try{
         const serviceID = process.env.NEXT_PUBLIC_EMAIL_SERVICE_ID!;
         const templateID = process.env.NEXT_PUBLIC_EMAIL_TEMPLATE_ID!;
@@ -27,11 +27,12 @@ const EmailForm = () => {
           publicKey
         );
         formRef.current.reset()
-        setButtonText('Send')
+        setshowForm(false)
       } catch (error) {
         console.error('Failed to send email: ', error)
         setError("Failed to send message!")
-        setButtonText('Try again')
+      } finally {
+        setIsSending(false)
       }
     }
 
@@ -46,8 +47,8 @@ const EmailForm = () => {
       transition={{ duration: 1 }}
     >
       <h2 className="text-2xl font-bold text-white mb-6">Contact Me</h2>
-
-      <form ref={formRef} onSubmit={sendEmail}>
+      {showForm ? (
+        <form ref={formRef} onSubmit={sendEmail}>
         <div className="mb-4">
           <label className="block text-sm font-medium text-gray-300" htmlFor="from_name" >Full Name <span className='text-red-500'>*</span></label>
           <input
@@ -86,13 +87,32 @@ const EmailForm = () => {
         {error && <span className='text-red-700'>{error}</span>}
         <div className="flex justify-end mt-2">
           <button
-            className="bg-gradient-to-r bg-primary text-white px-4 py-2 font-bold rounded-full hover:opacity-80 filter brightness-90"
-            type="submit"
+            className="bg-gradient-to-br from-primary to-secondary rounded-3xl p-[1px] transition-transform duration-300 text-sm md:text-lg hover:scale-95"
+            onClick={() => setshowForm(true)}
           >
-            {buttonText}
+            <div
+              className="bg-gray-900 rounded-3xl px-4 py-2 shadow-[inset_0_-8px_10px_#8fdfff1f] transition-shadow duration-500 ease-in-out hover:shadow-[inset_0_-5px_10px_#8fdfff3f]"
+              >
+               {isSending ? <SpinLoader /> : error ? "Try Again" : 'Send'}
+            </div>
           </button>
         </div>
       </form>
+      ) : (
+        <div className='w-full min-h-60 flex flex-col justify-center items-center'>
+        <h1 className='text-xl mb-5'>Sent! Thanks for connecting!</h1>
+        <button
+          className="bg-gradient-to-br from-primary to-secondary rounded-3xl p-[1px] transition-transform duration-300 text-sm md:text-lg hover:scale-95"
+          onClick={() => setshowForm(true)}
+        >
+          <div
+            className="bg-gray-900 rounded-3xl px-4 py-2 shadow-[inset_0_-8px_10px_#8fdfff1f] transition-shadow duration-500 ease-in-out hover:shadow-[inset_0_-5px_10px_#8fdfff3f]"
+            >
+              Send another
+          </div>
+        </button>
+      </div>
+      )}
     </motion.div>
   )
 }
