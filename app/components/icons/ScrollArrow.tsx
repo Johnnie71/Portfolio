@@ -21,7 +21,7 @@ const ScrollArrow = () => {
   }, [])
 
   return (
-    <div className={`fade-container ${isVisible ? 'flex justify-center items-center' : 'hidden'}`}>
+    <div className={`fade-container ${isVisible ? 'flex justify-center items-center' : 'hidden'} z-10`}>
       <ul id="downArrow">
           <li className="i-1"></li>
           <li className="i-2"></li>
