@@ -36,6 +36,8 @@ const Projects: React.FC<Props> = ({ projects }) => {
         {projects.map((project, idx) => {
           const { title, description, techStack, demoURL, repo, picture, liveSite } = project;
 
+          const showButtons = (demoURL != "") || (liveSite != "");
+
           return (
             <React.Fragment key={idx}>
               {/* Mobile section */}
@@ -47,48 +49,52 @@ const Projects: React.FC<Props> = ({ projects }) => {
                 transition={{ duration: 1, delay: 1 }}
               >
                 <div className="w-full h-full bg-slate-900 rounded-xl p-4">
-                <Image 
-                  className="w-full max-w-sm md:max-w-lg lg:max-w-xl object-cover mb-4 rounded-lg shadow-lg shadow-black" 
-                  src={`${"https:" + picture.src}`} 
-                  alt={picture.alt || 'project preview'} 
-                  height={20}
-                  width={20}
-                  unoptimized
-                  priority
-                />
-                <h3 className="text-primary mb-2 w-fit text-2xl font-semibold filter brightness-90">{title}</h3>
-                <p className="mb-4">{description}</p>
+                  <Image 
+                    className="w-full max-w-sm md:max-w-lg lg:max-w-xl object-cover mb-4 rounded-lg shadow-lg shadow-black" 
+                    src={`${"https:" + picture.src}`} 
+                    alt={picture.alt || 'project preview'} 
+                    height={20}
+                    width={20}
+                    unoptimized
+                    priority
+                  />
+                  <h3 className="text-primary mb-2 w-fit text-2xl font-semibold filter brightness-90">{title}</h3>
+                  <p className="mb-4">{description}</p>
                 
-                <div id={`${idx}`} className="flex justify-around w-full mb-4">
-                  {techStack.map((tech, index) => {
-                    const { alt, src } = tech;
-                    return (
-                      <Image
-                        src={`${"https:" + src}`}
-                        alt={alt}
-                        className='w-10 h-10'
-                        width={10}
-                        height={10} 
-                        key={index}
-                        priority
-                      />
+                  <div id={`${idx}`} className="flex justify-around w-full mb-4">
+                    {techStack.map((tech, index) => {
+                      const { alt, src } = tech;
+                      return (
+                        <Image
+                          src={`${"https:" + src}`}
+                          alt={alt}
+                          className='w-10 h-10'
+                          width={10}
+                          height={10} 
+                          key={index}
+                          priority
+                        />
+                      )
+                    })}
+                  </div>
+                  {showButtons && (
+                      <div className="flex justify-around items-center w-full">
+                        {demoURL && (
+                          <ProjectButton url={demoURL} text="Demo Video" />
+                        )
+                        }
+                        {liveSite && (
+                          <ProjectButton url={liveSite} text="Live Site" />
+                        )}
+                        {/* {repo && (
+                          <ProjectButton url={repo} text="Source Code" />
+                        )} */}
+                      </div>
                     )
-                  })}
-                </div>
-                <div className="flex justify-around items-center w-full">
-                  {demoURL && (
-                    <ProjectButton url={demoURL} text="Demo Video" />
-                  )
                   }
-                  {liveSite && (
-                    <ProjectButton url={liveSite} text="Live Site" />
-                  )}
-                  {repo && (
-                    <ProjectButton url={repo} text="Source Code" />
-                  )}
-                </div>
                 </div>
               </motion.div>
+
               {/* Desktop section */}
               <motion.div
                 className="hidden md:flex md:justify-center md:items-center mb-10 w-full"
@@ -117,19 +123,20 @@ const Projects: React.FC<Props> = ({ projects }) => {
                         )
                       })}
                     </div>
-                    <div className="flex justify-around items-center w-full">
-                      {demoURL && (
-                        <ProjectButton url={demoURL} text="Demo Video" />
-                      )
-                      }
-                      {liveSite && (
-                        <ProjectButton url={liveSite} text="Live Site" />
-                      )
-                      }
-                      {repo && (
-                         <ProjectButton url={repo} text="Source Code" />
-                      )}
-                    </div>
+                    {showButtons && (
+                      <div className="flex justify-around items-center w-full">
+                        {demoURL && (
+                          <ProjectButton url={demoURL} text="Demo Video" />
+                        )
+                        }
+                        {liveSite && (
+                          <ProjectButton url={liveSite} text="Live Site" />
+                        )}
+                        {/* {repo && (
+                          <ProjectButton url={repo} text="Source Code" />
+                        )} */}
+                      </div>
+                    )}
                   </div>
                   <motion.div
                     className={`${idx % 2 == 0 ? 'order-2' : 'order-1'} flex justify-center items-center w-full`}
