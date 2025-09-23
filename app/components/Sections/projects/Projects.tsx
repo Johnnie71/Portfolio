@@ -103,8 +103,8 @@ const Projects: React.FC<Props> = ({ projects }) => {
                 viewport={{ once: true }}
                 transition={{ duration: 1, delay: 1 }}
               >
-                <div className="grid grid-cols-2 gap-4 max-w-7xl ">
-                  <div className={`${idx % 2 == 0 ? 'order-1' : 'order-2'} flex flex-col justify-between w-full`}>
+                <div className="grid grid-cols-2 gap-4 max-w-7xl">
+                  <div className={`${idx % 2 == 0 ? 'order-1' : 'order-2'} flex flex-col justify-between w-full py-2`}>
                     <h3 className="border-b-2 border-secondary text-primary filter brightness-90 text-3xl">{title}</h3>
                     <p className="text-lg">{description}</p>
                     <div id={`${idx}`} className="flex justify-around w-full">
